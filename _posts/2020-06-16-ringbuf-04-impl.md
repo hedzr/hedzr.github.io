@@ -3,7 +3,8 @@ layout: post
 title: 高性能环形队列及其实现 [Golang版本环形队列实现]
 date: 2020-06-16 13:00:38 +0800
 Author: hedzr
-tags: [ring-buffer, circular-queue]
+tags: [ring-buffer, circular-queue, lock-free, mpmc, golang]
+categories: golang algorithm
 comments: true
 toc: true
 ---
