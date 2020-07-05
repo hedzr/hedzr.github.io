@@ -12,7 +12,7 @@ toc: true
 
 
 
-> https://github.com/hedzr/go-ringbuf
+> <https://github.com/hedzr/go-ringbuf>
 
 
 
@@ -382,7 +382,7 @@ func (rb *ringBuf) Dequeue() (item interface{}, err error) {
 
 ### 小结
 
-我们已经解释了关键性的无锁 Enqueue/Dequeue 思路，具体的实现代码在 https://github.com/hedzr/go-ringbuf 中可以找到。
+我们已经解释了关键性的无锁 Enqueue/Dequeue 思路，具体的实现代码在 <https://github.com/hedzr/go-ringbuf> 中可以找到。
 
 #### 性能
 

@@ -25,5 +25,5 @@ toc: true
 3. [并发编程和多核编程概要](../ringbuf-03-smp/)
 4. [Golang环形队列实现](../ringbuf-04-impl/)
 
-具体的实现代码在 https://github.com/hedzr/go-ringbuf 中可以找到。
+具体的实现代码在 <https://github.com/hedzr/go-ringbuf> 中可以找到。
 
