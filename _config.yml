@@ -193,3 +193,4 @@ exclude:
   - README.md
   - CNAME
   - LOFFER
+  - _ref
