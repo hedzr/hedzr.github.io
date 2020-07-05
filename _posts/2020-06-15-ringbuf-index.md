@@ -3,7 +3,7 @@ layout: post
 title: 高性能环形队列及其实现 [Overview]
 date: 2020-06-15
 Author: hedzr
-tags: [ring-buffer, circular-queue]
+tags: [ring-buffer, circular-queue, lock-free, mpmc]
 comments: true
 toc: true
 ---
