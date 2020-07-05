@@ -31,16 +31,42 @@ github_username:  hedzr
 
 # remote_theme: erlzhang/jekyll-theme-arktos
 #remote-theme: ngzhio/jekyll-theme-hamilton
+remote_theme: thelehhman/texture
 
 # Build settings
 #theme: jekyll-theme-arktos
-theme: jekyll-theme-tactile
+#theme: jekyll-theme-tactile
+# https://pages-themes.github.io/tactile/
+# https://github.com/pages-themes/tactile
 #theme: jekyll-theme-hamilton
-#theme: jekyll-theme-tactile  # https://github.com/pages-themes/tactile
+#theme: minima
 #theme: space
+#theme: texture
+theme: texture
 plugins:
   - jekyll-feed
   #- jekyll-theme-hamilton
+
+texture:
+  style: black
+  title: hz
+  tagline: Developer #. Designer
+  date_format: "%b %-d, %Y"
+  analytics_id: UA-171624977-1
+  social_links:
+    twitter: hedzr13
+    github:  hedzr
+    #linkedIn: in/thelehhman # format: locale/username
+  show_excerpts: true
+  showPicker: true
+  #disqus_shortname: games
+  showNav: true
+  navigation:
+    - title: MkDocsBlog
+      url: "/blog/"
+    - title: MkDocsTmpl
+      url: "/notes-hi/"
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.
