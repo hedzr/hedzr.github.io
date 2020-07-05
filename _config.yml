@@ -34,7 +34,7 @@ github_username:  hedzr
 
 # Build settings
 #theme: jekyll-theme-arktos
-theme: minima
+theme: jekyll-theme-tactile
 #theme: jekyll-theme-hamilton
 #theme: jekyll-theme-tactile  # https://github.com/pages-themes/tactile
 #theme: space
