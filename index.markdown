@@ -3,9 +3,6 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: home
+toc: true
 ---
-
-1. blog page: [Enter](./blog/)
-2. mkdocs template repo for your notes, blog, or docs-site: [notes-hi](./notes-hi/)
-3. github: https://github.com/hedzr/hedzr.github.io
 
