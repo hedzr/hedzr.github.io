@@ -1,25 +1,30 @@
-# Node rules:
-## Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
-.grunt
+# Vim
+*~
+*.sw[p_]
 
-## Dependency directory
-## Commenting this out is preferred by some people, see
-## https://docs.npmjs.com/misc/faq#should-i-check-my-node_modules-folder-into-git
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Ruby Gem
+*.gem
+.bundle
+Gemfile.lock
+**/vendor/bundle
+
+# Node.js and NPM
 node_modules
+npm-debug.log*
+package-lock.json
+codekit-config.json
 
-# Book build output
-_book
+# macOS
+.DS_Store
 
-# eBook build output
-*.epub
-*.mobi
-*.pdf
-
-_site
-.sass-cache
+# Jekyll generated files
 .jekyll-cache
 .jekyll-metadata
-vendor
-
-LOFFER/
-_ref/
+.sass-cache
+_asset_bundler_cache
+_site
+ref/

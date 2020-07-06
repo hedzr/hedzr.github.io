@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title: 高性能环形队列及其实现 [Overview]
 date: 2020-06-15
 Author: hedzr
@@ -26,4 +26,3 @@ toc: true
 4. [Golang环形队列实现](../ringbuf-04-impl/)
 
 具体的实现代码在 <https://github.com/hedzr/go-ringbuf> 中可以找到。
-

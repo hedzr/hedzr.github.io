@@ -1,6 +1,10 @@
 ---
-layout: post
-title: 高性能环形队列及其实现 [Golang版本环形队列实现]
+layout: single
+classes:
+  #- wide
+  #- landing
+  #- dark-theme
+title: 高性能环形队列及其实现 [Golang版本实现]
 date: 2020-06-16 13:00:38 +0800
 Author: hedzr
 tags: [ring-buffer, circular-queue, lock-free, mpmc, golang]
@@ -479,6 +483,3 @@ $ go test ./ringbuf/rb -v -race -run 'TestRingBuf_MPut'
 [^205]: [Go语言内存模型](http://hugozhu.myalert.info/2013/04/20/31-golang-memory-model.html)
 [^206]: [Golang内存模型- 简书](https://www.jianshu.com/p/ba9114542bb7)
 [^207]: [Go并发编程中的那些事](https://github.com/xitu/gold-miner/blob/master/TODO/concurrent-programming.md)
-
-
-
