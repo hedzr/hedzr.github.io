@@ -141,7 +141,13 @@ footer:
       icon: "fab fa-fw fa-instagram"
       # url:
 
-
+header:
+ overlay_image: /assets/images/unsplash-image-1.jpg
+ overlay_filter: rgba(255, 255, 255, 0.45)
+ caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
+ actions:
+   - label: "More Info"
+     url: "https://unsplash.com"
 
 
 # Tabs in header. There are 'Blog', 'About', 'Archive', 'Tags'
