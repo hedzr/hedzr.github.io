@@ -339,5 +339,7 @@ defaults:
       author_profile: true
       read_time: true
       comments: true # true
-      share: true
-      related: true
+      share: true           # 是否在文章末尾显示分享信息
+      reward: true          # 是否在文章末尾显示打赏信息
+      related: true         # 是否显示关联文章
+      copyright: true       # 是否在文章开头显示版权信息
