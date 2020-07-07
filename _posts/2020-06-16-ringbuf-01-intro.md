@@ -4,7 +4,7 @@ title: 高性能环形队列及其实现 [简介]
 date: 2020-06-16 10:00:38 +0800
 Author: hedzr
 tags: [ring-buffer, circular-queue, lock-free, mpmc, golang]
-categories: golang algorithm
+categories: algorithm golang
 comments: true
 toc: true
 ---
