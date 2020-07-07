@@ -316,7 +316,6 @@ void ring_buffer_clear(struct ring_buffer *buffer) {
 - 使用 mmap 特性，这可能不是我们想要的方式：mmap 带有额外的 kernel api 调用开销，可能不是最佳选择，除非你需要进程间通信这一环形队列。
 - 操作只能在单线程中，否则可能有数据竞争问题。
 
-#### 
 
 #### Linux内核的kfifo
 
