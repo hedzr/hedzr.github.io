@@ -12,7 +12,10 @@ toc: true
 
 
 
-> <https://github.com/hedzr/go-ringbuf>
+> **摘要**：  
+> 下面将依据前面的背景知识实现一个无锁的（Lock-Free）环形
+> 队列（Circular Queue，Ring Buffer），尽可能地解除各种竞争状况。  
+> 可以直接访问代码仓库：<https://github.com/hedzr/go-ringbuf>
 
 
 
@@ -378,6 +381,15 @@ func (rb *ringBuf) Dequeue() (item interface{}, err error) {
 
 由于自旋部分一定会在有限步骤中退出（成功，失败，空队列），所以这部分算法是 lock free 的。
 
+#### 无锁的 PUT 和 GET
+
+##### ABA Problem
+
+在 Golang 中并没有线程的概念，Goroutine 实质上是在一个维护线程中分片的。
+
+ABA 问题的本质在于不同线程、不同CPU核心等 Yield 场景下脏数据的问题。对此我们是通过独占的 rbItem 数据块的方式来避让的。只要任何时候仅有一个 Producer 能够拿到一个特定 rbItem 的写入权，那么就不会发生 ABA 问题：这个 rbItem 在任何时候都不可能被另一个 Producer 写，也不可能被另一个 Consumer 读（任何一个 Consumer 能读到的只会是队列尾部的 rbItem）。
+
+所以特定地针对环形队列，只要在 队列为空或已满 的检测能够保证无歧义，就无需担心发生 ABA 问题。
 
 
 ### 小结
