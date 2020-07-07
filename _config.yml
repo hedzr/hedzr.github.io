@@ -227,12 +227,16 @@ kramdown:
     - footnotes
     - smart
   syntax_highlighter: rouge
+  syntax_highlighter_opts: {}
+    #line_numbers: true
+    #tab_width: 2
+    #wrap: false
   hard_wrap: false
   auto_ids: true
   footnote_nr: 1
   entity_output: as_char
   toc_levels: 1..6
-  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  smart_quotes: lsquo,rsquo,ldquo,rdquo   #hellip,mdash,ndash,
   enable_coderay: false
   tab_width: 2
 
