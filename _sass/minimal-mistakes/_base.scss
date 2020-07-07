@@ -113,6 +113,7 @@ blockquote {
   font-style: italic;
   border-left: 0.25em solid $primary-color;
   font-size: 0.85em;
+  color: lighten($text-color, 43%);
 
   p {
     font-size: 0.85em;
