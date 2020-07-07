@@ -15,6 +15,8 @@ toc: true
 
 
 [^1]: [環形緩衝區 - 维基百科，自由的百科全书](https://zh.wikipedia.org/wiki/%E7%92%B0%E5%BD%A2%E7%B7%A9%E8%A1%9D%E5%8D%80)
+[^2]: [CircularBuffer - c2 - wiki](http://wiki.c2.com/?CircularBuffer)
+[^3]: [boost: circular_buffer](https://www.boost.org/doc/libs/1_39_0/libs/circular_buffer/doc/circular_buffer.html)
 
 
 
@@ -22,7 +24,8 @@ toc: true
 
 #### 表示
 
-> 下面的内容参考了 Wiki 相关条目[^1]，并且沿用了其上的图示。
+> 下面的内容参考了 Wiki 相关条目[^1]，并且沿用了其上的图示。  
+> 其他参考也包括：[^2],[^3]
 
 在算法与数据结构表示中，一个环形队列形如：
 

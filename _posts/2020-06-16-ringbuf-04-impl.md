@@ -1,9 +1,5 @@
 ---
 layout: single
-classes:
-  #- wide
-  #- landing
-  #- dark-theme
 title: 高性能环形队列及其实现 [Golang版本实现]
 date: 2020-06-16 13:00:38 +0800
 Author: hedzr
@@ -451,35 +447,40 @@ $ go test ./ringbuf/rb -v -race -run 'TestRingBuf_MPut'
 
 
 
+### References:
+
+[^1], [^2], [^3], [^4], [^5], [^6], [^7], [^8], [^9], [^10], [^11], [^12], [^13], [^14], [^15], [^16]
+
+[^100], [^101], [^201], [^202], [^203], [^204], [^205], [^206], [^207]
+
+
 ## 🔚
 
 
 
 
-
 [^1]: [環形緩衝區 - 维基百科，自由的百科全书](https://zh.wikipedia.org/wiki/%E7%92%B0%E5%BD%A2%E7%B7%A9%E8%A1%9D%E5%8D%80) 
-[^2]: http://wiki.c2.com/?CircularBuffer
-[^3]: https://www.boost.org/doc/libs/1_39_0/libs/circular_buffer/doc/circular_buffer.html
+[^2]: [CircularBuffer - c2 - wiki](http://wiki.c2.com/?CircularBuffer)
+[^3]: [boost: circular_buffer](https://www.boost.org/doc/libs/1_39_0/libs/circular_buffer/doc/circular_buffer.html)
 [^4]: 多核 CPU，CPU集群：预取，乱序执行，超标量流水线，并发编程
-[^5]: Paul E. McKenney: [*Memory Barriers: a Hardware View for Software Hackers*](http://www.rdrop.com/users/paulmck/scalability/paper/whymb.2010.06.07c.pdf)
-[^6]: 内存屏障 (Wikipedia): https://en.wikipedia.org/wiki/Memory_barrier
-[^7]: Intel® 64 and IA-32 Architectures Software Developer’s Manual, https://software.intel.com/en-us/articles/intel-sdm
-[^8]: Memory Barriers/Fences, https://mechanical-sympathy.blogspot.jp/2011/07/memory-barriersfences.html
-[^9]: Memory Barriers: a Hardware View for Software Hackers, Paul E. McKenney, Linux Technology Center, IBM Beaverton, https://www.researchgate.net/publication/228824849_Memory_Barriers_a_Hardware_View_for_Software_Hackers
-[^10]: Intel Sandy Bridge Configuration, http://www.7-cpu.com/cpu/SandyBridge.html
-[^11]: Intel’s Haswell CPU Microarchitecture, http://www.realworldtech.com/haswell-cpu/5/
-[^12]: Write Combining, http://mechanical-sympathy.blogspot.com/2011/07/write-combining.html
-[^13]: Memory ordering, https://en.wikipedia.org/wiki/Memory_ordering
+[^5]: [Paul E. McKenney: *Memory Barriers: a Hardware View for Software Hackers* (pdf)](http://www.rdrop.com/users/paulmck/scalability/paper/whymb.2010.06.07c.pdf)
+[^6]: [内存屏障 (Wikipedia, en)](https://en.wikipedia.org/wiki/Memory_barrier)
+[^7]: [Intel® 64 and IA-32 Architectures Software Developer’s Manual](https://software.intel.com/en-us/articles/intel-sdm)
+[^8]: [Memory Barriers/Fences](https://mechanical-sympathy.blogspot.jp/2011/07/memory-barriersfences.html)
+[^9]: [Memory Barriers: a Hardware View for Software Hackers, Paul E. McKenney, Linux Technology Center, IBM Beaverton](https://www.researchgate.net/publication/228824849_Memory_Barriers_a_Hardware_View_for_Software_Hackers)
+[^10]: [Intel Sandy Bridge Configuration](http://www.7-cpu.com/cpu/SandyBridge.html)
+[^11]: [Intel’s Haswell CPU Microarchitecture](http://www.realworldtech.com/haswell-cpu/5/)
+[^12]: [Write Combining](http://mechanical-sympathy.blogspot.com/2011/07/write-combining.html)
+[^13]: [Memory ordering](https://en.wikipedia.org/wiki/Memory_ordering)
 [^14]: [C++内存屏障（内存顺序）总结](http://lday.me/2017/12/02/0018_cpp_atomic_summary/)
 [^15]: [Race Condition(竞态条件) 和Memory Barrier(内存屏障)](https://holajiawei.com/race-and-memory/)
-[^16]: [可视化Go内存管理| Tony Bai](https://tonybai.com/2020/03/10/visualizing-memory-management-in-golang/)
-
+[^16]: [可视化Go内存管理 - Tony Bai](https://tonybai.com/2020/03/10/visualizing-memory-management-in-golang/)
 [^100]: [DPHPC: Sequential Consistency - pdf/slider](https://spcl.inf.ethz.ch/Teaching/2017-dphpc/recitation/seqcons.pdf)
 [^101]: [CPU Cache Line伪共享问题的总结和分析- 51CTO.COM](https://biz.51cto.com/art/201901/590602.htm)
 [^201]: [**探索Golang 一致性原语**- 温习江湖](https://wweir.cc/post/探索-golang-一致性原语/)
-[^202]: https://golang.org/ref/mem
+[^202]: [https://golang.org/ref/mem](https://golang.org/ref/mem)
 [^203]: [LearnConcurrency](https://github.com/golang/go/wiki/LearnConcurrency): Read [Advanced Go Concurrency Primitives](https://encore.dev/blog/advanced-go-concurrency), Study [The Go Memory Model](https://golang.org/ref/mem)
-[^204]: [Golang内存模型| apeipo的博客](http://longlog.me/2018/09/12/2018-09-12-golang-mem/)
+[^204]: [Golang内存模型 - apeipo的博客](http://longlog.me/2018/09/12/2018-09-12-golang-mem/)
 [^205]: [Go语言内存模型](http://hugozhu.myalert.info/2013/04/20/31-golang-memory-model.html)
 [^206]: [Golang内存模型- 简书](https://www.jianshu.com/p/ba9114542bb7)
 [^207]: [Go并发编程中的那些事](https://github.com/xitu/gold-miner/blob/master/TODO/concurrent-programming.md)
