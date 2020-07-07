@@ -89,6 +89,23 @@
       position: sticky;
       top: 2em;
       float: right;
+      max-height: calc(100vh - #{$nav-height} - 2em);
+      // background-image: linear-gradient(to bottom, rgba(255,255,255,0),rgba(255,255,255,0) 97%,rgba(255,255,255,1) 100%);
+
+      nav.semi {
+        position: relative;
+
+        .inner {
+          max-height: calc(100vh - #{$nav-height} - 2em);
+          overflow: auto;
+        }
+      }
+      div.semi-bg {
+        position: absolute; bottom: 0; width: 100%;
+        z-index: 19;
+        height: 1em;
+        background-image: linear-gradient(to bottom, rgba(255,255,255,0),$border-color);
+      }
     }
   }
 
@@ -344,4 +361,3 @@
     margin-right: initial;
   }
 }
-

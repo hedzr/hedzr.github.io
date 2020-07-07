@@ -2,6 +2,22 @@
    jQuery plugin settings and other scripts
    ========================================================================== */
 
+/*
+
+To modify or add your own scripts include them in assets/js/_main.js 
+and then rebuild using:
+
+ npm run build:js
+
+See below for more details.
+If you add additional scripts to assets/js/plugins/ and would like 
+them concatenated with the others, be sure to update the uglify 
+script in package.json. Same goes for scripts that you remove.
+
+https://mmistakes.github.io/minimal-mistakes/docs/javascript/
+
+*/
+
 $(document).ready(function() {
   // FitVids init
   $("#main").fitVids();
@@ -81,6 +97,57 @@ $(document).ready(function() {
       // Event support
       events: true // if true, emit custom events
     });
+    /*function isScrolledIntoView(elem)
+    {
+        var docViewTop = $(window).scrollTop();
+        var docViewBottom = docViewTop + $(window).height();
+
+        var elemTop = $(elem).offset().top;
+        var elemBottom = elemTop + $(elem).height();
+
+        return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+    }
+    function scroll_to_element_if_not_inside_view(element){
+      if($(window).scrollTop() > element.offset().top){
+        $('html, body').animate( { scrollTop: element.offset().top }, {duration: 400 } );
+      }
+    }*/
+    function ensureVisible(elem) {
+      var p = $(elem).offsetParent(), ph = p.height();
+
+      var ptfc = $(elem).parents('nav.toc').first().children().first();
+      var phh = ptfc.height(); // get the toc-header height
+
+      // var docViewTop = $(window).scrollTop();
+      // var docViewBottom = docViewTop + $(window).height();
+
+      // var elemTop = $(elem).offset().top;
+      // var elemBottom = elemTop + $(elem).height();
+
+      var docViewTop = 0; // p.scrollTop();
+      var docViewBottom = docViewTop + ph;
+
+      var elemTop = $(elem).offset().top - ptfc.offset().top;
+      var elemBottom = elemTop + $(elem).height();
+
+      if ($(elem).height()>phh) elemBottom = elemTop + phh;
+
+      var ofs = 0;
+
+      var vis = ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+      if (!vis) {
+        var pa = $(elem).parents('nav.inner').first();
+        ofs = elemTop>0 ? elemBottom+phh-ph : elemTop;// - p.height();
+        pa.animate( { scrollTop: ofs }, {duration: 70 } );
+      }
+      // console.log('vis, ph, phh, elemTop, elemBottom, ofs -> ', vis, ph, phh, elemTop, elemBottom, ofs)
+    }
+    document.addEventListener('gumshoeActivate', function (event) {
+      var li = event.target;
+      //var link = event.detail.link;
+      //var content = event.detail.content;
+      ensureVisible(li);
+    }, false);
   }
 
   // add lightbox class to all image links
