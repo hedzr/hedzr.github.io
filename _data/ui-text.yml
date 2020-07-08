@@ -376,8 +376,8 @@ zh: &DEFAULT_ZH_HANS
   page                       : "页面"
   pagination_previous        : "向前"
   pagination_next            : "向后"
-  breadcrumb_home_label      : "首页"
-  breadcrumb_separator       : "/"
+  breadcrumb_home_label      : "<i class='fa fa-home'></i>"
+  breadcrumb_separator       : ">"
   menu_label                 : "切换菜单"
   search_label               :
   toc_label                  : "在本页上"
