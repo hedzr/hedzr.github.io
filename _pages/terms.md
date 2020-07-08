@@ -3,9 +3,11 @@ permalink: /terms/
 title: "Terms and Privacy Policy"
 last_modified_at: 2016-06-06
 toc: true
+sidebar:
+  nav: sidebar-meta
 ---
 
-## Privacy Policy
+<!-- ## Privacy Policy -->
 
 The privacy of my visitors is extremely important. This Privacy Policy outlines the types of personal information that is received and collected and how it is used.
 

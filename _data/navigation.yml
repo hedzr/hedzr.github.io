@@ -44,6 +44,14 @@ main:
     # url: /sitemap/
 
 
+sidebar-meta:
+  - title: "META"
+    children:
+      - title: "License"
+        url: /license/
+      - title: "Terms & Privacy Policy"
+        url: /terms/
+
 
 # sidebar navigation list sample
 sidebar-sample:
