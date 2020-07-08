@@ -12,7 +12,7 @@
 
 # theme                  : "minimal-mistakes-jekyll"
 remote_theme           : "mmistakes/minimal-mistakes"
-#remote_theme             : "mmistakes/minimal-mistakes@4.19.3"
+# remote_theme             : "mmistakes/minimal-mistakes@4.19.3"
 minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
@@ -94,7 +94,7 @@ analytics:
   provider               : google # false (default), "google", "google-universal", "custom"
   google:
     tracking_id          : UA-171624977-1
-    anonymize_ip         : # true, false (default)
+    anonymize_ip         : true # true, false (default)
 
 
 # Site Author
@@ -147,12 +147,12 @@ footer:
       # url:
 
 header:
- overlay_image: /assets/images/unsplash-image-1.jpg
- overlay_filter: rgba(255, 255, 255, 0.45)
- caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
- actions:
-   - label: "More Info"
-     url: "https://unsplash.com"
+  overlay_image: /assets/images/unsplash-image-1.jpg
+  overlay_filter: rgba(255, 255, 255, 0.45)
+  caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
+  actions:
+    - label: "More Info"
+      url: "https://unsplash.com"
 
 
 # Tabs in header. There are 'Blog', 'About', 'Archive', 'Tags'
@@ -215,6 +215,9 @@ exclude:
   - /docs # ignore Minimal Mistakes /docs
   - /test # ignore Minimal Mistakes /test
   - ref
+  - in-progress
+  - todo
+  - jelly-cache
 keep_files:
   - .git
   - .svn
@@ -263,6 +266,7 @@ permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
 timezone: Asia/Chongqing # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
 
 
 # Plugins (previously gems:)
@@ -333,6 +337,20 @@ compress_html:
     envs: development
 
 
+# Collections
+collections:
+  recipes:
+    output: true
+    permalink: /:collection/:path/
+  pets:
+    output: true
+    permalink: /:collection/:path/
+  portfolio:
+    output: true
+    permalink: /:collection/:path/
+
+
+
 # Defaults
 defaults:
   # _posts
@@ -348,3 +366,34 @@ defaults:
       reward: true          # 是否在文章末尾显示打赏信息
       related: true         # 是否显示关联文章
       copyright: true       # 是否在文章开头显示版权信息
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+  # _recipes
+  - scope:
+      path: ""
+      type: recipes
+    values:
+      layout: single
+      author_profile: true
+      share: true
+  # _pets
+  - scope:
+      path: ""
+      type: pets
+    values:
+      layout: single
+      author_profile: true
+      share: true
+  # _portfolio
+  - scope:
+      path: ""
+      type: portfolio
+    values:
+      layout: single
+      author_profile: false
+      share: true
