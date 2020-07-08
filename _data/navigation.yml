@@ -49,8 +49,10 @@ sidebar-meta:
     children:
       - title: "License"
         url: /license/
+        icon: "far fa-fw fa-copyright"
       - title: "Terms & Privacy Policy"
         url: /terms/
+        icon: "far fa-fw fa-fingerprint"
 
 
 # sidebar navigation list sample
