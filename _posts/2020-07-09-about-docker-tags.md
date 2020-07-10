@@ -162,6 +162,8 @@ docker rmi 30926f619369
 > 如果想要为你的 Terminal 环境增加一系列的 docker 专用扩展函数的话，可以安装我的[^1]：
 >
 > <https://github.com/hedzr/docker-functions>
+>
+> 或者节选：**[docker-rmi-none.bash](https://gist.github.com/hedzr/1d3e2de5eee40bccad19ad6392a1a820)**
 
 ```bash
 function docker-rmi-none() {
@@ -170,8 +172,8 @@ function docker-rmi-none() {
     #local cid=$(docker-cid "$i")
     #[ "$cid" != "" ] && 
     local pid=$(docker-pid "$i" 2>/dev/null)
-    [ "$pid" != "" ] && echo "-------- Clean the stopped container: $i, $pid" && docker rm -f $pid
-    [ "$i"   != "" ] && echo "-------- Erase the container: $i, $pid" && docker rmi -f $i
+    [ "$pid" != "" ] && echo "-------- Cleaning the stopped container: $i, $pid" && docker rm -f $pid
+    [ "$i"   != "" ] && echo "-------- Erasing the container: $i, $pid" && docker rmi -f $i
   done
 }
 
