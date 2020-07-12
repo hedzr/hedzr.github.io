@@ -360,6 +360,8 @@ defaults:
     values:
       layout: single
       author_profile: true
+      sidebar:
+        nav: sidebar-meta
       read_time: true
       comments: true # true
       share: true           # 是否在文章末尾显示分享信息
