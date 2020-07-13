@@ -150,6 +150,20 @@ $(document).ready(function() {
     }, false);
   }
 
+  // add A tag around the images in post while it's not been anchored
+  $('.page__content').find('img').each(function() {
+    var img = $(this);
+    if (img.parent().prop('tagName')!='A'){
+      console.log('add A tag for IMG: ', img.attr('src'));
+      var anchor = document.createElement("a");
+      anchor.className = 'image-link';
+      anchor.href = img.attr('src');
+      anchor.innerHTML = img[0].outerHTML;
+      anchor.title = "Click on image to enlarge it at full screen";
+      img.replaceWith(anchor);
+    }
+  });
+
   // add lightbox class to all image links
   $(
     "a[href$='.jpg'],a[href$='.jpeg'],a[href$='.JPG'],a[href$='.png'],a[href$='.gif']"
@@ -203,3 +217,49 @@ $(document).ready(function() {
     }
   });
 });
+
+/*function isScrolledIntoView(elem)
+{
+    var docViewTop = $(window).scrollTop();
+    var docViewBottom = docViewTop + $(window).height();
+
+    var elemTop = $(elem).offset().top;
+    var elemBottom = elemTop + $(elem).height();
+
+    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+}
+function scroll_to_element_if_not_inside_view(element){
+  if($(window).scrollTop() > element.offset().top){
+    $('html, body').animate( { scrollTop: element.offset().top }, {duration: 400 } );
+  }
+}*/
+function ensureVisible(elem) {
+  var p = $(elem).offsetParent(), ph = p.height();
+
+  var ptfc = $(elem).parents('nav.toc').first().children().first();
+  var phh = ptfc.height(); // get the toc-header height
+
+  // var docViewTop = $(window).scrollTop();
+  // var docViewBottom = docViewTop + $(window).height();
+
+  // var elemTop = $(elem).offset().top;
+  // var elemBottom = elemTop + $(elem).height();
+
+  var docViewTop = 0; // p.scrollTop();
+  var docViewBottom = docViewTop + ph;
+
+  var elemTop = $(elem).offset().top - ptfc.offset().top;
+  var elemBottom = elemTop + $(elem).height();
+
+  if ($(elem).height()>phh) elemBottom = elemTop + phh;
+
+  var ofs = 0;
+
+  var vis = ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+  if (!vis) {
+    var pa = $(elem).parents('nav.inner').first();
+    ofs = elemTop>0 ? elemBottom+phh-ph : elemTop;// - p.height();
+    pa.animate( { scrollTop: ofs }, {duration: 70 } );
+  }
+  // console.log('vis, ph, phh, elemTop, elemBottom, ofs -> ', vis, ph, phh, elemTop, elemBottom, ofs)
+}
