@@ -241,10 +241,17 @@ kramdown:
     - footnotes
     - smart
   syntax_highlighter: rouge
-  syntax_highlighter_opts: {}
-    #line_numbers: true
-    #tab_width: 2
+  syntax_highlighter_opts:
+    # bad - tab_width: 4
     #wrap: false
+    # Rouge Options › https://github.com/jneen/rouge#full-options
+    # css_class: 'highlight'
+    # bad - #line_numbers: true # bad idea, spans don't need linenos and would inherit this option
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
   hard_wrap: false
   auto_ids: true
   footnote_nr: 1
@@ -252,7 +259,10 @@ kramdown:
   toc_levels: 1..6
   smart_quotes: lsquo,rsquo,ldquo,rdquo   #hellip,mdash,ndash,
   enable_coderay: false
-  tab_width: 2
+  # bad - tab_width: 4
+
+pygments_options:
+  tabsize: 4
 
 
 # Sass/SCSS
