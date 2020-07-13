@@ -157,7 +157,7 @@ $(document).ready(function() {
       a.addClass('local');
     }else{
       a.addClass('external');
-      console.log('external link: ', this.outerHTML, ':', a.attr('target'));
+      // console.log('external link: ', this.outerHTML, ':', a.attr('target'));
       if (!(a.attr('target'))) // test the attr value is undefined or empty
         a.attr('target', '_blank');
     }
