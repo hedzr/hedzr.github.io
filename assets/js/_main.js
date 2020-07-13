@@ -150,6 +150,19 @@ $(document).ready(function() {
     }, false);
   }
 
+  $('.page__content').find('a').each(function() {
+    var a = $(this);
+    var local = location.hostname === this.hostname || !this.hostname.length;
+    if (local) {
+      a.addClass('local');
+    }else{
+      a.addClass('external');
+      console.log('external link: ', this.outerHTML, ':', a.attr('target'));
+      if (!(a.attr('target'))) // test the attr value is undefined or empty
+        a.attr('target', '_blank');
+    }
+  });
+
   // add A tag around the images in post while it's not been anchored
   $('.page__content').find('img').each(function() {
     var img = $(this);
