@@ -9,7 +9,7 @@ comments: true
 toc: true
 header:
   overlay_image: /assets/images/docker-compose-button.jpg
-  overlay_filter: rgba(128, 128, 0, 0.3)
+  overlay_filter: rgba(64, 64, 0, 0.6)
 excerpt: >-
   这篇文章基本上是 docker-compose YAML 文件格式的严格的英译中。
   这么做，缘起于昨天想起扫描一下 docker-compose 编排中怎么使用 
