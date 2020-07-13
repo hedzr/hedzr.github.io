@@ -79,7 +79,7 @@ body {
 
 .page__lead {
   font-family: $global-font-family;
-  font-size: $type-size-4;
+  font-size: $type-size-5;
 }
 
 .page__content {
@@ -199,6 +199,7 @@ body {
     .btn {
       color: #fff;
       text-shadow: 1px 1px 4px rgba(#000, 0.5);
+      backdrop-filter: blur(2px);
     }
 
     .page__lead {
