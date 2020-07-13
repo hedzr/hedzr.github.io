@@ -201,7 +201,7 @@ body:hover .visually-hidden button {
   vertical-align: middle;
 }
 
-a[target="_blank"]:after, a.external:after {
+a[target="_blank"].external:after {
     // display: inline-block;
     // font-family: "Font Awesome 5 Free", "Font Awesome 5 Brands", "Font Awesome", "FontAwesome";
     // font-weight: 900;

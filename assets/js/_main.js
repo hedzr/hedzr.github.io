@@ -155,7 +155,7 @@ $(document).ready(function() {
     var local = location.hostname === this.hostname || !this.hostname.length;
     if (local) {
       a.addClass('local');
-    }else{
+    }else if((a.children().length!=1||a.children().first().prop('tagName')!='IMG') && !a.children().first().hasClass('image-link')) {
       a.addClass('external');
       // console.log('external link: ', this.outerHTML, ':', a.attr('target'));
       if (!(a.attr('target'))) // test the attr value is undefined or empty
