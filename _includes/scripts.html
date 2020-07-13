@@ -3,7 +3,7 @@
     <script src="{{ script | relative_url }}"></script>
   {% endfor %}
 {% else %}
-  <script src="{{ '/assets/js/main.min.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/main.min.js?t=.1' | relative_url }}"></script>
 {% endif %}
 
 {% if site.search == true or page.layout == "search" %}
