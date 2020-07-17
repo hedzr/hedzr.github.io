@@ -35,6 +35,8 @@ main:
   #   url: https://google.com
   #- title: MkDocs-Blog
   #  url: /blog/
+  - title: Cmdr-Docs
+    url: /cmdr-docs/
   - title: Tmpl
     url: /notes-hi/
     description: A github template repository that allows building a MkDocs site faster.
