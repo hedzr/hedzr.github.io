@@ -35,8 +35,9 @@ main:
   #   url: https://google.com
   #- title: MkDocs-Blog
   #  url: /blog/
-  - title: Cmdr-Docs
+  - title: CMDR
     url: /cmdr-docs/
+    description: The Documentation for Golang cmdr
   - title: Tmpl
     url: /notes-hi/
     description: A github template repository that allows building a MkDocs site faster.
