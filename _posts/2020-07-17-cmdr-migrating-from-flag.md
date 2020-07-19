@@ -12,7 +12,7 @@ header:
   overlay_image: /assets/images/cmdr/help-screen.png
   overlay_filter: rgba(128, 128, 0, 0.3)
 excerpt: >-
-  Migrating to cmdr ...
+  Migrating to cmdr, One line is those you have to modify ...
 
 #  caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
 #  actions:
@@ -25,6 +25,16 @@ excerpt: >-
 # 从 `flag` 迁移到 `cmdr`
 
 > 一个早期的版本已经发布在 juejin 和 segmentfault。本文是很久以后的修改版，一方面是订正错误，另一方面是集中我的文档到一个地方。
+
+>
+>
+>从 flag 迁移到 cmdr
+>
+> —— 你需要的只是一行代码修改
+>
+>
+
+
 
 采用一个新的命令行解释器框架，最痛苦地莫过于编写数据结构或者流式定义了。我们首先回顾一下  [`cmdr`](https://github.com/hedzr/cmdr) 和其它大多数三方增强命令行解释器都支持的最典型的两种命令行界面定义方式，然后再来研究一下 [`cmdr`](https://github.com/hedzr/cmdr) 新增的最平滑的迁移方案。
 
