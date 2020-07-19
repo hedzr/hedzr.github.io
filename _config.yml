@@ -277,6 +277,10 @@ paginate: 5 # amount of posts to show
 paginate_path: /page:num/
 timezone: Asia/Chongqing # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
+# jekyll-multiple-languages-plugin
+languages: [zh, en]
+exclude_from_localizations: ["javascript", "images", "css"]
+default_locale_in_subfolder: true
 
 
 # Plugins (previously gems:)
@@ -288,6 +292,7 @@ plugins:
   - jekyll-include-cache
   - jekyll-archives
   - jemoji
+  #- jekyll-multiple-languages-plugin
 
 # mimic GitHub Pages with --safe
 whitelist:
@@ -385,6 +390,8 @@ defaults:
     values:
       layout: single
       author_profile: true
+      sidebar:
+        nav: sidebar-meta
   # _recipes
   - scope:
       path: ""
