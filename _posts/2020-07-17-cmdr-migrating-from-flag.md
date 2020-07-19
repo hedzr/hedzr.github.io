@@ -2,6 +2,7 @@
 layout: single
 title: '从 flag 迁移到 cmdr'
 date: 2020-07-17 22:15:11 +0800
+last_modified: 2020-07-19 18:00:00 +0800
 Author: hedzr
 tags: [commander, command-line, "command-line-parser", command-line-interface,  getops, posix, posix-compatible, hierarchical-configuration, hierarchy, cli, golang]
 categories: golang cmdr others
@@ -168,90 +169,158 @@ func main() {
 比结构体数据定义方案更好一点的是采用流式调用链方式。它可能长得像这样：
 
 ```go
-	// root
-
-	root := cmdr.Root(appName, "1.0.1").
-		Header("fluent - test for cmdr - no version - hedzr").
+func buildRootCmd() (rootCmd *cmdr.RootCommand) {
+	root := cmdr.Root(appName, cmdr_examples.Version).
+		// Header("fluent - test for cmdr - no version - hedzr").
+		Copyright(copyright, "hedzr").
 		Description(desc, longDesc).
 		Examples(examples)
 	rootCmd = root.RootCommand()
+  AddFlags(root)
+	return
+}
 
-	// soundex
+func AddFlags(root cmdr.OptCmd) {
+	// tags sub-commands
 
-	root.NewSubCommand().
-		Titles("snd", "soundex", "sndx", "sound").
-		Description("", "soundex test").
-		Group("Test").
-		Action(func(cmd *cmdr.Command, args []string) (err error) {
-			for ix, s := range args {
-				fmt.Printf("%5d. %s => %s\n", ix, s, cmdr.Soundex(s))
-			}
-			return
-		})
-
-	// xy-print
-
-	root.NewSubCommand().
-		Titles("xy", "xy-print").
-		Description("test terminal control sequences", "test terminal control sequences,\nverbose long descriptions here.").
-		Group("Test").
-		Action(func(cmd *cmdr.Command, args []string) (err error) {
-			fmt.Println("\x1b[2J") // clear screen
-
-			for i, s := range args {
-				fmt.Printf("\x1b[s\x1b[%d;%dH%s\x1b[u", 15+i, 30, s)
-			}
-
-			return
-		})
-
-	// mx-test
-
-	mx := root.NewSubCommand().
-		Titles("mx", "mx-test").
-		Description("test new features", "test new features,\nverbose long descriptions here.").
-		Group("Test").
-		Action(func(cmd *cmdr.Command, args []string) (err error) {
-			fmt.Printf("*** Got pp: %s\n", cmdr.GetString("app.mx-test.password"))
-			fmt.Printf("*** Got msg: %s\n", cmdr.GetString("app.mx-test.message"))
-			fmt.Printf("*** Got fruit: %v\n", cmdr.GetString("app.mx-test.fruit"))
-			fmt.Printf("*** Got head: %v\n", cmdr.GetInt("app.mx-test.head"))
-			return
-		})
-	mx.NewFlag(cmdr.OptFlagTypeString).
-		Titles("pp", "password").
-		Description("the password requesting.", "").
+	parent := root.NewSubCommand("flags", "f").
+		Description("flags demo", "").
 		Group("").
-		DefaultValue("", "PASSWORD").
-		ExternalTool(cmdr.ExternalToolPasswordInput)
-	mx.NewFlag(cmdr.OptFlagTypeString).
-		Titles("m", "message", "msg").
-		Description("the message requesting.", "").
-		Group("").
-		DefaultValue("", "MESG").
-		ExternalTool(cmdr.ExternalToolEditor)
-	mx.NewFlag(cmdr.OptFlagTypeString).
-		Titles("fr", "fruit").
-		Description("the message.", "").
-		Group("").
-		DefaultValue("", "FRUIT").
-		ValidArgs("apple", "banana", "orange")
-	mx.NewFlag(cmdr.OptFlagTypeInt).
-		Titles("hd", "head").
-		Description("the head lines.", "").
-		Group("").
-		DefaultValue(1, "LINES").
-		HeadLike(true, 1, 3000)
+		Action(flagsAction)
 
-	// kv
+	cmdr.NewBool(false).
+		Titles("bool", "b").
+		Description("A bool flag", "").
+		Group("").
+		AttachTo(parent)
 
-	kvCmd := root.NewSubCommand().
-		Titles("kv", "kvstore").
-		Description("consul kv store operations...", ``)
+	cmdr.NewInt(1).
+		Titles("int", "i").
+		Description("A int flag", "").
+		Group("1000.Integer").
+		AttachTo(parent)
+	cmdr.NewInt64(2).
+		Titles("int64", "i64").
+		Description("A int64 flag", "").
+		Group("1000.Integer").
+		AttachTo(parent)
+	cmdr.NewUint(3).
+		Titles("uint", "u").
+		Description("A uint flag", "").
+		Group("1000.Integer").
+		AttachTo(parent)
+	cmdr.NewUint64(4).
+		Titles("uint64", "u64").
+		Description("A uint64 flag", "").
+		Group("1000.Integer").
+		AttachTo(parent)
+
+	cmdr.NewFloat32(2.71828).
+		Titles("float32", "f", "float").
+		Description("A float32 flag with 'e' value", "").
+		Group("2000.Float").
+		AttachTo(parent)
+	cmdr.NewFloat64(3.14159265358979323846264338327950288419716939937510582097494459230781640628620899).
+		Titles("float64", "f64").
+		Description("A float64 flag with a `PI` value", "").
+		Group("2000.Float").
+		AttachTo(parent)
+	cmdr.NewComplex64(3.14+9i).
+		Titles("complex64", "c64").
+		Description("A complex64 flag", "").
+		Group("2010.Complex").
+		AttachTo(parent)
+	cmdr.NewComplex64(3.14+9i).
+		Titles("complex128", "c128").
+		Description("A complex128 flag", "").
+		Group("2010.Complex").
+		AttachTo(parent)
+
+	// a set of booleans
+
+	cmdr.NewBool().
+		Titles("single", "s").
+		Description("A bool flag: single", "").
+		Group("Boolean").
+		EnvKeys("").
+		AttachTo(parent)
+
+	cmdr.NewBool().
+		Titles("double", "d").
+		Description("A bool flag: double", "").
+		Group("Boolean").
+		EnvKeys("").
+		AttachTo(parent)
+
+	cmdr.NewBool().
+		Titles("norway", "n", "nw").
+		Description("A bool flag: norway", "").
+		Group("Boolean").
+		EnvKeys("").
+		AttachTo(parent)
+
+	cmdr.NewBool().
+		Titles("mongo", "m").
+		Description("A bool flag: mongo", "").
+		Group("Boolean").
+		EnvKeys("").
+		AttachTo(parent)
+
+	// others
+
+	cmdr.NewString().
+		Titles("string-value", "sv", "str", "string").
+		Description("A string flag", "").
+		Group("").
+		EnvKeys("").
+		AttachTo(parent)
+
+	cmdr.NewDuration(time.Second).
+		Titles("time-duration-value", "tdv").
+		Description("A time duration flag: '3m15s', ...", "").
+		Group("").
+		EnvKeys("").
+		AttachTo(parent)
+
+	// arrays
+
+	cmdr.NewIntSlice(1, 2, 3).
+		Titles("int-slice-value", "isv").
+		Description("A int slice flag: ", "").
+		Group("Array").
+		EnvKeys("").
+		AttachTo(parent)
+
+	cmdr.NewStringSlice("quick", "fox", "jumps").
+		Titles("string-slice-value", "ssv").
+		Description("A string slice flag: ", ``).
+		Group("Array").
+		EnvKeys("").
+		Examples(``).
+		AttachTo(parent)
+
+}
+
 //...More
 ```
 
 这种方式很有效地改进的痛苦之源。要说起来，也没有什么缺点了。所以这也是 [`cmdr`](https://github.com/hedzr/cmdr) 主要推荐你采用的方案。
+
+> cmdr  的早期版本采用另一种方式做标志（Flag）的定义，基本无差别：
+>
+> ```go
+> 	mx.NewFlagV("", "test", "t").
+> 		Description("the test text.", "").
+> 		EnvKeys("COOLT", "TEST").
+> 		Group("")
+> 	mx.NewFlagV("", "password", "pp").
+> 		Description("the password requesting.", "").
+> 		Group("").
+> 		Placeholder("PASSWORD").
+> 		ExternalTool(cmdr.ExternalToolPasswordInput)
+> ```
+>
+> 但现在我们推荐你采用前面的 `cmdr.NewXXX()...AttachTo(optCmd)` 的语义方案。
 
 
 
@@ -500,7 +569,7 @@ flag.WithCommand(func(newSubCmd cmdr.OptCmd){
 
 还可以，写出来了这么多！
 
-
+cmdr 提供的平滑迁移方案，说起来只是权宜之计。我们还是鼓励你直接采用我们新的流式调用方案，并直接利用 `Option Store` 来管理配置数据，而且充分利用这种方式提前完成配置参数表的设计（我们都会在一开始就建立配置文件的 yaml 格式，从而令配置参数具有更好的可读性，这也会从另一角度帮助你完善应用程序的架构和逻辑）。
 
 
 
