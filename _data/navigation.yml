@@ -38,9 +38,6 @@ main:
   # - title: CMDR
   #   url: /cmdr-docs/
   #   description: The Documentation for Golang cmdr
-  - title: Tmpl
-    url: /notes-hi/
-    description: A github template repository that allows building a MkDocs site faster.
   - title: About
     url: /about
   # - title: "Sitemap"
@@ -57,6 +54,9 @@ sidebar-meta:
       - title: "CMDR Docs"
         url: /cmdr-docs/
         description: The Documentation for cmdr (Golang)
+      - title: "Tmpl Repo"
+        url: /notes-hi/
+        description: A github template repository that allows building a MkDocs site faster.
   - title: "META"
     children:
       - title: "License"
