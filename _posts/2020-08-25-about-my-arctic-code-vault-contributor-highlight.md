@@ -6,7 +6,7 @@ last_modified: 2020-08-24 15:15:00 +0800
 Author: hedzr
 tags: [coding, life, lifestyle]
 categories: lifestyle records
-#comments: true
+comments: true
 #toc: true
 header:
   overlay_image: /assets/images/foo-bar-identity.jpg
@@ -24,7 +24,7 @@ excerpt: >-
 
 # About Arctic Code Vault Contributor Badge of Mine
 
-实际上，当然，这个资格是很早就已经获取了，不过我一直没有加入到 Profile HIghlights 中。因为，当然，只会是因为还有一些遗憾。
+实际上，当然，这个资格是很早就已经获取了，不过我一直没有加入到 Profile Highlights 中。因为，当然，只会是因为还有一些遗憾。
 
 想到自己曾经的贡献能够放1K年，这已经是另一种社会主义上的长生了，对不对？所以当初一看到这个计划发起的通知信之后我甚至没有了解任何细节就 Join 了。不过，由于春节全部都是生病状态，而且虚弱的状态维持了比较长时间，所以后来竟然也就忘记了做过这个事情。直到前一阵子偶然看到国内的新闻较多报道该事情之后才去Review了一番。
 
