@@ -22,7 +22,7 @@ excerpt: >-
 
 
 
-# About Arctic Code Vault Contributor Badge of Mine
+# About Arctic Code Vault Contributor[^1] Badge of Mine
 
 实际上，当然，这个资格是很早就已经获取了，不过我一直没有加入到 Profile Highlights 中。因为，当然，只会是因为还有一些遗憾。
 
@@ -43,6 +43,8 @@ excerpt: >-
 此志。
 
 
+
+[^1]: <https://github.blog/2020-07-16-github-archive-program-the-journey-of-the-worlds-open-source-code-to-the-arctic/>
 
 
 
