@@ -12,7 +12,7 @@ header:
   overlay_image: /assets/images/unsplash-image-9.jpg
   overlay_filter: rgba(128, 128, 0, 0.3)
 excerpt: >-
-  Migrating to cmdr, One line is those you have to modify ...
+  对于个人的开发环境，有时候一些小的技巧很难再被记住了，所以只好收录在某处 ...
 
 #  caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
 #  actions:
