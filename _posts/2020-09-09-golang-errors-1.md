@@ -251,6 +251,8 @@ if err != nil {
 }
 ```
 
+换句话说，Don't just check errors, handle them gracefully[^1]。
+
 一般来说，作为subfunc()的调用者，你应该收集或提供一定的现场信息，而不是直接返回由 subfunc() 提供的错误。
 
 > 除非，你的函数仅仅是一个包装者。
@@ -259,9 +261,18 @@ if err != nil {
 
 
 
+如果你捕俘了一个错误，那么你应该对其进行良好的处理，也就是说，总是一律panic是不对的，总是简单地 log.Errorf 也未必正确，要不要 defer recover 也一定要依据实际情况进行完善的选择和决定。
+
+为了能让使用者能够很好地捕俘错误并分类处理它们，库作者需要：
+
+1. 根据库的逻辑，封装所有错误（无论它们来自于硬件、OS、网络还是库自身的不同部分的业务逻辑）为单一的、或者几种主要的 error types，或者将它们封装到几种不同的 behaviors，以便使用者能够以良好的代码风格和结构捕俘这些错误
+2. 必要时，库作者应该掩盖无足轻重的内部错误，这取决于库本身应该提供怎样的业务逻辑
+
+
+
 ### 在结构体中缓存错误对象
 
-在 Rob Pike 的 [Errors are values](https://blog.golang.org/errors-are-values)[^5] 一文中，他提到了标准库中使用了一种简化错误处理代码的trick，bufio的Writer就使用了这个技巧：
+在 Rob Pike 的 [Errors are values](https://blog.golang.org/errors-are-values)[^5] 一文中，他提到了标准库中使用了一种简化错误处理代码的技巧，bufio的Writer就使用了这个技巧：
 
 ```go
 b := bufio.NewWriter(fd)
@@ -276,7 +287,7 @@ if b.Flush() != nil {
 
 
 
-实际上，这种模式在标准库中被广泛使用，例如 [`archive/zip`](https://golang.org/pkg/archive/zip/) 和 [`net/http`](https://golang.org/pkg/net/http/) 包等等。该讨论最显著的是， [`bufio` 包的 `Writer`](https://golang.org/pkg/bufio/) 实际上是 `errWriter` 想法的实现。 尽管 `bufio.Writer.Write` 返回错误，但主要是在于实现 [`io.Writer`](https://golang.org/pkg/io/#Writer) 接口。 `bufio.Writer` 的 `Write` 方法就像我们上面的 `errWriter.write` 方法一样， `Flush` 报告错误，因此我们的示例可以像这样编写：
+实际上，这种模式在标准库中被广泛使用，例如 [`archive/zip`](https://golang.org/pkg/archive/zip/) 和 [`net/http`](https://golang.org/pkg/net/http/) 包等等。该讨论最显著的是， [`bufio` 包的 `Writer`](https://golang.org/pkg/bufio/) 实际上是 `errWriter` 想法的实现。 尽管 `bufio.Writer.Write` 返回错误，但主要是在于实现 [`io.Writer`](https://golang.org/pkg/io/#Writer) 接口。 `bufio.Writer` 的 `Write` 方法不会直接报告错误，而是由 `Flush` 报告错误，因此我们的示例可以像这样编写：
 
 ```go
 b := bufio.NewWriter(fd)
@@ -288,10 +299,14 @@ if b.Flush() != nil {
     return b.Flush()
 }
 ```
+
+在内里，bufio.Writer.Write 会检测自己缓存的 err，如果已经出错了，Write 不会再执行正常的逻辑而是直接返回。
 
 
 
 至少对于某些应用程序， 这种方法有一个明显的缺点：在错误发生之前无法知道完成了多少处理。 如果该信息很重要，则需要采用更细粒度的方法。 但是，通常，最后全有或全无检查就足够了。
+
+> 为了改善这一问题，[hedzr/errors](https://github.com/hedzr/errors) 提供了 `NewContainer` 来帮助你在结构体中缓存多个步骤或多次迭代的全部错误。详见本系列文章的下一部分：[二、辅助库](/golang/errors/golang-errors-2/) - [hedzr/errors](https://github.com/hedzr/errors)
 
 
 
