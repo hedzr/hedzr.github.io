@@ -54,6 +54,10 @@ excerpt: >-
 
 ### 特性
 
+下面对 [hedzr/errors](https://github.com/hedzr/errors) 的主要内容进行介绍，但极少数内容或已过时，此时当然以 live codes 为准。
+
+
+
 #### 基本兼容性
 
 `hedzr/errors` 复制了标准库（go 1.13+）的特性。这包括：
