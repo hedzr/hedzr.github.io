@@ -2,7 +2,7 @@
 layout: single
 title: '开发环境中的技巧'
 date: 2020-09-07 00:07:11 +0800
-last_modified: 2020-09-07 00:27:11 +0800
+last_modified: 2020-09-18 17:12:11 +0800
 Author: hedzr
 tags: [development, skills, tricks]
 categories: develop tricks
@@ -216,6 +216,28 @@ sudo /System/Library/Extensions/TMSafetyNet.kext/Contents/Helpers/bypass rm -rfv
 [How to delete old Time Machine backups on a Mac computer in 2 ways, to free up storage space](https://www.businessinsider.com/how-to-delete-backups-on-mac)
 
 [How to delete (tmutil delete) all old backups from TimeMachine - keep only current full backup](https://apple.stackexchange.com/questions/281614/how-to-delete-tmutil-delete-all-old-backups-from-timemachine-keep-only-curre)
+
+
+
+
+
+## 取得最新的 gitlab 备份文件名
+
+对于 gitlab 服务器，当你启用了自动备份功能之后，相应的备份文件会被定时生成。
+
+由于在备份文件夹中有多个 tar 文件，当需要拖回本地时可能往往只想最新的一个，因此需要筛选一下文件名。以下假设你能够自动免密登录到 GITLAB 服务器：
+
+```bash
+GITLAB_HOST=my-git.com
+LOCAL_TARGET=$HOME/Downloads/
+
+FN=$(ssh $GITLAB_HOST 'sudo ls -la --color /var/opt/gitlab/backups/*.tar|tail -1|awk "{print \$NF}"')
+
+# 下载到本地
+rsync -avrztopg --progress $GITLAB_HOST:$FN $LOCAL_TARGET
+```
+
+
 
 
 
