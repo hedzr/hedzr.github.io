@@ -12,7 +12,7 @@ header:
   overlay_image: /assets/images/unsplash-image-10.jpg
   overlay_filter: rgba(128, 128, 0, 0.3)
 excerpt: >-
-  Golang Functional Programming in brief ...
+  Golang Testing 概览，适合入门级欲进一步者 ...
 
 #  caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
 #  actions:
@@ -494,15 +494,15 @@ go test -v ./... -test.short
 
 
 
-[^4]: [go - The Go Programming Language](https://tip.golang.org/cmd/go/#hdr-Testing_flags) 
-[^5]:  [go - The Go Programming Language](https://tip.golang.org/cmd/go/#hdr-Testing_functions) 
+[^4]: [go - The Go Programming Language - Testing Flags](https://tip.golang.org/cmd/go/#hdr-Testing_flags) 
+[^5]:  [go - The Go Programming Language - Testing Functions](https://tip.golang.org/cmd/go/#hdr-Testing_functions) 
 [^6]: <https://golang.org/pkg/testing/>
 
 
 
 ### 其它入门教程
 
- [Unit Testing made easy in Go. In this article, we will learn about… | by Uday Hiwarale | RunGo | Medium](https://medium.com/rungo/unit-testing-made-easy-in-go-25077669318) 是一篇很有意思的教程，它有很多 vscode 截图，仅凭这一点，就足以被推荐，这很用心了。
+ [Unit Testing made easy in Go. In this article, we will learn about… / by Uday Hiwarale / RunGo / Medium](https://medium.com/rungo/unit-testing-made-easy-in-go-25077669318) 是一篇很有意思的教程，它有很多 vscode 截图，仅凭这一点，就足以被推荐，这很用心了。
 
 当然，我的文章虽然不爱截图，但是也是很用心的，同意的朋友不妨点赞我。
 
