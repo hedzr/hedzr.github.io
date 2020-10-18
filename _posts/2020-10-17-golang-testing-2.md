@@ -150,7 +150,7 @@ func TestThree(t *testing.T) {
 
 综合测试在其他开发语言支持中多半被称作集成测试（Integration testing）[^31]。
 
-[^30]: [Understanding Unit and Integration Testing in Golang. | by victor steven | Medium](https://medium.com/@victorsteven/understanding-unit-and-integrationtesting-in-golang-ba60becb778d) 
+[^30]: [Understanding Unit and Integration Testing in Golang. / by victor steven / Medium](https://medium.com/@victorsteven/understanding-unit-and-integrationtesting-in-golang-ba60becb778d) 
 [^31]: [Integration testing - Wikipedia](https://en.wikipedia.org/wiki/Integration_testing) 
 
 
@@ -203,8 +203,8 @@ func TestMain(m *testing.M) {
 
 [^40]: [Integration Testing in Go: Part I - Executing Tests with Docker](https://www.ardanlabs.com/blog/2019/03/integration-testing-in-go-executing-tests-with-docker.html) 
 [^41]: [Integration Testing in Go: Part II - Set-up and Writing Tests](https://www.ardanlabs.com/blog/2019/10/integration-testing-in-go-set-up-and-writing-tests.html) 
-[^42]: [Golang Integration Testing Made Easy | by Arie Ardaya Lizuardi | Sep, 2020 | Gojek Product + Tech](https://blog.gojekengineering.com/golang-integration-testing-made-easy-a834e754fa4c) 
-[^43]: [Understanding Unit and Integration Testing in Golang. | by victor steven | Medium](https://medium.com/@victorsteven/understanding-unit-and-integrationtesting-in-golang-ba60becb778d) 
+[^42]: [Golang Integration Testing Made Easy / by Arie Ardaya Lizuardi / Sep, 2020 / Gojek Product + Tech](https://blog.gojekengineering.com/golang-integration-testing-made-easy-a834e754fa4c) 
+[^43]: [Understanding Unit and Integration Testing in Golang. / by victor steven / Medium](https://medium.com/@victorsteven/understanding-unit-and-integrationtesting-in-golang-ba60becb778d) 
 
 
 
