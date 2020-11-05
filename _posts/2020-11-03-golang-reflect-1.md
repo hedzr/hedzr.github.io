@@ -2,7 +2,7 @@
 layout: single
 title: 'Golang Reflect 系列一 - 和 deepcopy 有关的'
 date: 2020-11-03 10:08:00 +0800
-last_modified: 2020-11-03 10:08:00 +0800
+last_modified: 2020-11-05 15:01:00 +0800
 Author: hedzr
 tags: [reflect, deepcopy, clone, glang]
 categories: golang reflect
@@ -157,6 +157,7 @@ vou = reflect.Indirect(vou)
 
 1. 实现 Cloneable 接口
 2. 通过 unsafe pointer
+3. 通过 reflect 反射
 
 
 
@@ -245,6 +246,46 @@ type Cat struct {
 ```
 
 这样的手段，真的不要滥用，实际上可能是非常可怕的。
+
+
+
+#### 通过 reflect 方式
+
+本质上说，reflect 方式和 unsafe pointer 方式是差不多的，不过代码上面看要简练一些：
+
+```go
+type Foo struct {
+	Exported string
+	unexported string
+}
+
+func testUnexported(t *testing.T) {
+	f := &Foo{
+		Exported: "Old Value ",
+	}
+
+	t.Log(f.Exported)
+
+	field := reflect.ValueOf(f).Elem().FieldByName("unexported")
+	SetUnexportedField(field, "New Value")
+	t.Log(GetUnexportedField(field))
+	t.Logf("foo: %+v", f)
+}
+
+func GetUnexportedField(field reflect.Value) interface{} {
+	return reflect.NewAt(field.Type(), unsafe.Pointer(field.UnsafeAddr())).Elem().Interface()
+}
+
+func SetUnexportedField(field reflect.Value, value interface{}) {
+	reflect.NewAt(field.Type(), unsafe.Pointer(field.UnsafeAddr())).
+		Elem().
+		Set(reflect.ValueOf(value))
+}
+```
+
+
+
+
 
 
 
