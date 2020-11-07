@@ -4,7 +4,7 @@ title: 'Golang Reflect 系列一 - 和 deepcopy 有关的'
 date: 2020-11-03 10:08:00 +0800
 last_modified: 2020-11-05 15:01:00 +0800
 Author: hedzr
-tags: [reflect, deepcopy, clone, glang]
+tags: [reflect, deepcopy, clone, golang]
 categories: golang reflect
 comments: true
 toc: true
