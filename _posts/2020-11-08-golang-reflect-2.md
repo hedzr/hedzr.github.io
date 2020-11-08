@@ -77,7 +77,7 @@ assert.EqualTrue(t, newInstanceValue.CanAddr())
 
 > 稍后的章节会有更复杂的示例。
 
-MakeMap会创建一个 map 新实例 ins，并返回 `&ins` 的 Value 表示。需要注意的是此时所得到的 `newInstanceValue` 是 `addressable` 的，这意味着你可以直接使用 `newInstanceValue` 进行赋值操作（SetXXX 类操作）:
+MakeMap会创建一个 map 新实例 ins，并返回 `ins` 的 Value 表示。需要注意的是此时所得到的 `newInstanceValue` 是 `addressable` 的（因为一个 map 对象本身就是 addresable 的），这意味着你可以直接使用 `newInstanceValue` 进行赋值操作（SetXXX 类操作）:
 
 ```go
 newInstanceValue.SetMapIndex(reflect.ValueOf("1"), reflect.ValueOf(1))
