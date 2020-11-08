@@ -245,6 +245,27 @@ func testMap_newMap_2(t *testing.T) {
 }
 ```
 
+##### map 新实例赋值给一个指针对象
+
+```go
+func testMap_d2(t *testing.T) {
+	var m1 map[string]interface{}
+	var m2 = &m1
+
+	v2 := ValueOf(m2)
+	v2i := v2.IndirectValueRecursive()
+
+	t.Logf("v2i: %v     | v2: %v      | m2: %v", v2i.Type(), v2.Type(), m2)
+	nmi := reflect.MakeMap(reflect.TypeOf(m1))
+	nmi.SetMapIndex(reflect.ValueOf("today"), reflect.ValueOf("is monday"))
+	t.Logf("nmi: %v", nmi.Type())
+	t.Logf("     %v | %v | %v", v2.CanAddr(), v2i.CanAddr(), nmi.CanAddr())
+	//*(v2.Interface().(*map[string]interface{})) = nmi.Interface().(map[string]interface{})
+	v2.Elem().Set(nmi)
+	t.Logf("m2 = %v", m2)
+}
+```
+
 
 
 
