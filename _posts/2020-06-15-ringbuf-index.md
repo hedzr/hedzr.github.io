@@ -26,15 +26,15 @@ toc: true
 
 ---
 
-环形队列，又被称作循环队列（cyclic queue）、圆形缓冲区（circular buffer），也称作圆形队列（circular queue），循环缓冲区（cyclic buffer），环形缓冲区（ring buffer），是一种用于表示一个固定尺寸、头尾相连的缓冲区的数据结构，适合缓存数据流。
+环形队列（ringbuf，ring queue），又被称作循环队列（cyclic queue）、圆形缓冲区（circular buffer），也称作圆形队列（circular queue），循环缓冲区（cyclic buffer），环形缓冲区（ring buffer），是一种用于表示一个固定尺寸、头尾相连的缓冲区的数据结构，适合缓存数据流。
 
 ---
 
-本系列文章的重点在于研究高吞吐量场景下环形队列的现代实现方法。也就是说，当在MPMC（Multiple Producers and Multiple Consumers）环境下，采用 SMP 架构（对称多处理器 Symmetric MultiProcessing 或者多核 Multi-core processor）时，怎么样实现一个线程安全的环形队列——当然，这是基于 Golang 的。
+本系列文章的重点在于研究高吞吐量场景下环形队列的现代实现方法。也就是说，当在MPMC（Multiple Producers and Multiple Consumers）环境下，采用 SMP 架构（[对称多处理器 Symmetric MultiProcessing](https://en.wikipedia.org/wiki/Symmetric_multiprocessing) 或者[多核 Multi-core processor](https://en.wikipedia.org/wiki/Multi-core_processor)）时，怎么样实现一个线程安全的环形队列——当然，这是基于 Golang 的。
 
 所以系列中会讨论多核或者说 SMP 架构中的 CPU 与内存总线协作时的高级应用。
 
-而且我们也会重点研究无锁编程究竟怎么做的问题。
+而且我们也会重点研究无锁编程（lock-free）究竟怎么做的问题。
 
 ---
 
@@ -46,3 +46,9 @@ toc: true
 4. [Golang环形队列实现](../ringbuf-04-impl/)
 
 具体的实现代码在 <https://github.com/hedzr/go-ringbuf> 中可以找到。
+
+
+
+
+
+:end:
