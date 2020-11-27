@@ -2,7 +2,7 @@
 layout: single
 title: 'ports 更新版 - 如何从命令行快速检视已侦听端口'
 date: 2020-11-21 10:23:00 +0800
-last_modified: 2020-11-19 10:23:00 +0800
+last_modified_at: 2020-11-19 10:23:00 +0800
 Author: hedzr
 tags: [shell, bash, zsh, devops]
 categories: devops shell

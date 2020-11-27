@@ -2,7 +2,7 @@
 layout: single
 title: '定制 vscode 中的 markdown 预览样式'
 date: 2020-09-17 11:07:11 +0800
-last_modified: 2020-09-17 12:27:11 +0800
+last_modified_at: 2020-09-17 12:27:11 +0800
 Author: hedzr
 tags: [development, skills, tricks, vscode, markdown, preview, styles, stylesheets, css]
 categories: develop tricks

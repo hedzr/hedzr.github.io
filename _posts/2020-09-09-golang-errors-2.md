@@ -2,7 +2,7 @@
 layout: single
 title: 'Golang errors 编程模型 - Part II'
 date: 2020-09-09 23:47:11 +0800
-last_modified: 2020-09-11 20:31:11 +0800
+last_modified_at: 2020-09-11 20:31:11 +0800
 Author: hedzr
 tags: [errors, golang]
 categories: golang errors

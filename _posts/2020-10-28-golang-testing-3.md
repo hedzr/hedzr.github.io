@@ -2,7 +2,7 @@
 layout: single
 title: 'Golang Testing 概览 - 补充篇'
 date: 2020-10-28 06:08:00 +0800
-last_modified: 2020-10-28 10:01:00 +0800
+last_modified_at: 2020-10-28 10:01:00 +0800
 Author: hedzr
 tags: [testing, tests, mock, "unit test", benchmark, assert, assertions, fp, "functional programming", golang]
 categories: golang testing

@@ -2,7 +2,7 @@
 layout: single
 title: '关于我的北极存储亮点'
 date: 2020-08-24 00:00:00 +0800
-last_modified: 2020-08-24 15:15:00 +0800
+last_modified_at: 2020-08-24 15:15:00 +0800
 Author: hedzr
 tags: [coding, life, lifestyle]
 categories: lifestyle records

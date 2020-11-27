@@ -2,7 +2,7 @@
 layout: single
 title: 'Golang 函数式编程简述'
 date: 2020-09-25 22:55:11 +0800
-last_modified: 2020-09-25 22:55:11 +0800
+last_modified_at: 2020-09-25 22:55:11 +0800
 Author: hedzr
 tags: [functional programming, fp, golang]
 categories: golang fp

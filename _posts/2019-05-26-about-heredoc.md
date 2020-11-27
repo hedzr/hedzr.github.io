@@ -2,7 +2,7 @@
 layout: single
 title: 认识 Here Document
 date: 2019-05-26 08:00:00 +0800
-last-modified: 2020-09-16 17:35:00 +0800
+last_modified_at: 2020-09-16 17:35:00 +0800
 author: hedzr
 tags: [shell, bash, devops]
 categories: devops shell

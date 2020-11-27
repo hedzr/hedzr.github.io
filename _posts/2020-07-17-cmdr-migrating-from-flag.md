@@ -2,7 +2,7 @@
 layout: single
 title: '从 flag 迁移到 cmdr'
 date: 2020-07-17 22:15:11 +0800
-last_modified: 2020-07-19 18:00:00 +0800
+last_modified_at: 2020-07-19 18:00:00 +0800
 Author: hedzr
 tags: [commander, command-line, "command-line-parser", command-line-interface,  getops, posix, posix-compatible, hierarchical-configuration, hierarchy, cli, golang]
 categories: golang cmdr others
