@@ -5,11 +5,12 @@ date: 2020-03-04 11:47:22 +0800
 Author: hedzr
 tags: [docker, compose, file format, devops]
 categories: devops docker
-comments: true
+deprecated: true          # Don't show in related posts
+comments: false
 toc: true
 header:
   overlay_image: /assets/images/docker-compose-button.jpg
-  overlay_filter: rgba(128, 128, 0, 0.3)
+  overlay_filter: rgba(32, 32, 32, 0.3)
 excerpt: >-
   这篇文章基本上是 docker-compose YAML 文件格式的严格的英译中。
   这么做，缘起于昨天想起扫描一下 docker-compose 编排中怎么使用 

@@ -2,7 +2,7 @@
 layout: single
 title: 认识 Here Document
 date: 2019-05-26 08:00:00 +0800
-last_modified_at: 2020-09-16 17:35:00 +0800
+last_modified_at: 2020-12-11 22:31:00 +0800
 author: hedzr
 tags: [shell, bash, devops]
 categories: devops shell
@@ -12,7 +12,7 @@ header:
   overlay_image: /assets/images/bash-shell.png
   overlay_filter: rgba(255, 255, 255, 0.5)
 excerpt: >-
-  Here Document in a nutshell
+  Here Document in a nutshell，介绍 Bash/Linux Heredoc
 ---
 
 
@@ -20,7 +20,7 @@ excerpt: >-
 
 ### 基础
 
-HereDoc 全名叫做 `Here Document`，中文可以称之为 `嵌入文档`。对它的叫法实际上很多，here文档，hereis，here-string 等等都是它。
+HereDoc 全名叫做 `Here Document`，中文可以称之为 `嵌入文档`。对它的叫法实际上很多，here文档，hereis，here-string 等等都是它。下面是关于 Linux HereDoc 或者说 Bash HereDoc 的详细介绍。
 
 嵌入文档是 Shell I/O 重定向功能的一种替代。我们已经知道 Shell 的 I/O 重定向是一种文件句柄的传输。例如：
 
