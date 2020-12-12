@@ -4,7 +4,7 @@ title: 认识 Here Document
 date: 2019-05-26 08:00:00 +0800
 last_modified_at: 2020-12-11 22:31:00 +0800
 author: hedzr
-tags: [shell, bash, devops]
+tags: [shell, bash, devops, linux]
 categories: devops shell
 comments: true
 toc: true

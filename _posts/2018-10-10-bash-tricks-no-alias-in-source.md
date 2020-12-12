@@ -22,6 +22,10 @@ excerpt: "BASH 小技巧一小组 [...]"
 
 
 
+## Tips
+
+
+
 ### BASH: \LS
 
 前缀\的目的是避免alias替换，使用命令的原生目标来执行。当 alias ls=’ls –color’ 时，ls的输出结果是带高亮色的，\ls则避免了alias替换，输出结果没有高亮色。

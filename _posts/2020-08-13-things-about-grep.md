@@ -5,7 +5,7 @@ date: 2020-08-13 22:15:11 +0800
 last_modified_at: 2020-08-15 13:00:00 +0800
 Author: hedzr
 tags: [grep, awk, linux, unix, shell, bash]
-categories: bash utilities
+categories: devops shell
 comments: true
 toc: true
 header:
