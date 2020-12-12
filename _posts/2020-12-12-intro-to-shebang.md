@@ -128,7 +128,7 @@ Golang 是一个比 Python 更有力的解释器候选人，不过这边的积�
 
 ```bash
 #!/usr/bin/env bash
-exec scala "$0" "$@"
+exec go run "$0" "$@"
 !#
 package main
 
@@ -144,7 +144,9 @@ func main() {
 
 ```
 
+但它会以不合适的golang 语法而告终。行得通的办法在稍后会进行讨论。
 
+但 Scala，Scheme，Nodejs 都能够达到解释运行的目的。
 
 
 
