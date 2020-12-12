@@ -12,7 +12,7 @@ header:
   overlay_image: /assets/images/bash-shell.png
   overlay_filter: rgba(255, 255, 255, 0.5)
 excerpt: >-
-  Git 命令之 ls-tree 以及 ls-files，...
+  Shebang 是什么，...
 
 ---
 
