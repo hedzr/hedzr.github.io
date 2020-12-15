@@ -4,7 +4,7 @@ title: 'P&P 观后感'
 date: 2020-12-13 00:00:00 +0800
 last_modified_at: 2020-12-15 12:11:00 +0800
 Author: hedzr
-tags: [lifestyle, review, p&p, pride & prejudice]
+tags: [lifestyle, review, p&p, pride & prejudice, 傲慢与偏见]
 categories: lifestyle review
 comments: true
 toc: true
