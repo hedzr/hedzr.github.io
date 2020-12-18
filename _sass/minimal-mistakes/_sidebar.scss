@@ -83,6 +83,11 @@
     padding-left: 1em;
     z-index: 10;
 
+    h2:before, h3:before, h4:before, h5:before, h6:before {
+        content: none;
+        counter-increment: none;
+    }
+
     &.sticky {
       @include clearfix();
       position: -webkit-sticky;
