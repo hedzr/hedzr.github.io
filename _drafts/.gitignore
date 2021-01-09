@@ -12,3 +12,5 @@ _site
 ref/
 todo/
 in-progress/
+
+*.draft.md
