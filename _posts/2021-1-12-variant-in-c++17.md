@@ -10,7 +10,7 @@ comments: true
 toc: true
 header:
   overlay_image: /assets/images/foo-bar-identity-th.jpg
-  overlay_filter: rgba(255, 255, 255, 0.5)
+  overlay_filter: rgba(16, 16, 32, 0.73)
 excerpt: >-
   关于 std::variant，...
 ---
