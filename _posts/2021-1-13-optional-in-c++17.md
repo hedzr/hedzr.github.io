@@ -154,7 +154,7 @@ std::cout << y.value_or(0);
 
 value() 和 value_or() 是抽出 T 值的方法，含义明显，不必赘述。当无值或者类型不能转换时，value() 有可能抛出异常 std::bad_optional_access，如果想要避免则可以使用 value_or。
 
-对于复合对象来说，原位构造 emplace 也是可用的。同样地也可以善加利用 swap。
+对于复合对象来说，原位构造方式赋值 emplace 也是可用的。同样地也可以善加利用 swap。
 
 ### 应用
 
