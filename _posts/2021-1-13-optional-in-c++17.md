@@ -25,7 +25,7 @@ excerpt: >-
 
 
 
-### C++17 之前
+## C++17 之前
 
 在 C 时代以及早期 C++ 时代，语法层面支持的 nullable 类型可以采用指针方式：`T*`，如果指针为 `NULL`（C++11 之后则使用 `nullptr`） 就表示无值状态（empty value）。
 
@@ -96,7 +96,7 @@ namespace cmdr {
 
 
 
-### std::optional in C++17
+## std::optional in C++17
 
 `std::optional` 类似于 `Nullable<T>` 和 `std::variant` 的联合体，它管理一个 Nullable 变体类型。
 
@@ -113,15 +113,33 @@ optional 和 variant 也不同，variant 是提前确定好一组可选的类型
 
 optional 从语法意义上来说，就是一个完美版的 `Nullable<T>`，你可以将其和 Kotlin 的可空类型等价。
 
-我们可以以多种方式来构造、声明 optional 的变量，其中 `std::make_optional<T>` 是比较 meaningful 的一种：
+### 使用
+
+
+
+我们可以以多种方式来构造、声明 optional 的变量，最原始的方式是在构造参数时传入值对象：
 
 ```cpp
 std::optional<int> opt_int(72);
 std::optional opt_int2(8);
+std::optional opt_int2(std::string("a string"));
+```
 
+使用 `std::make_optional<T>` 是比较 meaningful 的一种，而且也是更整洁的原位构造：
+
+```cpp
 auto opt_double = std::make_optional(3.14);
 auto opt_complex = std::make_optional<std::complex<double>>(3.0, 4.0);
 std::optional<std::complex<double>> opt_complex2{std::in_place, 3.0, 4.0};
+```
+
+使用原位构造
+
+```cpp
+// constructing a string in-place
+std::optional<std::string> o1(std::in_place, "a string");
+// with a repeated spaces
+std::optional<std::string> o1(std::in_place, 8, ' ');
 ```
 
 has_value 可以用于测试有没有值，是否尚未赋值：
