@@ -1,6 +1,6 @@
 ---
 layout: single
-title: 'C++ 中的原位构造构造函数以及完美转发 - 我们的 variant 包装类'
+title: 'C++ 中的原位构造函数及完美转发 - 写我们自己的 variant 包装类'
 date: 2021-1-15 06:00:00 +0800
 last_modified_at: 2021-1-15 08:13:12 +0800
 Author: hedzr
