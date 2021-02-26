@@ -13,7 +13,7 @@ header:
   overlay_image: /assets/images/foo-bar-identity-th.jpg
   overlay_filter: rgba(16, 16, 32, 0.73)
 excerpt: >-
-  回顾队列这种数据结构，以及优先队列的 C++ 实现 ...
+  回顾队列这种数据结构，以及准备(下一篇)优先队列的 C++ 实现 ...
 ---
 
 
