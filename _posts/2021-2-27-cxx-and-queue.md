@@ -112,8 +112,8 @@ template<class T>
     ~ti_queue() {
       auto *p = _head;
       while (p != nullptr) {
-        auto t = p;
-        p = p->next;
+        auto *t = p;
+        p = p->_next;
         delete t;
       }
     }
@@ -126,8 +126,8 @@ template<class T>
     }
 
     T pop() {
-      auto p = _tail->_last;
-      if (p == _head) {
+      auto p = _head->_next;
+      if (p == _tail) {
         return T{};
       }
       p->_last->_next = p->_next;
@@ -154,7 +154,38 @@ template<class T>
 
 在这份实现中有一个重要的约定：我们认为你在提供 T 的具现类型时，你会隐含地约束零值初始化的 T 示例代表着空元素。所以当你 pop/peek 得到一个 T 实例时，如果它是零值将代表着队列为空。
 
-这是因为我们没有使用指针方案来存储 T，所以你需要检查 pop/peek 得到的 T 实例是否为空元素。或者，你在 pop/peek() 之前首先采用 empty() 进行队列非空判断。
+所以我们的测试片段为：
+
+```cpp
+int main() {
+  std::cout << '\n' << "queue: ";
+  bet::ti_queue<int> tiq;
+  tiq.push(31);
+  tiq.push(17);
+  tiq.push(19);
+  tiq.push(73);
+
+  auto tmp = tiq.pop();
+  std::cout << tmp;
+
+  while (!tiq.empty()) {
+    tmp = tiq.pop();
+    std::cout << ',' << tmp;
+  }
+
+  std::cout << '\n';
+}
+```
+
+其结果应该形如这样：
+
+```bash
+queue: 31,17,19,73
+```
+
+OK，继续我们的思考线路：
+
+检测队列有否为空很重要，你不可能无代价地避免空访问，因为这是数据结构本身的特性决定的。而在具体实现方面，上面之所以要做出那样的约定，是因为我们没有使用指针方案来存储 T，所以你需要检查 pop/peek 得到的 T 实例是否为空元素。或者，你在 pop/peek() 之前首先采用 empty() 进行队列非空判断。
 
 如果采用指针存储方案的话，你可以顺理成章地检查 pop/peek 返回值是否 nullptr，这其实是 C/C++98 时代的典型实现方案。
 
