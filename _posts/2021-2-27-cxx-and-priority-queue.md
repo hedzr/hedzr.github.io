@@ -588,22 +588,21 @@ void test_pq() {
 
 ```bash
 DUMP...
-CMD:SEND,
-CMD:CONNECT TO,
+CMD:CONNECT TO,CMD:SEND,CMD:CLOSE,
 data:c3,
 data:tv1,
 data:b1,
 data:a125,
-data:a123,CMD:CLOSE,
+data:a123,
 POP...
-CMD:SEND
 CMD:CONNECT TO
+CMD:SEND
+CMD:CLOSE
 data:tv1
 data:c3
 data:b1
 data:a125
 data:a123
-CMD:CLOSE
 ```
 
 
