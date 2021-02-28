@@ -668,7 +668,7 @@ struct pq_comp {
 
 #### 计划
 
-我们打算以 [`cmdr::util::priority_queue<...>`](https://github.com/hedzr/cmdr-cxx/blob/master/libs/cmdr11/include/cmdr11/cmdr_utils.hh#L299) 作为本文所描述的优先队列的相对完整版并予以开源，作为 [`cmdr-cxx`](https://github.com/hedzr/cmdr-cxx) 的附加工具类提供。在这里我们善后了不少的细节问题，基本上可以适应工程级别的开发需求了。
+我们打算以 [`cmdr::util::priority_queue<...>`](https://github.com/hedzr/cmdr-cxx/blob/master/libs/cmdr11/include/cmdr11/cmdr_utils.hh#L308) 作为本文所描述的优先队列的相对完整版并予以开源，作为 [`cmdr-cxx`](https://github.com/hedzr/cmdr-cxx) 的附加工具类提供。在这里我们善后了不少的细节问题，基本上可以适应工程级别的开发需求了。
 
 > 警告：开源版本较诸本文中提供的代码有所不同。
 >
@@ -696,7 +696,7 @@ struct pq_comp {
 
 在工程上做选择题，由于 `std::deque`，`std::list` 以及 `std::priority_queue` 的存在，大多数情况下它们都是最佳选择，你可以获得非常好的性能和便利性——除非你选择错误——例如不正确的互换使用 `std::list` 和 `std::vector`。所以绝大多数常规编程场景中我们并不需要手撸这类基础结构。
 
-但在特殊的情况下，一般说当我们需要面对较高要求的性能调优时，可能需要在这方面进行额外的处理。这个话题，暂时我没有重新整理的动力，所以你可以考虑查阅我的旧文章  [高性能环形队列及其实现 [无锁编程概要]](http://localhost:3999/algorithm/golang/ringbuf-02-lock-free/) 以及  [高性能环形队列及其实现 [并发和多核编程概要]](http://localhost:3999/algorithm/golang/ringbuf-03-smp/) ，它们至少罗列了一些关键要素，你可以当作 checklist 来对自己的实现做指引。当你遇到需要自己的环形队列、优先队列、自己的二叉树搜索、排序等工具时，这些文章可能会有助于你适配它们到高频交易场景中。
+但在特殊的情况下，一般说当我们需要面对较高要求的性能调优时，可能需要在这方面进行额外的处理。这个话题，暂时我没有重新整理的动力，所以你可以考虑查阅我的旧文章  [高性能环形队列及其实现 [无锁编程概要]](http://hedzr.github.io/algorithm/golang/ringbuf-02-lock-free/) 以及  [高性能环形队列及其实现 [并发和多核编程概要]](http://hedzr.github.io/algorithm/golang/ringbuf-03-smp/) ，它们至少罗列了一些关键要素，你可以当作 checklist 来对自己的实现做指引。当你遇到需要自己的环形队列、优先队列、自己的二叉树搜索、排序等工具时，这些文章可能会有助于你适配它们到高频交易场景中。
 
 
 
@@ -704,7 +704,7 @@ struct pq_comp {
 
 - [队列 - 维基百科，自由的百科全书](https://zh.wikipedia.org/wiki/%E9%98%9F%E5%88%97) 
 - [优先队列 - 维基百科，自由的百科全书](https://zh.wikipedia.org/wiki/%E5%84%AA%E5%85%88%E4%BD%87%E5%88%97) 
-- [高性能环形队列及其实现 [无锁编程概要]](http://localhost:3999/algorithm/golang/ringbuf-02-lock-free/) 以及  [高性能环形队列及其实现 [并发和多核编程概要]](http://localhost:3999/algorithm/golang/ringbuf-03-smp/) 
+- [高性能环形队列及其实现 [无锁编程概要]](http://hedzr.github.io/algorithm/golang/ringbuf-02-lock-free/) 以及  [高性能环形队列及其实现 [并发和多核编程概要]](http://hedzr.github.io/algorithm/golang/ringbuf-03-smp/) 
 - [`cmdr-cxx`](https://github.com/hedzr/cmdr-cxx) - 一个 CLI 命令行解释工具，getopt 的替代品
 
 
