@@ -540,6 +540,6 @@ go tool pprof -http :6060 bin/mdx-cli ref/cpu.prof
 -  [net/http/pprof - The Go Programming Language](https://golang.org/pkg/net/http/pprof/) 
 -  [Profiling Go Programs - The Go Blog](https://blog.golang.org/pprof) 
 -  [Diagnostics - The Go Programming Language](https://golang.org/doc/diagnostics) 
--  [Go: Profile Your Code Like a Master | by Ali Josie | The Startup | Medium](https://medium.com/swlh/go-profile-your-code-like-a-master-1505be38fdba) 
+-  [Go: Profile Your Code Like a Master - by Ali Josie - The Startup - Medium](https://medium.com/swlh/go-profile-your-code-like-a-master-1505be38fdba) 
 -  [gperftools/gperftools: Main gperftools repository](https://github.com/gperftools/gperftools) 
 
