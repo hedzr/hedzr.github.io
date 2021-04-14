@@ -1,6 +1,6 @@
 ---
 layout: single
-title: 'Golang Profiling: 关于 prof'
+title: 'Golang Profiling: 关于 pprof'
 date: 2021-04-15 02:40:00 +0800
 last_modified_at: 2021-04-15 02:40:00 +0800
 Author: hedzr
