@@ -73,3 +73,13 @@ Same as cinnamon, you can enable this feature in gnome environment:
    1. Navigate into `/org/gnome/gnome-session/` by clicking on list item
    2. Check `auto-save-session` on the config window
 
+
+
+## CANNOT Work for Newest Ubuntu
+
+It mentioned at https://askubuntu.com/questions/1084389/automatically-remember-current-running-applications
+
+> Ubuntu [dropped session saving](https://lists.ubuntu.com/archives/ubuntu-desktop/2011-January/002734.html) long ago because it never worked well. Gnome Shell, the desktop environment that Ubuntu 18.04 uses, apparently does not support it as such.
+>
+> - **Sleep** (computer stays on in very low power use mode) and **hibernate** (computer fully shuts down after saving memory to the hard disk, and reloads the memory content on the next startup) to turn off your computer functionally allow the same, i.e. continue later where you left off. Unfortunately, sleep and hibernate may not work well on your hardware. Sleep works in many cases, but hibernate represents issues on many hardware, to the extent that on Ubuntu, the possibility to hibernate is not enabled by default.
+> - Alternatively, you may try the well maintained **Gnome Shell extension** [Window Session Manager](https://extensions.gnome.org/extension/1323/window-session-manager/).
