@@ -15,8 +15,17 @@ group :jekyll_plugins do
   gem "jekyll-archives"
 end
 
+# https://github.com/hedzr/hedzr.github.io/network/alert/Gemfile.lock/kramdown/open
+gem "kramdown", ">= 2.3.1"
+
 # gem "minimal-mistakes-jekyll"
 
 # gemspec
 # gem "jekyll-archives"
 # gem "jemoji"
+
+
+# ----
+
+#gem "minimal-mistakes-jekyll"
+#gem 'jekyll-multiple-languages-plugin'
