@@ -214,6 +214,8 @@ GEM
     json (2.5.1)
     kramdown (2.3.1)
       rexml
+    kramdown-parser-gfm (1.1.0)
+      kramdown (~> 2.0)
     liquid (4.0.3)
     listen (3.2.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
@@ -285,6 +287,7 @@ DEPENDENCIES
   jekyll-sitemap
   jemoji
   kramdown (>= 2.3.1)
+  kramdown-parser-gfm
   minimal-mistakes-jekyll
 
 BUNDLED WITH

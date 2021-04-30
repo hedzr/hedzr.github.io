@@ -17,6 +17,7 @@ end
 
 # https://github.com/hedzr/hedzr.github.io/network/alert/Gemfile.lock/kramdown/open
 gem "kramdown", ">= 2.3.1"
+gem "kramdown-parser-gfm"
 
 # gem "minimal-mistakes-jekyll"
 
