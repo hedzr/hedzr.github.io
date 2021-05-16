@@ -27,7 +27,7 @@ title_separator          : "|"
 subtitle                 : "There's something." # site tagline that appears below site title in masthead
 name                     : "hedzr"
 description              : "There's something, recording by hedzr."
-url                      : https://hedzr.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : "https://hedzr.com" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "hedzr/hedzr.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : "assets/images/500x300.hz.png"  # https://via.placeholder.com/728x90.png?text=teaser+for+hedzr.github.io  # path of fallback teaser image, e.g. "/assets/images/500x300.png"
