@@ -8,4 +8,3 @@ main gh io pages and sites
 
 
 
-![teaser](_assets/README/728x90.png)
