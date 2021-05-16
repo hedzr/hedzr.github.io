@@ -11,12 +11,10 @@
 # https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
 
 # For debugging locally
-# theme                  : "minimal-mistakes-jekyll"
-# #remote_theme           : "mmistakes/minimal-mistakes"
+theme                  : "minimal-mistakes-jekyll"
 
 # For Github publishing (always, suspress the warings)
-# #theme                  : "minimal-mistakes-jekyll"
-remote_theme             : "mmistakes/minimal-mistakes@4.23.0"
+# remote_theme             : "mmistakes/minimal-mistakes"
 
 minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
