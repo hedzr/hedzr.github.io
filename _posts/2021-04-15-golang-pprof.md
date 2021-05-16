@@ -9,6 +9,7 @@ categories: golang profiling
 comments: true
 toc: true
 header:
+  teaser: /assets/images/unsplash-image-11.jpg
   overlay_image: /assets/images/unsplash-image-11.jpg
   overlay_filter: rgba(128, 128, 0, 0.3)
 excerpt: >-
@@ -542,4 +543,3 @@ go tool pprof -http :6060 bin/mdx-cli ref/cpu.prof
 -  [Diagnostics - The Go Programming Language](https://golang.org/doc/diagnostics) 
 -  [Go: Profile Your Code Like a Master - by Ali Josie - The Startup - Medium](https://medium.com/swlh/go-profile-your-code-like-a-master-1505be38fdba) 
 -  [gperftools/gperftools: Main gperftools repository](https://github.com/gperftools/gperftools) 
-

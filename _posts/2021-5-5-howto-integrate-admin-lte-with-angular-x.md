@@ -9,6 +9,7 @@ categories: web angular
 comments: true
 toc: true
 header:
+  teaser: /assets/images/foo-bar-identity-th.jpg
   overlay_image: /assets/images/foo-bar-identity-th.jpg
   overlay_filter: rgba(16, 16, 32, 0.73)
 excerpt: >-
@@ -534,4 +535,3 @@ Here is all we set now Admin LTE Theme See below screen shot
 
 
 ## :end:
-

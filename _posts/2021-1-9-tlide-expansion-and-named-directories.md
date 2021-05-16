@@ -9,6 +9,7 @@ categories: devops shell
 comments: true
 toc: true
 header:
+  teaser: /assets/images/backslashes.png
   overlay_image: /assets/images/backslashes.png
   overlay_filter: rgba(0, 170, 255, 0.5)
 excerpt: >-
@@ -239,12 +240,3 @@ The string that would be displayed by ‘dirs -N’
 
 
 ## :end:
-
-
-
-
-
-
-
-
-

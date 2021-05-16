@@ -9,6 +9,7 @@ categories: lifestyle review
 comments: true
 toc: true
 header:
+  teaser: /assets/images/3953273590_704e3899d5_m.jpg
   overlay_image: /assets/images/3953273590_704e3899d5_m.jpg
   overlay_filter: rgba(255, 255, 255, 0.5)
 excerpt: >-

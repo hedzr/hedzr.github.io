@@ -9,6 +9,7 @@ categories: cmake notes
 comments: true
 toc: true
 header:
+  teaser: /assets/images/unsplash-image-11.jpg
   overlay_image: /assets/images/unsplash-image-11.jpg
   overlay_filter: rgba(128, 128, 0, 0.3)
 excerpt: >-

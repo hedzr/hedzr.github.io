@@ -9,6 +9,7 @@ categories: devops linux
 comments: true
 toc: true
 header:
+  teaser: /assets/images/ubuntuhero.jpg
   overlay_image: /assets/images/ubuntuhero.jpg
   overlay_filter: rgba(32, 32, 0, 0.5)
 excerpt: "as title said, how to enable desktop session save and restore in cinnamon GUI environment"

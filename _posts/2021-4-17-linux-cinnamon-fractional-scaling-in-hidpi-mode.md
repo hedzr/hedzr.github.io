@@ -9,6 +9,7 @@ categories: devops linux
 comments: true
 toc: true
 header:
+  teaser: /assets/images/ubuntuhero.jpg
   overlay_image: /assets/images/ubuntuhero.jpg
   overlay_filter: rgba(32, 32, 0, 0.5)
 excerpt: "as title said, how to enable font fractional scaling in cinnamon GUI environment"
@@ -64,4 +65,3 @@ Same as cinnamon, you can enable this feature in gnome environment:
 
    1. Navigate into `/org/gnome/desktop/interface/text-scaling-factor` by clicking on list item
    2. Uncheck `Use default value` on the config window, and type the number what you want into `Custom value` box, such as 1.25, or others value between 0.5 and 3.
-
