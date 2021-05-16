@@ -28,5 +28,5 @@ gem "kramdown-parser-gfm"
 
 # ----
 
-gem "minimal-mistakes-jekyll"
+#gem "minimal-mistakes-jekyll"
 #gem 'jekyll-multiple-languages-plugin'
