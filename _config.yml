@@ -104,7 +104,7 @@ analytics:
 author:
   name             : "hedzr"
   avatar           : https://avatars1.githubusercontent.com/u/12786150?s=400&v=4 # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "#devops #agile #golang #kotlin #dotnetcore #c++ #bash #android #flutter #dart"
+  bio              : "#devops #c++ #golang #kotlin #dotnetcore #bash #android #flutter #dart"
   location         : "Chongqing, CN"
   # email            : hedzrz@gmail.com
   links:
