@@ -653,9 +653,9 @@ kubectl delete -n cattle-system pods --all
 
 ## 🔚
 
-- [Rancher文档 | K8S文档 | Rancher | Rancher文档](https://docs.rancher.cn/)
+- [Rancher文档](https://docs.rancher.cn/)
 
-- [Kubernetes 文档 | Kubernetes](https://kubernetes.io/zh/docs/home/) 
+- [Kubernetes 文档 - Kubernetes](https://kubernetes.io/zh/docs/home/) 
 
 - [**How to setup MicroK8s with RBAC and Storage**](https://igy.cx/posts/setup-microk8s-rbac-storage/#create-an-admin-user-service-account-to-access-the-dashboard-optional) 
 
@@ -663,7 +663,7 @@ kubectl delete -n cattle-system pods --all
 
 - [MicroK8s - Using the built-in registry](https://microk8s.io/docs/registry-built-in) - 提供内建的 docker registry，可以接收外界 push 镜像到 microk8s.local 然后供 k8s 集群引用。
 
-- [Configuring your Linux host to resolve a local Kubernetes cluster’s service URLs | by Andy Goldstein | Heptio](https://blog.heptio.com/configuring-your-linux-host-to-resolve-a-local-kubernetes-clusters-service-urls-a8c7bdb212a7) 
+- [Configuring your Linux host to resolve a local Kubernetes cluster’s service URLs - by Andy Goldstein - Heptio](https://blog.heptio.com/configuring-your-linux-host-to-resolve-a-local-kubernetes-clusters-service-urls-a8c7bdb212a7) 
 
 - [Custom DNS Entries For Kubernetes](https://coredns.io/2017/05/08/custom-dns-entries-for-kubernetes/) 
 
