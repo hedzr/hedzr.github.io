@@ -11,14 +11,7 @@ toc: true
 header:
   overlay_image: /assets/images/ubuntuhero.jpg
   overlay_filter: rgba(32, 32, 0, 0.5)
-#excerpt: "BASH 小技巧一小组 [...]"
-#header:
-#  overlay_image: /assets/images/unsplash-image-1.jpg
-#  overlay_filter: rgba(0, 0, 0, 0.15)
-#  caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
-#  actions:
-#    - label: "More Info"
-#      url: "https://unsplash.com"
+excerpt: "针对 rancher 2.5.8 以及 ubuntu 20.04 的 microk8s （kubernetes 1.20）"
 ---
 
 
