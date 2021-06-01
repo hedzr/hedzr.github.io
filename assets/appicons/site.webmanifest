@@ -3,12 +3,12 @@
     "short_name": "hzSomthing",
     "icons": [
         {
-            "src": "/assets/appicons/android-chrome-192x192.png?v=1",
+            "src": "/assets/appicons/android-chrome-192x192.png?v=1.36",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "/assets/appicons/android-chrome-256x256.png?v=1",
+            "src": "/assets/appicons/android-chrome-256x256.png?v=1.36",
             "sizes": "256x256",
             "type": "image/png"
         }
