@@ -46,12 +46,12 @@ Intro: 一个（或者两个）关于 Armitage for mac 无法启动的问题。
 解决 MSF_DATABASE_CONFIG 对话框问题的方法是：
 
 ```bash
-❯ sudo mkdir -p /opt/metasploit/apps/pro/ui/config/
+❯ sudo mkdir -p /opt/metasploit/apps/pro/ui/config
 Password:
-❯ sudo mv ~/.msf/database.yml /opt/metasploit/apps/pro/ui/config/
+❯ sudo ln -s ~/.msf4/database.yml /opt/metasploit/apps/pro/ui/config/database.yml
 ❯ ll /opt/metasploit/apps/pro/ui/config/
 total 0
-lrwxr-xr-x  1 hz  staff    28B Jun  7 16:43 database.yml -> /Users/somthing/.msf4/database.yml
+lrwxr-xr-x  1 somthing  staff    28B Jun  7 16:43 database.yml -> /Users/somthing/.msf4/database.yml
 ```
 
 提示：
