@@ -61,6 +61,14 @@ lrwxr-xr-x  1 somthing  staff    28B Jun  7 16:43 database.yml -> /Users/somthin
 
 所以叻，建一个符号链接是最省心的办法。
 
+---
+
+临时的办法是在 Terminal 中使用命令行启动：
+
+```bash
+❯ MSF_DATABASE_CONFIG=$HOME/.msf4/database.yml open /Application/Armitage.app/
+```
+
 
 
 ## 吐槽
