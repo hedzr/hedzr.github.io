@@ -20,7 +20,7 @@ excerpt: >-
 
 ## 过门
 
-经过[上一篇](https://hedzr.com/golang/algorithm/go-load-balancer-2)对基本算法的列举之后，我们注意到基本算法的堆叠是个比较重要的特性。此外，怎么样对 factor 做约束也是一个比较重要的特性，因为它可以帮助决定堆叠后的 LB 如何完成第二级选择。
+经过[上一篇](https://hedzr.com/golang/algorithm/go-load-balancer-1)对基本算法的列举之后，我们注意到基本算法的堆叠是个比较重要的特性。此外，怎么样对 factor 做约束也是一个比较重要的特性，因为它可以帮助决定堆叠后的 LB 如何完成第二级选择。
 
 
 
