@@ -102,7 +102,7 @@ func (s *randomS) miniNext() (next lbapi.Peer) {
 
 既然 wrr 能够加权，random 能够随机，那么借助于已经建设好的基础设施我们就可以堆叠两者。
 
-在这个需求里，需要用到 Next 中的这个分支锁提供的能力：
+在这个需求里，需要用到 Next 中的这个分支所提供的能力：
 
 ```go
   if nested, ok := next.(lbapi.BalancerLite); ok {
@@ -332,7 +332,7 @@ func (s *constrainablePeer) Check(factor interface{}) (satisfied bool) {
 
 `constrainablePeer` 的关键之处在于它的 Check 函数，在这里它会试图解开 factor 中包含的 `*semver.Version` 值 V，然后运用约束器 `s.constraintsObj` 来检查 V 是不是满足约束条件。
 
-翻译成直白的话就是：我是版本号 1.3，我是不是 `< 1.3,x` 啊？`constrainablePeer`  就会说，是的。
+翻译成直白的话就是：我是版本号 1.3，我是不是 `< 1.3.x` 啊？`constrainablePeer`  就会说，是的。
 
 ##### NewConstrainablePeer
 
