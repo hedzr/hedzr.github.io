@@ -58,7 +58,7 @@ excerpt: >-
 
 然后在我们的每一个 Next 中会鉴别 next-picked peer 是不是也是一个 BalancerLite，如果是的话就递归进去，从而达到套娃的目的。
 
-例如我们的最终 random 算法是这样子的（wrr 中的 Next 也是相似的）：
+比如说，我们的最终 random 算法是这样子的（wrr 中的 Next 也是相似的）：
 
 ```go
 func (s *randomS) Next(factor lbapi.Factor) (next lbapi.Peer, c lbapi.Constraintenable) {
