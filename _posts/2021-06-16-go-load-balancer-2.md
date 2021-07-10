@@ -423,8 +423,8 @@ func (fa *backendsFactor) ConstrainedBy(constraints interface{}) (peer lbapi.Pee
 
 1. 可以按照版本范围的约束表达式来进行权重分配
 2. 能够透明地完成 incoming requests 的 dispatch
-3. 利用 cmdr 锁提供的配置文件自动监控、自动载入和合并、自动触发变更机制，以便在 microservice 在线的状态下实时地调整权重分配设定
-4. 如果没有配置文件合并能力，则需要考虑采用诸如 redis 缓存的配置项等手段来保证实时权重分配。
+3. 利用 cmdr 所提供的配置文件自动监控、自动载入和合并、自动触发变更机制，以便在 microservice 在线的状态下实时地调整权重分配设定
+4. 如果没有配置文件合并能力，则需要考虑采用诸如 redis 缓存的配置项等手段来保证能够实时地权重分配。
 5. 需要能够综合多种负载均衡算法，特别是正确地抽取请求上下文中的 Properties 来完成分发决策
 
 所以，真正全功能的 API GW，已知的能开箱即用的大概还没有，能够通过代码调整来适配的可能都有限，或者是需要在系统的各种角落做不知名的 hack 才行。
@@ -436,6 +436,8 @@ func (fa *backendsFactor) ConstrainedBy(constraints interface{}) (peer lbapi.Pee
 
 
 最后，把所有的 LB 算法收归到上一级 package 中，我们用一个 map，这个 map 配备了一颗 RWMutex 来防止你会在多线程的环境中使用它。但是实际上我们认为你应该事先建立一个 lb 的实例，之后动态地 add/remove 它的 peers 就好了，此外，我们也认为你应该是在 app 一开始的时候就已经注册了自行定制的 balancer 算法及其 generator 的——也就是说，其实这颗锁意思有限。
+
+> 防备性编程，是指我不知道你会怎么搞，不过我不会崩。
 
 好，在上一级的总领中，代码片段是这样：
 
@@ -517,7 +519,7 @@ package main
 
 import (
 	"fmt"
-	lb "github.com/hedzr/lb"
+	"github.com/hedzr/lb"
 	"github.com/hedzr/lb/lbapi"
 )
 

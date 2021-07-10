@@ -461,7 +461,7 @@ $ microk8s.config
 为了得到更精炼的 token，可以使用下面的惯用法：
 
 ```bash
-kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep admin-user | awk '{print $1}')
+kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | awk '/^deployment-controller-token-/{print $1}') | awk '$1=="token:"{print $2}'
 ```
 
 由于 dashboard 跑在 k8s 子网中，所以外界是不能直接访问的。解决的办法有多种：
