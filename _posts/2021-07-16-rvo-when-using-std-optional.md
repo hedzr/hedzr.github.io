@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "std::optional<T> 作为返回值时的优化问题，及其他相关"
+title: "std::optional T 作为返回值时的优化问题，及其他相关"
 date: 2021-07-16 05:00:00 +0800
 last_modified_at: 2021-07-16 23:50:00 +0800
 Author: hedzr
