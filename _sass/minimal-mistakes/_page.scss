@@ -496,6 +496,20 @@ body {
   }
 }
 
+.gt-container {
+  /*.gt-header-comment { */
+    .gt-comment-textarea {
+      color: #aa9988;
+    }
+  /* } */
+}
+
+.gt-container {
+  .gt-comment-body {
+    color: #aa9988 !important;
+  }
+}
+
 /*
    Related
    ========================================================================== */
