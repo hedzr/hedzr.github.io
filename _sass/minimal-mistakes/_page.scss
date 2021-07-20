@@ -498,14 +498,14 @@ body {
 
 .gt-container {
   /*.gt-header-comment { */
-    .gt-comment-textarea {
-      color: #aa9988;
+    .gt-header-textarea {
+      color: #aa9988 !important;
     }
   /* } */
 }
 
 .gt-container {
-  .gt-comment-body {
+  .gt-comment-body, .markdown-body {
     color: #aa9988 !important;
   }
 }
