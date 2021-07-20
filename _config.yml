@@ -40,7 +40,6 @@ comments:
     client_secret: 4efb1467b475f847e93457497adbf74de6456041
     repo: hedzr.github.io
     owner: hedzr
-    distractionFreeMode: true  # Facebook-like distraction free mode
   disqus:
     shortname            : # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   discourse:
