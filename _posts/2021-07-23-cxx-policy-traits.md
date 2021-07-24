@@ -2,7 +2,7 @@
 layout: single
 title: "c++ policies & traits"
 date: 2021-07-23 05:00:00 +0800
-last_modified_at: 2021-07-23 07:50:00 +0800
+last_modified_at: 2021-07-25 07:26:00 +0800
 Author: hedzr
 tags: [c++,c++11,c++17,policy,policies,traits,modern c++ design,loki]
 categories: c++ algorithm
