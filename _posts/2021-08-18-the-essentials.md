@@ -148,11 +148,11 @@ Server Core 是更轻量级一点的版本，它的安装后尺寸大约在 5.1G
 
 官方提供的比较表格在这里：
 
- [Comparison of Standard and Datacenter editions Windows Server 2019 | Microsoft Docs](https://docs.microsoft.com/en-us/windows-server/get-started/editions-comparison-windows-server-2019) 
+ [Comparison of Standard and Datacenter editions Windows Server 2019 - Microsoft Docs](https://docs.microsoft.com/en-us/windows-server/get-started/editions-comparison-windows-server-2019) 
 
 如果嫌它太长，那就先看这里：
 
- [Windows Server 2019 Licensing & Pricing | Microsoft](https://www.microsoft.com/en-us/windows-server/pricing) 
+ [Windows Server 2019 Licensing & Pricing - Microsoft](https://www.microsoft.com/en-us/windows-server/pricing) 
 
 
 
