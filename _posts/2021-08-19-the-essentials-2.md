@@ -202,8 +202,6 @@ curl -UseBasicParsing -Uri "https://code.visualstudio.com/sha/download?build=sta
 >
 > `$Env:Path += "$Env:UserProfile\AppData\Local\Programs\Microsoft VS Code"`
 >
-> s
->
 > "c:\Program Files (x86)\Microsoft Visual Studio\Installer"
 
 #### GUI？
@@ -216,7 +214,7 @@ curl -UseBasicParsing -Uri "https://code.visualstudio.com/sha/download?build=sta
 
 ![image-20210819195640123](https://raw.githubusercontent.com/hzimg/blog-pics/master/uPic/image-20210819195640123.png)
 
-康康，它确实能够工作，对于长期在 bash 环境中的人来说，这特么真的不合理，但有合理的很，不是吗？
+康康，它确实能够工作，对于长期在 bash 环境中的人来说，这特么真的不合理，但又合理的很，不是吗？
 
 
 
