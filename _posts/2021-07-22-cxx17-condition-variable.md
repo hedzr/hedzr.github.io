@@ -25,7 +25,7 @@ excerpt: >-
 
 原因在于我一向以为，C++11 固然不错，但实在是太简陋了，一切稍微重要的实作型基础设施，例如读写锁，信号量等等全都没有，而可变参数模板、可变参数展开、折叠表达式等等也没有（或者说存在问题），这导致我浅度尝试了迁移代码后发现同样的形状难看（因为实在是需要太多预处理和各式各样的 hack 手法）后被迫挂起了操作，转投其他语言。相信我，对 TC 有感情的人（暂时）放弃也绝对是很难过的。
 
-直到 C++17 的各种特性固化后，这些情况才得以最终改善（即使是信号量仍旧是没有）。
+直到 C++17 的各种特性固化后，这些情况才得以最终改善（即使如此，像信号量之类仍旧是没有）。
 
 其实还不算完美，例如匿名函数一直以来真的炒鸡难看，和 Kotlin 比比看就是被秒的下场。不过你忍一下哈。
 
@@ -219,6 +219,8 @@ namespace hicc::pool {
 }
 ```
 
+> **注**：这个实现充满示意性。更稳妥、完整、工程化的实现请在 [hicc-cxx](https://github.com/hedzr/hicc) 项目中直接浏览[源代码](https://github.com/hedzr/hicc/blob/master/libs/hicc/include/hicc/hz-pool.hh#L40)。
+
 这个包装类对条件变量的使用做了一些抽象和封装。但它还只是一个基础类，我们提供了两个进一步的封装，除了能演示 `conditional_wait` 的用法之外，也提供更简明的编码能力：
 
 ```c++
@@ -319,7 +321,11 @@ void test_cv() {
 
 对于很多典型的 condition variable，我们提供的预制 `conditional_wait_for_bool`  和 `conditional_wait_for_int` 可能就足够用了。
 
-你也能够非常轻易地利用 `conditional_wait` 做你的定制实现。
+你也能够非常轻易地利用 `conditional_wait` 做你的定制实现，例如将一个复杂的 struct 当作 T 并进行条件运算。
+
+
+
+
 
 #### 关于 hicc-cxx
 
@@ -331,7 +337,7 @@ void test_cv() {
 
 ### 基本可锁定
 
-除了 `std::condition_variable` 之外，还有一个条件变量类：`std::condition_variable_any`。它和前者的区别在于：前者被要求和 `std::unique_lock<std::mutex>` 联合使用，不可以换用其他手段，而后者则可以在任何满足[*基本可锁定* *(BasicLockable)* ](https://zh.cppreference.com/w/cpp/named_req/BasicLockable)要求的锁上工作。也就是说，你可以使用更广泛的其他锁定手段。
+除了 [`std::condition_variable`](https://zh.cppreference.com/w/cpp/thread/condition_variable) 之外，还有一个条件变量类：[`std::condition_variable_any`](https://zh.cppreference.com/w/cpp/thread/condition_variable_any)。它和前者的区别在于：前者被要求和 `std::unique_lock<std::mutex>` 联合使用，不可以换用其他手段，而后者则可以在任何满足[*基本可锁定* *(BasicLockable)* ](https://zh.cppreference.com/w/cpp/named_req/BasicLockable)要求的锁上工作。也就是说，你可以使用更广泛的其他锁定手段。
 
 所以，什么是基本可锁定呢？
 
