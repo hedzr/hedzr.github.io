@@ -4,7 +4,7 @@ title: C++ 中的 Pipeable 编程
 date: 2021-08-21 05:00:00 +0800
 last_modified_at: 2021-08-21 17:31:00 +0800
 Author: hedzr
-tags: [c++,c++11,c++17,pipeable,piped,boost,ranges,protocol-oriented,swift,protocol oriented,c#,kotlin,extension function]
+tags: [c++,c++11,c++17,pipeable,piped,boost,ranges,protocol-oriented,swift,protocol oriented,csharp,kotlin,extension function]
 categories: c++ algorithm
 comments: true
 toc: true
