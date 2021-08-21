@@ -73,7 +73,7 @@ struct pipe_closure : F
 {
     template<class... Xs>
     pipe_closure(Xs&&... xs) : F(std::forward<Xs>(xs)...)
-    {}
+    { }
 };
 
 template<class T, class F>
@@ -99,7 +99,7 @@ struct add_one_f
 那么 pipeable 串联操作就像这样：
 
 ```c++
-const pipe_closure<add_one_f> add_one = {};
+const pipe_closure<add_one_f> add_one = { };
 int number_3 = 1 | add_one | add_one;
 std::cout << number_3 << std::endl;
 ```
@@ -122,7 +122,7 @@ namespace hicc::pipeable {
 
     public:
         pipeable(F &&f)
-            : f(std::forward<F>(f)) {}
+            : f(std::forward<F>(f)) { }
 
         template<class... Xs>
         auto operator()(Xs &&...xs) -> decltype(std::bind(f, std::placeholders::_1, std::forward<Xs>(xs)...)) const {
