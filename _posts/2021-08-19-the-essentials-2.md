@@ -288,6 +288,14 @@ cmake --build build/
 cmake --build build/ --target install
 ```
 
+默认时，vcpkg 下载并安装代码库的 x86 版本，为了编译和安装 64 位的二进制版本，需要设置如下的系统环境变量：
+
+```bash
+VCPKG_DEFAULT_TRIPLET=x64-windows
+```
+
+
+
 如上
 
 
