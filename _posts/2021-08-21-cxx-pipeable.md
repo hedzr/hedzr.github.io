@@ -166,7 +166,7 @@ void test_piped() {
 
 ![c++11 pipeline](https://raw.githubusercontent.com/hzimg/blog-pics/master/uPic/cpp11pipes.png)
 
-Paul Fultz II 的动机更优先，只是我从来不会真正使用 boost，它太庞大了，太完整了，根本不适合在工程中使用。我更喜欢相对轻量级的，但却有相对完整的。
+Paul Fultz II 的动机更优先，只是我从来不会真正使用 boost，它太庞大了，太完整了，根本不适合在工程中使用。我更喜欢相对轻量级的，但却又相对完整的。
 
 如果你对 Paul Fultz II 的实现感兴趣，除了 boost::hof::pipeable 之外，他还制作了开源的 Linq： [pfultz2/Linq: Linq for list comprehension in C++](https://github.com/pfultz2/Linq) 。这是 C# Linq 技术的 C++ 实现，很 amazing，也很疯狂。
 
@@ -180,7 +180,7 @@ Paul Fultz II 的动机更优先，只是我从来不会真正使用 boost，它
 
 当然，也需要提到的是 [std::ranges 范围库](https://zh.cppreference.com/w/cpp/ranges)，它是 C++20 带来的改变之一，不过目前 C++20 规范也没发布多久，工程应用并不现实。
 
-ranges 也有同名的孵化项目  [ericniebler/range-v3: Range library for C++14/17/20, basis for C++20's std::ranges](https://github.com/ericniebler/range-v3) ，如果不想理机启用 c++20，那么可以使用这个项目，它需要 clang 3.6+ 或者 gcc 4.9.1，所以旧工程表示无压力。
+ranges 也有同名的孵化项目  [ericniebler/range-v3: Range library for C++14/17/20, basis for C++20's std::ranges](https://github.com/ericniebler/range-v3) ，如果不想立即启用 c++20，那么可以使用这个项目，它需要 clang 3.6+ 或者 gcc 4.9.1，所以旧工程表示无压力。
 
 总的来说，ranges 提供一种 filter 手段，在管道过滤的基础上你可以做筛选、排序、mapreduce 等等操作。
 
@@ -196,7 +196,7 @@ ranges 也有同名的孵化项目  [ericniebler/range-v3: Range library for C++
 
 它们的实际含义要去考究英文词根的词源，所以对于中国人来说很难直观理解。
 
-在这里，我们不去管 ranges 词源问题，而是借助于 std::ranges::view 来理解它。范围库换个人话来说，就是对一个集合做一个截面，获得一个可观察到视图（view），然后对该 view 进行各种可能的操作，可以倍乘、加一，也可以计算均值、做其他聚集操作，还可以排序，更可以 map reduce。
+在这里，我们不去管 ranges 词源问题，而是借助于 std::ranges::view 来理解它。范围库换个人话来说，就是对一个集合做一个截面，获得一个可观察的视图（view），然后对该 view 进行各种可能的操作，可以倍乘、加一，也可以计算均值、做其他聚集操作，还可以排序，更可以 map reduce。
 
 能做什么的问题，不是 ranges 的问题，而是你准备如何在 ranges 提供的 view 上做操作的问题。所以想要运用好 ranges 库，你应该对函数式编程（functional programming）有足够的理解。对于 C# Linq 技术，RxJava 有理解的朋友能够很容易理解 std::ranges 的核心内涵。
 
