@@ -186,7 +186,7 @@ function docker-cid() {
 	[ "$CID" != "" ] && echo $CID || echo $1
 }
 
-alias docker-pid="docker inspect --format '{{.State.Pid}}'"
+alias docker-pid="docker inspect --format '{\{.State.Pid}}'"
 ```
 
 用法很简单：
