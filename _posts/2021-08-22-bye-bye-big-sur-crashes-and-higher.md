@@ -12,7 +12,7 @@ header:
   overlay_image: /assets/images/3953273590_704e3899d5_m.jpg
   overlay_filter: rgba(255, 255, 255, 0.5)
 excerpt: >-
-  最近一个多月，饱受崩溃之苦，...
+  后来，我终于学会了放弃...
 
 ---
 
