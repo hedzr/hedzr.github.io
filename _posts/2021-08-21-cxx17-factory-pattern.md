@@ -68,7 +68,9 @@ Factory 模式是 [Creational Patterns](https://en.wikipedia.org/wiki/Creational
 以 Point 为例，
 
 ```c++
-namespace hicc::dp::factory::inner {
+namespace cmdr::dp::factory::classical {
+
+    class classical_factory_method;
 
     class Transport {
     public:
@@ -80,46 +82,68 @@ namespace hicc::dp::factory::inner {
         float x, y;
 
     public:
-        explicit Trunk(double x_, double y_) { x = (float) x_, y = (float) y_; }
+        explicit Trunk(double x_, double y_) { x = (float)x_, y = (float)y_; }
         explicit Trunk(float x_, float y_) { x = x_, y = y_; }
         ~Trunk() = default;
+        friend class classical_factory_method;
         void deliver() override { printf("Trunk::deliver()\n"); }
         friend std::ostream &operator<<(std::ostream &os, const Trunk &o) { return os << "x: " << o.x << " y: " << o.y; }
-        static std::unique_ptr<Trunk> create(float x_, float y_) {
-            return std::make_unique<Trunk>(x_, y_);
-        }
     };
 
     class Ship : public Transport {
         float x, y;
 
     public:
-        explicit Ship(double x_, double y_) { x = (float) x_, y = (float) y_; }
+        explicit Ship(double x_, double y_) { x = (float)x_, y = (float)y_; }
         explicit Ship(float x_, float y_) { x = x_, y = y_; }
         ~Ship() = default;
+        friend class classical_factory_method;
         void deliver() override { printf("Ship::deliver()\n"); }
         friend std::ostream &operator<<(std::ostream &os, const Ship &o) { return os << "x: " << o.x << " y: " << o.y; }
-        static std::unique_ptr<Ship> create(float r_, float theta_) {
+    };
+
+    class classical_factory_method {
+    public:
+        static Transport *create_ship(float r_, float theta_) {
+            return new Ship{r_ * cos(theta_), r_ * sin(theta_)};
+        }
+        static Transport *create_trunk(float x_, float y_) {
+            return new Trunk{x_, y_};
+        }
+        static std::unique_ptr<Ship> create_ship_2(float r_, float theta_) {
             return std::make_unique<Ship>(r_ * cos(theta_), r_ * sin(theta_));
+        }
+        static std::unique_ptr<Trunk> create_trunk_2(float x_, float y_) {
+            return std::make_unique<Trunk>(x_, y_);
+        }
+
+        template<typename T, typename... Args>
+        static std::unique_ptr<T> create(Args &&...args) {
+            return std::make_unique<T>(args...);
         }
     };
 
-} // namespace hicc::dp::factory::inner
+} // namespace cmdr::dp::factory::classical
 
-void test_factory_inner() {
-    using namespace hicc::dp::factory::inner;
+void test_factory_classical() {
+    using namespace cmdr::dp::factory::classical;
+    classical_factory_method f;
 
-    auto p1 = create_transport<Trunk>(3.1, 4.2);
-    std::cout << *p1.get() << '\n';
+    auto p1 = f.create_trunk(3.1f, 4.2f);
+    std::cout << p1 << '\n';
     p1->deliver();
 
-    auto p2 = create_transport<Ship>(3.1, 4.2);
-    std::cout << *p2.get() << '\n';
+    auto p2 = f.create_ship(3.1f, 4.2f);
+    std::cout << p2 << '\n';
     p2->deliver();
 
-    auto p3 = Ship::create(3.1, 4.2);
-    std::cout << *p3.get() << '\n';
+    auto p3 = f.create_ship_2(3.1f, 4.2f);
+    std::cout << p3.get() << '\n';
     p3->deliver();
+
+    auto p4 = f.create<Ship>(3.1f, 4.2f);
+    std::cout << p4.get() << '\n';
+    p4->deliver();
 }
 ```
 
