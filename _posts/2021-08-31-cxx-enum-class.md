@@ -274,7 +274,7 @@ int main(){
 
 ### AWESOME_MAKE_ENUM
 
-如果你不想集成 magic_enum 那么全面的能力，而是仅仅只需要一个简单的字面量映射的话，我们在 hicc/cmdr 中提供了一个宏 AWESOME_MAKE_ENUM（基于 [Debdatta Basu](https://stackoverflow.com/users/1078703/debdatta-basu) 提供的版本），用它的话你可以以很少量的代价获得枚举量的字面量表示。
+如果你不想集成 magic_enum 那么全面的能力，而是仅仅只需要一个简单的字面量映射的话，我们在 [hicc-cxx](https://github.com/hedzr/hicc)/[cmdr-cxx](https://github.com/hedzr.cmdr-cxx) 中提供了一个宏 AWESOME_MAKE_ENUM（基于 [Debdatta Basu](https://stackoverflow.com/users/1078703/debdatta-basu) 提供的版本），用它的话你可以以很少量的代价获得枚举量的字面量表示。
 
 ```c++
 #include <cmdr/cmdr_defs.hh>
