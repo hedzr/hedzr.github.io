@@ -228,33 +228,26 @@ namespace hicc::util {
 } // namespace hicc::util
 ```
 
-关于 C++11 标准库的 make_unique_ptr/make_shared_ptr 不能在私有构造函数上工作的问题也早已被多方讨论了，但直接的解决方法没有什么简洁的（而且难以做到跨编译器兼容性），所以在 `singleton<T>` 中采用了 struct token 的方法来拒绝使用者直接构造一个类——为了让派生类具备一定的控制力，`struct token {}` 以及 `ctor()` 被标记为 protected。
+关于 C++11 标准库的 make_unique_ptr/make_shared_ptr 不能在私有构造函数上工作的问题也早已被多方讨论了，但直接的解决方法没有什么简洁的（而且难以做到跨编译器兼容性），所以在 `singleton<T>` 中提供了 struct token 的方法来拒绝使用者直接构造一个类——为了让派生类能够实现特别的构造函数，`struct token {}` 以及 `ctor()` 被标记为 protected。
 
-这个模板类的使用比较简单：
+这个模板类的使用一般来说必须采用派生类的方式，但需要特别的构造函数：
 
 ```c++
 #include <hicc/hz-common.hh>
 // #include <cmdr11/cmdr_common.hh>
 
-struct MyVars {
+class MyVars: public hicc::util::singleton<MyVars> {
+  public:
+  explicit MyVars(typename hicc::util::singleton<MyVars>::token) {}
   long var1;
-}
-
-template<typename T>
-using hus = hicc::util::singleton<T>;
-
-#define MyVarsST hus<MyVars>
-// #define MyVarsST cmdr::util::singleton<MyVars>
+};
 
 int main() {
-  hus<MyVars>.var1 = 1;
-  printf("%d\n", HICC_SINGLETON(MyVars).var1);
-  // cmdr::util::singleton<MyVars>.var1 = 1;
-  // printf("%d\n", CMDR_SINGLETON(MyVars).var1);
+  printf("%ld\n", MyVars.instance().var1);
 }
 ```
 
-你可以有好几种写法，从上面任选即可。
+
 
 
 
