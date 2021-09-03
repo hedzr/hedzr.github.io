@@ -13,7 +13,7 @@ header:
   overlay_image: /assets/images/3953273590_704e3899d5_m.jpg
   overlay_filter: rgba(16, 16, 32, 0.73)
 excerpt: >-
-  回顾工厂模式的各种可能的实现，尝试建立其最优解 ...
+  回顾工厂模式的各种可能的实现，尝试建立其 C++17 中的最优解 ...
 ---
 
 
