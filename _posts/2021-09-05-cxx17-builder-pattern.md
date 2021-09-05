@@ -61,7 +61,7 @@ canva.place(shape, Position.Default);
 
 Builder 模式并非必须得要采用流式接口。
 
-反而在很多时候我们需要和交互对象协商一个选择，并将这个决定设置到 Builder 构造者中。知道全部协商完成之后，才使用 builder.build() 构建出最终产品实例。
+反而在很多时候我们需要和交互对象协商一个选择，并将这个决定设置到 Builder 构造者中。直到全部协商完成之后，才使用 builder.build() 构建出最终产品实例。
 
 如同示例代码中给出的想象，我们还可以糅合 Builder 和 Factory 模式（以及 Proxy 模式或者其它），让一个根本性的 Builder 去调用 concreted 的 FactoryBuilder 来构建多种产品。由于这往往需要较大篇幅的代码才能呈现出风貌，故而不再展开了。
 
