@@ -18,22 +18,11 @@ excerpt: >-
 
 
 
-
-> 继续在回忆
-
-
-
 回顾享元模式，考虑实作它的各种问题。
 
 ## Prologue
 
-
-
-> FROM: [HERE](https://refactoringguru.cn/design-patterns/builder)
-
-
-
-
+略过
 
 ## FlyWeight Pattern
 
