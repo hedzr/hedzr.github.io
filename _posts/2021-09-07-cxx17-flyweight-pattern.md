@@ -467,7 +467,7 @@ seed ^= hasher(v) + 0x9e3779b9 + (seed<<6) + (seed>>2);
 
 就目前已知的*学术*研究中，这是*最佳*的。
 
-那么谁制造了这么奇幻的一个神经质数(golden ratio)呢，大体可考的原作应该是： [A Hash Function for Hash Table Lookup](http://burtleburtle.net/bob/hash/doobs.html) 或  [Hash Functions for Hash Table Lookup](http://burtleburtle.net/bob/hash/evahash.html) 。原作者 Bob Jenkins，原发于 DDJ 刊物 1997 年，代码大约是成形于 1996 年。而这个数嘛，源于这个表达式：$\frac{2^{32}}{\frac{1+\sqrt{5}}{2}}$。
+那么谁制造了这么奇幻的一个神经质数(golden ratio)呢，大体可考的原作应该是： [A Hash Function for Hash Table Lookup](http://burtleburtle.net/bob/hash/doobs.html) 或  [Hash Functions for Hash Table Lookup](http://burtleburtle.net/bob/hash/evahash.html) 。原作者 Bob Jenkins，原发于 DDJ 刊物 1997 年，代码大约是成形于 1996 年。而这个数嘛，源于这个表达式：$\frac{2^{32}}{\frac{1+\sqrt{5}}{2}}$ （![image-20210907202334864](https://raw.githubusercontent.com/hzimg/blog-pics/master/uPic/image-20210907202334864.png))。
 
 
 
