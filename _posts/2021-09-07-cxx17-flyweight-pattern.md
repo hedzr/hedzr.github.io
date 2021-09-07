@@ -9,11 +9,11 @@ categories: c++ algorithm
 comments: true
 toc: true
 header:
-  teaser: https://raw.githubusercontent.com/hzimg/blog-pics/master/uPic/image-20210901010943203.png
+  teaser: https://raw.githubusercontent.com/hzimg/blog-pics/master/uPic/image-20210907201203834.png
   overlay_image: /assets/images/3953273590_704e3899d5_m.jpg
   overlay_filter: rgba(16, 16, 32, 0.73)
 excerpt: >-
-  回顾构建者模式的各种可能的实现，在 C++17 语境中讨论，...
+  关于享元模式的 C++17 中的较通用实现，...
 ---
 
 
@@ -195,7 +195,7 @@ namespace hicc::dp::flyweight::basic {
 void test_flyweight_basic() {
   using namespace hicc::dp::flyweight::basic;
 
-  flyweight_factory *factory = new flyweight_factory({{"Chevrolet", "Camaro2018", "pink"}, {"Mercedes Benz", "C300", "black"}, {"Mercedes Benz", "C500", "red"}, {"BMW", "M5", "red"}, {"BMW", "X6", "white"}});
+  flyweight_factory *factory = new flyweight_factory({ {"Chevrolet", "Camaro2018", "pink"}, {"Mercedes Benz", "C300", "black"}, {"Mercedes Benz", "C500", "red"}, {"BMW", "M5", "red"}, {"BMW", "X6", "white"} });
   factory->list();
 
   AddCarToPoliceDatabase(*factory,
@@ -346,6 +346,37 @@ class vehicle : public flyweight_factory<shared_state_impl, unique_state_impl> {
 其中 `using flyweight_factory<shared_state_impl, unique_state_impl>::flyweight_factory;` 是 C++17 以后的新语法，它将父类的所有构造函数原样复制给派生类，从而让你不必拷贝粘贴代码然后修改类名。
 
 在 `vehicle` 模板类中我们使用默认的 `flyweight<shared_t, unique_t>`，但你可以在 `flyweight_factory` 的模板参数中修改它以便提供你自己的享元类具体实现。
+
+#### 测试代码
+
+```c++
+void test_flyweight_meta() {
+    using namespace hicc::dp::flyweight::meta;
+
+    auto factory = std::make_unique<vehicle>(
+            std::initializer_list<shared_state_impl>{
+                    {"Chevrolet", "Camaro2018", "pink"},
+                    {"Mercedes Benz", "C300", "black"},
+                    {"Mercedes Benz", "C500", "red"},
+                    {"BMW", "M5", "red"},
+                    {"BMW", "X6", "white"}});
+
+    factory->list();
+
+    factory->AddCarToPoliceDatabase("CL234IR",
+                                    "James Doe",
+                                    "BMW",
+                                    "M5",
+                                    "red");
+
+    factory->AddCarToPoliceDatabase("CL234IR",
+                                    "James Doe",
+                                    "BMW",
+                                    "X1",
+                                    "red");
+    factory->list();
+}
+```
 
 #### 附加
 
