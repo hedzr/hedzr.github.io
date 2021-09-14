@@ -20,8 +20,6 @@ excerpt: >-
 
 
 
-
-
 ## Visitor Pattern
 
 访问者模式是一种行为模式，允许任意的分离的访问者能够在管理者控制下访问所管理的元素。访问者不能改变对象的定义（但这并不是强制性的，你可以约定为允许改变）。对管理者而言，它不关心究竟有多少访问者，它只关心一个确定的元素访问顺序（例如对于二叉树来说，你可以提供中序、前序等多种访问顺序）。
@@ -74,7 +72,7 @@ namespace hicc::util {
 
 ### 场景
 
-以一个实例来说，假设我们正在设计一套矢量图编辑器，在画布（Canva）中，可以有很多图层（Layer），每一图层包含一定的属性（例如填充色，透明度），并且可以有多种图元（Element）。图元可以是 Point，Line，Rect，Arc 等等。
+以一个实例来说，假设我们正在设计一套矢量图编辑器，在画布（Canvas）中，可以有很多图层（Layer），每一图层包含一定的属性（例如填充色，透明度），并且可以有多种图元（Element）。图元可以是 Point，Line，Rect，Arc 等等。
 
 为了能够将画布绘制在屏幕上，我们可以有一个 Screen 设备对象，它实现了 Visitor 接口，因此画布可以接受 Screen 的访问，从而将画布中的图元绘制到屏幕上。
 
@@ -196,14 +194,14 @@ namespace hicc::dp::visitor::basic {
 
 
 
-#### canva 画布
+#### 画布 Canvas
 
 画布包含了若干图层，所以它同样应该实现 visitable 接口：
 
 ```cpp
 namespace hicc::dp::visitor::basic {
 
-  struct canva : public hicc::util::visitable<drawable> {
+  struct canvas : public hicc::util::visitable<drawable> {
     using layer_t = std::unique_ptr<layer>;
     using layers_t = std::unordered_map<draw_id, layer_t>;
     layers_t layers;
@@ -275,7 +273,7 @@ inline std::string to_string(T const &t) {
 void test_visitor_basic() {
     using namespace hicc::dp::visitor::basic;
 
-    canva c;
+    canvas c;
     static draw_id id = 0, did = 0;
     c.add(++id); // added one graph-layer
     c[1]->add(std::make_unique<line>(++did));
