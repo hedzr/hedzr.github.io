@@ -18,11 +18,11 @@ excerpt: >-
 
 
 
-> 昨天很疲惫，没精力写字。今天凌晨被摇醒，一开始没意识到真的再摇，换了两个姿势没感觉，干脆就写字吧。半晌之后，看新闻才知道确实震了，上一次 CQ 有明显感觉时是 08 年，抱着娃下楼呆站，没有实时的资讯可言，不知道事态将会怎么演变，升斗小民想要挣扎求存也不可得，哪怕是今天其实也是如此，并不会因为消息满天飞就有所不同。
+> 昨天很疲惫，没精力写字。今天凌晨被摇醒，一开始没意识到真的在摇，换了两个姿势没感觉，干脆就写字吧。半晌之后，看新闻才知道确实震了，上一次 CQ 有明显感觉时是 08 年，抱着娃下楼呆站，没有实时的资讯可言，不知道事态将会怎么演变，升斗小民想要挣扎求存也不可得，哪怕是今天其实也是如此，并不会因为消息满天飞就有所不同。
 >
 > 因为，中文网着实是个充满了垃圾的地方啊。
 >
-> 所以我订阅的震情速报毫无意义。缘何，因为国产的 Android 机太肮脏啊，所以总是装很多杀后台的工具。结果杀得通知总是晚上6点时噼里啪啦来几十上百条，幸好有分组，一划就能抹掉几十条，不算累，可以忍。
+> 所以我订阅的震情速报毫无意义。缘何，因为国产的 Android 机太肮脏啊，所以我总是会装很多杀后台的工具。结果杀得通知总是晚上6点时噼里啪啦来几十上百条，幸好有分组，一划就能抹掉几十条，不算累，可以忍。
 >
 > 谢谢你看我叨叨，继续谈谈观察者模式吧：
 
@@ -128,18 +128,11 @@ namespace hicc::util {
       _observers.push_back(wp);
       return (*this);
     }
+    observable &remove_observer(observer_t_shared &o) { return remove_observer(o.get()); }
     observable &remove_observer(observer_t_nacked *o) {
       _observers.erase(std::remove_if(_observers.begin(), _observers.end(), [o](observer_t const &rhs) {
         if (auto spt = rhs.lock())
           return spt.get() == o;
-        return false;
-      }), _observers.end());
-      return (*this);
-    }
-    observable &remove_observer(observer_t_shared &o) {
-      _observers.erase(std::remove_if(_observers.begin(), _observers.end(), [o](observer_t const &rhs) {
-        if (auto spt = rhs.lock())
-          return spt.get() == o.get();
         return false;
       }), _observers.end());
       return (*this);
