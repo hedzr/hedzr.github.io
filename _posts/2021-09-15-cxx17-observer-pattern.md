@@ -66,7 +66,7 @@ excerpt: >-
 
 话虽如此（boring on uml），还是引用一张图：
 
-![观察者设计模式的结构](_assets/2021-09-15-cxx17-observer-pattern/structure.png)
+![观察者设计模式的结构](https://raw.githubusercontent.com/hzimg/blog-pics/master/uPic/structure.png)
 
 > FROM:  [观察者设计模式](https://refactoringguru.cn/design-patterns/observer) 
 
