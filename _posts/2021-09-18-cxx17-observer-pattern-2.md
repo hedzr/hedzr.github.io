@@ -106,7 +106,7 @@ namespace hicc::util {
    * @tparam AutoLock  thread-safe even if modifying observers chain dynamically
    * @tparam CNS       use Copy-and-Swap to shorten locking time.
    */
-  tplate<typename S, bool AutoLock = false, bool CNS = true, typename Observer = observer<S>>
+  template<typename S, bool AutoLock = false, bool CNS = true, typename Observer = observer<S>>
   class observable {
     public:
     virtual ~observable() { clear(); }
