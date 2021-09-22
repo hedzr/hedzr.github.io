@@ -19,6 +19,8 @@ excerpt: >-
 
 
 > 上上上回的  [谈 C++17 里的 Observer 模式](https://hedzr.com/c++/algorithm/cxx17-observer-pattern/) 介绍了该模式的基本构造。后来在 [谈 C++17 里的 Observer 模式 - 补/2](https://hedzr.com/c++/algorithm/cxx17-observer-pattern-2/) 里面提供了改进版本，主要聚焦于针对多线程环境的暴力使用的场景。再后来又有一篇 [谈 C++17 里的 Observer 模式 - 再补/3](https://hedzr.com/c++/algorithm/cxx17-observer-pattern-3/)，谈的是直接绑定 lambda 作为观察者的方案。
+>
+> **C++17 系列的 Design Patterns 文章也被同步发表在 InfoQ，掘金，Segmentfault 平台。**
 
 ## Observer Pattern - Part IV
 
