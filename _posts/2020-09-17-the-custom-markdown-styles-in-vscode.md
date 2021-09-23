@@ -9,15 +9,11 @@ categories: develop tricks
 comments: true
 toc: true
 header:
+  teaser: https://raw.githubusercontent.com/hzimg/blog-pics/master/uPic/image-20210924003921224.png
   overlay_image: https://i.loli.net/2020/09/17/mn74q3y2gOdhaM6.png
   overlay_filter: rgba(32, 32, 0, 0.3)
 excerpt: >-
   自定义预览时的 CSS 样式表 ...
-
-#  caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
-#  actions:
-#    - label: "More Info"
-#      url: "https://unsplash.com"
 ---
 
 
@@ -26,11 +22,15 @@ excerpt: >-
 
 > 对于个人的开发环境，有时候一些小的技巧很难再被记住了，所以只好收录在某处
 
+>**UPDATED**（2021-09-23 深夜）:
 >
+>由于站点停用和迁移，本文中的样式表文件现在单独存放了一份copy：
 >
+>[https://github.com/hzimg/blog-pics/blob/master/vscode.markdown-styles.custom.css](https://github.com/hzimg/blog-pics/blob/master/vscode.markdown-styles.custom.css)
 >
+>你将可以直接使用它：
 >
-> 
+>![image-20210924003921224](https://raw.githubusercontent.com/hzimg/blog-pics/master/uPic/image-20210924003921224.png)
 
 
 
@@ -113,7 +113,7 @@ vscode 自带了 markdown 功能，所以我们可以找到 vscode 的用户设�
 {
   ...,
     "markdown.styles": [
-        "https://hedzr.com/vscode.markdown-styles.custom.css?t=.00000011",
+        "https://github.com/hzimg/blog-pics/blob/master/vscode.markdown-styles.custom.css?t=.00000011",
     ]
 }
 ```
