@@ -9,7 +9,7 @@ categories: c++ algorithm
 comments: true
 toc: true
 header:
-  teaser: https://raw.githubusercontent.com/hzimg/blog-pics/master/uPic/image-20210907201203834.png
+  teaser: https://raw.githubusercontent.com/hzimg/blog-pics/master/uPic/image-20210930084318643.png
   overlay_image: /assets/images/3953273590_704e3899d5_m.jpg
   overlay_filter: rgba(16, 16, 32, 0.73)
 excerpt: >-
