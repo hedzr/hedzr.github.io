@@ -58,9 +58,9 @@ namespace hicc::dp::strategy::basic {
         }
     };
 
-    class by_traffic : public router_t<by_traffic> {
+    class by_transit : public router_t<by_transit> {
     public:
-        virtual ~by_traffic() {}
+        virtual ~by_transit() {}
         guide make_guide(context &ctx) override {
             guide g;
             UNUSED(ctx);
