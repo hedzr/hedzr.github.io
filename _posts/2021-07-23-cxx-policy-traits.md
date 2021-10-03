@@ -135,7 +135,7 @@ class Writer {
   }
 }
 
-void test(){
+void test() {
   BoldPen bp{};
   Writer writer(bp);
   writer.StartWriting();
