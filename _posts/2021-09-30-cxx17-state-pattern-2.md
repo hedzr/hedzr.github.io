@@ -4,7 +4,7 @@ title: "谈 C++17 里的 State 模式之二"
 date: 2021-09-30 05:00:00 +0800
 last_modified_at: 2021-09-30 20:00:00 +0800
 Author: hedzr
-tags: [c++,c++11,c++17,state pattern,fsm,state machine,state chart,design patterns]
+tags: [c++,c++11,c++17,state pattern,fsm,fsm-cxx,state machine,state chart,design patterns]
 categories: c++ algorithm
 comments: true
 toc: true
@@ -13,14 +13,15 @@ header:
   overlay_image: /assets/images/3953273590_704e3899d5_m.jpg
   overlay_filter: rgba(16, 16, 32, 0.73)
 excerpt: >-
-  关于状态模式的研究，以及状态机的 C++17 中的通用实现，...
+  关于状态模式的研究，以及状态机的 C++17 中的通用实现，介绍 fsm-cxx ...
 ---
 
 
 
 
 
-> 这是第二部分，有关有限状态机（FSM）的 C++ 实作部分，也等同于状态模式实现
+> 这是第二部分，有关有限状态机（FSM）的 C++ 实作部分，也等同于状态模式实现。
+> 介绍 [fsm-cxx](https://github.com/hedzr/fsm-cxx) 的实现
 
 ## Prologue
 
