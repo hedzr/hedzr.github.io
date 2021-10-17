@@ -359,7 +359,9 @@ namespace word_processor {
 }
 ```
 
-在真实的编辑器中，我们相信你有一个所有编辑器窗口的容器并且能跟踪到当前具有输入焦点的编辑器。基于此，do_execute 应该是对当前编辑器中的选择文字做字体样式设置（如粗体），save_state_impl 应该是将选择文字的元信息以及 Command 的元信息打包到 `State` 中，undo 应该是反向设置字体样式（如去掉粗体），redo 应该是依据 memento 的 `State` 信息再次设置字体样式（粗体）。
+在真实的编辑器中，我们相信你有一个所有编辑器窗口的容器并且能跟踪到当前具有输入焦点的编辑器。
+
+基于此，do_execute 应该是对当前编辑器中的选择文字做字体样式设置（如粗体），save_state_impl 应该是将选择文字的元信息以及 Command 的元信息打包到 `State` 中，undo 应该是反向设置字体样式（如去掉粗体），redo 应该是依据 memento 的 `State` 信息再次设置字体样式（粗体）。
 
 > 但在本例中，出于演示目的，这些具体细节都被一个 _info 字符串所代表了。
 >
@@ -387,9 +389,6 @@ namespace word_processor {
       std::cout << "<<" << _info << ">>" << '\n';
       Base::do_execute(sender, ctx);
     }
-
-    private:
-    std::string _info{"do 'undo'"};
   };
 
   template<typename State>
@@ -406,14 +405,11 @@ namespace word_processor {
       std::cout << "<<" << _info << ">>" << '\n';
       Base::do_execute(sender, ctx);
     }
-
-    private:
-    std::string _info{"do 'redo'"};
   };
 }
 ```
 
-注意对于它们来说，相应的基类被限制为 base_undo/redo_cmd_t ，并且你必需在 do_execute 实现中包含到基类方法的调用，如同这样：
+注意对于它们来说，相应的基类被限制为 base_(undo/redo)_cmd_t ，并且你必需在 do_execute 实现中包含到基类方法的调用，如同这样：
 
 ```cpp
     void do_execute(CmdSP &sender, ContextT &ctx) override {
@@ -422,7 +418,20 @@ namespace word_processor {
     }
 ```
 
+基类中有默认的实现，形如这样：
 
+```cpp
+    template<typename State, typename BaseCmdT,
+             template<class S, class B> typename RefCmdT>
+    inline void base_redo_cmd_t<State, BaseCmdT, RefCmdT>::
+            do_execute(CmdSP &sender, ContextT &ctx) {
+        ctx.mgr.redo(sender, Base::_delta);
+    }
+```
+
+它实际上具体地调用 ctx.mgr，也就是 undoable_cmd_system_t 的 redo() 去完成具体的内务，类似的，undo 方面也有相似的语句。
+
+---
 
 undo/redo 的特殊之处在于它们的基类有特别的重载函数：
 
@@ -438,7 +447,7 @@ undo/redo 的特殊之处在于它们的基类有特别的重载函数：
 
 ##### actions_controller
 
-我们现在嘉定字处理器软件具有一个命令管理器，它同时也是命令动作的 controller，它将会负责在具体的编辑器窗口中执行一条编辑命令：
+我们现在假定字处理器软件具有一个命令管理器，它同时也是命令动作的 controller，它将会负责在具体的编辑器窗口中执行一条编辑命令：
 
 ```cpp
 namespace word_processor {
@@ -486,7 +495,7 @@ namespace word_processor {
 
 ##### 最后是测试函数
 
-
+借助于改进过的工厂模式，controller 可以调用编辑命令，注意使用者在发出 undo/redo 时，controller 同样地通过调用 UndoCmd/RedoCmd 的方式来完成相应的业务逻辑。
 
 ```cpp
 void test_undo_sys() {
