@@ -4,7 +4,7 @@ title: "谈 C++17 里的 State 模式之二"
 date: 2021-09-30 05:00:00 +0800
 last_modified_at: 2021-09-30 20:00:00 +0800
 Author: hedzr
-tags: [c++,c++11,c++17,state pattern,fsm,fsm-cxx,state machine,state chart,design patterns]
+tags: [c++,c++11,c++17,state pattern,fsm,fsm-cxx,state machine,state chart,design patterns,状态模式,设计模式]
 categories: c++ algorithm
 comments: true
 toc: true

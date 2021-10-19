@@ -4,7 +4,7 @@ title: "谈 C++17 里的 Factory 模式之二"
 date: 2021-10-18 05:10:00 +0800
 last_modified_at: 2021-10-19 07:40:00 +0800
 Author: hedzr
-tags: [c++,c++11,c++17,factory pattern,design patterns]
+tags: [c++,c++11,c++17,factory pattern,design patterns,工厂模式,设计模式]
 categories: c++ algorithm
 comments: true
 toc: true

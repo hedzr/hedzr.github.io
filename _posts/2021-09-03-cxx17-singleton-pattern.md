@@ -4,7 +4,7 @@ title: "谈 C++17 里的 Singleton 模式"
 date: 2021-09-03 05:00:00 +0800
 last_modified_at: 2021-09-03 19:43:00 +0800
 Author: hedzr
-tags: [c++,c++11,c++17,singleton pattern,design patterns]
+tags: [c++,c++11,c++17,singleton pattern,design patterns,单件模式,设计模式]
 categories: c++ algorithm
 comments: true
 toc: true

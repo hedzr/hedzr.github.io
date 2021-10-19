@@ -4,7 +4,7 @@ title: "谈 C++17 里的 Visitor 模式"
 date: 2021-09-13 23:35:00 +0800
 last_modified_at: 2021-09-14 08:00:00 +0800
 Author: hedzr
-tags: [c++,c++11,c++17,visitor pattern,design patterns]
+tags: [c++,c++11,c++17,visitor pattern,design patterns,访问者模式,设计模式]
 categories: c++ algorithm
 comments: true
 toc: true

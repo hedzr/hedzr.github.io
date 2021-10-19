@@ -4,7 +4,7 @@ title: 谈 C++17 里的 Factory 模式
 date: 2021-08-22 14:50:00 +0800
 last_modified_at: 2021-08-28 05:01:00 +0800
 Author: hedzr
-tags: [c++,c++11,c++17,factory pattern,abstract factory pattern,design patterns]
+tags: [c++,c++11,c++17,factory pattern,abstract factory pattern,design patterns,工厂模式,设计模式]
 categories: c++ algorithm
 comments: true
 toc: true

@@ -4,7 +4,7 @@ title: "谈 C++17 里的 Memento 模式"
 date: 2021-10-07 09:02:00 +0800
 last_modified_at: 2021-10-17 11:00:00 +0800
 Author: hedzr
-tags: [c++,c++11,c++17,undo,memento pattern,design patterns]
+tags: [c++,c++11,c++17,undo,memento pattern,design patterns,备忘录模式,设计模式]
 categories: c++ algorithm
 comments: true
 toc: true

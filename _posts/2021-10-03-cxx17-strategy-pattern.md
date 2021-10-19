@@ -4,7 +4,7 @@ title: "谈 C++17 里的 Strategy 模式"
 date: 2021-10-03 04:03:00 +0800
 last_modified_at: 2021-10-03 07:00:00 +0800
 Author: hedzr
-tags: [c++,c++11,c++17,strategy pattern,design patterns]
+tags: [c++,c++11,c++17,strategy pattern,design patterns,策略模式,设计模式]
 categories: c++ algorithm
 comments: true
 toc: true

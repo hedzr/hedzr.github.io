@@ -4,7 +4,7 @@ title: "谈 C++17 里的 Builder 模式"
 date: 2021-09-05 05:00:00 +0800
 last_modified_at: 2021-09-05 07:13:00 +0800
 Author: hedzr
-tags: [c++,c++11,c++17,builder pattern,design patterns]
+tags: [c++,c++11,c++17,builder pattern,design patterns,构建者模式,设计模式]
 categories: c++ algorithm
 comments: true
 toc: true

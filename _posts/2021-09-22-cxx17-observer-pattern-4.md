@@ -4,7 +4,7 @@ title: "谈 C++17 里的 Observer 模式 - 4 - 信号槽模式"
 date: 2021-09-22 05:00:00 +0800
 last_modified_at: 2021-09-22 19:33:00 +0800
 Author: hedzr
-tags: [c++,c++11,c++17,observer pattern,pub-sub,publish,subcription,signal-slot,qt,design patterns]
+tags: [c++,c++11,c++17,observer pattern,pub-sub,publish,subcription,signal-slot,qt,design patterns,观察者模式,设计模式]
 categories: c++ algorithm
 comments: true
 toc: true
