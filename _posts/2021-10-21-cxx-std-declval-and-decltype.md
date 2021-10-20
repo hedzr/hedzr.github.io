@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "std::declval 和 decltype"
+title: "理解 std::declval 和 decltype"
 date: 2021-10-21 05:10:00 +0800
 last_modified_at: 2021-10-21 07:48:00 +0800
 Author: hedzr
