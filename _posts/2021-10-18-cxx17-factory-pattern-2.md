@@ -13,7 +13,7 @@ header:
   overlay_image: /assets/images/3953273590_704e3899d5_m.jpg
   overlay_filter: rgba(16, 16, 32, 0.73)
 excerpt: >-
-  探讨中介者模式...
+  改进后的工厂模式，以及 type_name 等等...
 ---
 
 
