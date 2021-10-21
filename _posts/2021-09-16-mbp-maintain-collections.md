@@ -79,6 +79,48 @@ MBP 出现问题，首先是自我检查，做一个粗略的评估和判断。
 
  [如何在 Mac 上使用安全模式 - Apple 支持 (中国)](https://support.apple.com/zh-cn/HT201262) 
 
+
+
+### MBP 恢复模式
+
+ [8 Mac System Features You Can Access in Recovery Mode](https://www.howtogeek.com/189575/8-mac-system-features-you-can-access-in-recovery-mode/) 
+
+ [How to Repair Disk and File System Problems on Your Mac](https://www.howtogeek.com/236978/how-to-repair-disk-and-file-system-problems-on-your-mac/) 
+
+
+
+## Mac 的启动组合键
+
+ [Mac 的启动组合键 - Apple 支持 (中国)](https://support.apple.com/zh-cn/HT201255) 
+
+### 在搭载 Apple 芯片的 Mac 上
+
+将[搭载 Apple 芯片的 Mac](https://support.apple.com/zh-cn/HT211814) 开机并继续按住电源按钮，直至看到启动选项窗口。在那里，您可以从另一个磁盘启动，以安全模式启动，使用 macOS 恢复功能和进行更多操作。[进一步了解包括 macOS 恢复功能在内的这些选项](https://support.apple.com/zh-cn/guide/mac-help/macos-recovery-a-mac-apple-silicon-mchl82829c17/mac)。
+
+### 在基于 Intel 的 Mac 上
+
+要使用这些组合键中的任何一个，请在按下电源按钮以开启 Mac 后或在 Mac 开始重新启动后，立即按住相应按键。请一直按住，直至电脑出现对应的行为。
+
+- **Command (⌘)-R：**从内建的 [macOS 恢复](https://support.apple.com/zh-cn/HT201314)系统启动。或者，您也可以使用 Option-Command-R 或 Shift-Option-Command-R 以通过互联网从 macOS 恢复功能启动。[macOS 恢复功能可以安装不同版本的 macOS](https://support.apple.com/zh-cn/HT204904)，具体取决于您使用的组合键。如果您的 Mac 使用了[固件密码](https://support.apple.com/zh-cn/HT204455)，系统将提示您输入这个密码。
+- **Option (⌥) 或 Alt：**启动进入“[启动管理器](https://support.apple.com/zh-cn/guide/mac-help/change-your-mac-startup-disk-mchlp1034/mac)”，您可以从中选取其他可用的启动磁盘或宗卷。如果您的 Mac 使用了[固件密码](https://support.apple.com/zh-cn/HT204455)，系统将提示您输入这个密码。
+- **Option-Command-P-R：**[重置 NVRAM](https://support.apple.com/zh-cn/HT204063) 或 PRAM。如果您的 Mac 使用了[固件密码](https://support.apple.com/zh-cn/HT204455)，电脑会忽略这个组合键或从 [macOS 恢复功能](https://support.apple.com/zh-cn/HT201314)启动。
+- **Shift (⇧)：**以[安全模式](https://support.apple.com/zh-cn/HT201262)启动。如果使用了[固件密码](https://support.apple.com/zh-cn/HT204455)，这个组合键将被停用。
+- **D：**启动进入“[Apple 诊断](https://support.apple.com/zh-cn/HT202731)”实用工具。或者，您也可以使用 Option-D 通过互联网启动进入这个实用工具。如果使用了[固件密码](https://support.apple.com/zh-cn/HT204455)，这个组合键将被停用。
+- **N：**从 NetBoot 服务器启动，[前提是您的 Mac 支持网络启动宗卷](https://support.apple.com/zh-cn/HT202770)。要使用服务器上默认的引导映像，请按住 Option-N。如果使用了[固件密码](https://support.apple.com/zh-cn/HT204455)，这个组合键将被停用。
+- **Command-S：**以单用户模式启动。如果运行的是 macOS Mojave 或更高版本，或者使用了[固件密码](https://support.apple.com/zh-cn/HT204455)，这个组合键将被停用。
+- **T：**以[目标磁盘模式](https://support.apple.com/zh-cn/guide/mac-help/transfer-files-mac-computers-target-disk-mode-mchlp1443/mac)启动。如果使用了[固件密码](https://support.apple.com/zh-cn/HT204455)，这个组合键将被停用。
+- **Command-V：**以详细模式启动。如果使用了[固件密码](https://support.apple.com/zh-cn/HT204455)，这个组合键将被停用。
+- **推出键** (⏏)、**F12**、**鼠标按钮**或**触控板按钮：**推出可移动介质，例如光盘。如果使用了[固件密码](https://support.apple.com/zh-cn/HT204455)，这个组合键将被停用。
+
+如果某个组合键在启动时不起作用，以下解决方案之一可能会有所帮助：
+
+- 同时按住组合键中的所有按键，而不是一次只按住一个。 
+- 将 Mac 关机。然后按下电源按钮以将 Mac 开机。接下来，在 Mac 启动时按住相应按键。在按下相应按键之前，您可能需要等待几秒钟，以便让 Mac 在启动时有更多时间来识别键盘。某些键盘上有一个指示灯会在启动时短暂闪烁，表明键盘已被识别并可供使用。
+- 如果您使用的是无线键盘，请在可能的情况下将这个键盘接入 Mac。或者使用您的内建键盘或有线键盘。如果您使用的是 PC 专用键盘，例如带有 Windows 标志的键盘，请尝试改用 Mac 专用键盘。
+- 如果您使用“启动转换”从 Microsoft Windows 进行启动，请对[“启动磁盘”偏好设置](https://support.apple.com/zh-cn/guide/mac-help/change-your-mac-startup-disk-mchlp1034/mac)进行相应设置，修改为从 macOS 启动。随后关机或重新启动，然后再试一次。
+
+
+
 ## :end:
 
 不完整，若是遇到特殊状况再来补充完整。
