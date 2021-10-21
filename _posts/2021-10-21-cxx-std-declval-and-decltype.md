@@ -1,10 +1,10 @@
 ---
-layout: single
+layout: "single"
 title: "理解 declval 和 decltype"
-date: 2021-10-21 05:10:00 +0800
-last_modified_at: 2021-10-21 07:48:00 +0800
+date: "2021-10-21 05:10:00 +0800"
+last_modified_at: "2021-10-21 07:48:00 +0800"
 Author: hedzr
-tags: [c++,c++11,std::declval,decltype,abstract class]
+tags: [c++,c++11,declval,decltype,abstract class]
 categories: c++ algorithm
 comments: true
 toc: true
@@ -13,12 +13,12 @@ header:
   overlay_image: /assets/images/3953273590_704e3899d5_m.jpg
   overlay_filter: rgba(16, 16, 32, 0.73)
 excerpt: >-
-  理解 std::declval 的力量；顺带提提抽象类容器化等 tricks ...
+  理解 `std::declval` 的力量；顺带提提抽象类容器化等 tricks ...
 ---
 
 
 
-## std::declval 和 decltype
+## `std::declval` 和 `decltype`
 
 > 题图来自于 [C++ Type Deduction Introduction - hacking C++](https://hackingcpp.com/cpp/lang/type_deduction.html) 但略有变形以适合 banner
 
