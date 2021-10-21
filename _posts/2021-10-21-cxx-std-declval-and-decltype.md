@@ -9,7 +9,7 @@ categories: c++ algorithm
 comments: true
 toc: true
 header:
-  teaser: https://raw.githubusercontent.com/hzimg/blog-pics/master/uPic/cpp_genericity_type_deduction_14.svg
+  teaser: https://raw.githubusercontent.com/hzimg/blog-pics/master/uPic/declval-deduce-type.png
   overlay_image: /assets/images/3953273590_704e3899d5_m.jpg
   overlay_filter: rgba(16, 16, 32, 0.73)
 excerpt: >-
@@ -20,7 +20,7 @@ excerpt: >-
 
 ## std::declval 和 decltype
 
-题图来自于 [C++ Type Deduction Introduction - hacking C++](https://hackingcpp.com/cpp/lang/type_deduction.html)
+> 题图来自于 [C++ Type Deduction Introduction - hacking C++](https://hackingcpp.com/cpp/lang/type_deduction.html) 但略有变形以适合 banner
 
 
 
