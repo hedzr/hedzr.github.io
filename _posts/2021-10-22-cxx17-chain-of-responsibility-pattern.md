@@ -53,7 +53,7 @@ excerpt: >-
 - 所以每个接收者应该判断消息来源以及消息类别来决定自己是否应该处理一个消息。
 - 如果接收者消费了某个事件，那么应该返回一个消费结果实体，这个实体由你的消息协议来决定，可以是一个简单的 bool，或者一个状态码，也可以是一个处理结果包（struct result）。
 - 一个有效的结果实体会令 message_chain_t 结束消息分发行为。
-- 如果返回空（`std::optional<R>{}`），则 mediator_t 会继续分发消息给其它全部接收者。
+- 如果返回空（`std::optional<R>{}`），则 message_chain_t 会继续分发消息给其它全部接收者。
 
 和信号槽、observer 模式等的不同之处在于，message_chain_t 是一个 message bumper，而不是发布订阅系统，它是泛泛广播的。
 
@@ -61,7 +61,7 @@ excerpt: >-
 
 ### message_chain_t
 
-message_chain_t 是一个可以指定消息参数包 Messages 以及消息处理结果 R 的模板。消息处理结果 R 由 std::optional 打包，所以 mediator_t 根据 `std::optional<R>::has_value()` 来决定是否继续消息分发循环。
+message_chain_t 是一个可以指定消息参数包 Messages 以及消息处理结果 R 的模板。消息处理结果 R 由 std::optional 打包，所以 message_chain_t 根据 `std::optional<R>::has_value()` 来决定是否继续消息分发循环。
 
 ```cpp
 namespace dp::resp_chain {
@@ -98,11 +98,11 @@ namespace dp::resp_chain {
 
 如果有这样的需求，一般是通过消息分层分级之后再分组的方式来解决。无论是分层级还是分组的目的都是为了削减一次分发循环所需要遍历的 elements 大幅度减少（减少到几百、几十的数量级）。
 
-> 分层级可以通过串联两个 mediator_t 的方法来实现。
+> 分层级可以通过串联两个 message_chain_t 的方法来实现。
 
 ### receiver_t
 
-你可以向 mediator_t 添加接收者。接收者需要从 receiver_t 派生，并且实现 on_recv 虚函数。
+你可以向 message_chain_t 添加接收者。接收者需要从 receiver_t 派生，并且实现 on_recv 虚函数。
 
 ```cpp
 namespace dp::resp_chain {
@@ -210,7 +210,7 @@ namespace dp::resp_chain::test {
     std::string _id;
   };
 
-} // namespace dp::mediator::test
+} // namespace dp::resp_chain::test
 ```
 
 #### test_resp_chain
@@ -253,7 +253,7 @@ void test_resp_chain() {
 运行结果会是这样：
 
 ```bash
---- BEGIN OF test_mediator                            ----------
+--- BEGIN OF test_resp_chain                            --------
 [bb1} received: 123
 [bb2} received: 123
 [bb3} received: 123
@@ -265,7 +265,7 @@ void test_resp_chain() {
 [bb1} received: quit
 [bb2} received: quit *
 [bb3} received: quit
---- END OF test_mediator                              ----------
+--- END OF test_resp_chain                              --------
 ```
 
 其中最后一组信息是广播消息，所以 quit 信号不会导致终止。
