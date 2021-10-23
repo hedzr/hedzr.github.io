@@ -10,7 +10,7 @@
 # Review documentation to determine if you should use `theme` or `remote_theme`
 # https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
 
-# For debugging locally
+# For debugging locally, don't use remote_theme
 # theme                  : "minimal-mistakes-jekyll"
 
 # For Github publishing (always, suspress the warings)
@@ -37,7 +37,7 @@ comments:
   provider               : gitalk  # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "custom"
   gitalk:
     client_id: 10724481e09eab45c527
-    client_secret: 4efb1467b475f847e93457497adbf74de6456041
+    client_secret: 
     repo: hedzr.github.io
     owner: hedzr
   disqus:
