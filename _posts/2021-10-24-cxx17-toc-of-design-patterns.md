@@ -211,6 +211,11 @@ excerpt: >-
 
 暂告一段落了。
 
+除了特别提及的单列库之外，主要的参考代码可见于：
+
+- <https://github.com/hedzr/design-patterns-cxx>
+- <https://github.com/hedzr/cmdr-cxx>
+
 
 
 :end:
