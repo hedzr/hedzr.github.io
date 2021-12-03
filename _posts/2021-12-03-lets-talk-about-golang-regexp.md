@@ -138,7 +138,7 @@ func main() {
 
 发觉有必要简述一下正则式的各种分支版本。
 
-正则表达式的POSIX规范，分为基本型正则表达式（Basic Regular Expression，BRE）和扩展型正则表达式（Extended Regular Express，ERE）两大流派。在兼容 POSIX 的 UNIX 系统上，grep 和 egrep 之类的工具都遵循 POSIX 规范，一些数据库系统中的正则表达式也匹配 POSIX 规范。grep、vi、sed 都属于 BRE，是历史最早的正则表达式，因此元字符必须转译之后才具有特殊含义。egrep、awk 则属于 ERE，元字符不用转译。（源自 [Wiki](https://zh.wikipedia.org/wiki/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F)）
+正则表达式的 POSIX 规范，分为基本型正则表达式（Basic Regular Expression，BRE）和扩展型正则表达式（Extended Regular Express，ERE）两大流派。在兼容 POSIX 的 UNIX 系统上，grep 和 egrep 之类的工具都遵循 POSIX 规范，一些数据库系统中的正则表达式也匹配 POSIX 规范。grep、vi、sed 都属于 BRE，是历史最早的正则表达式，因此元字符必须转译之后才具有特殊含义。egrep、awk 则属于 ERE，元字符不用转译。（源自 [Wiki](https://zh.wikipedia.org/wiki/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F)）
 
 Perl 的正则式解析器原采用 PCRE，但在分叉之后就形成了 egrep 和 pgrep 两种版本。PCRE 继续单独开发，形成了 Extended RE（ERE，egrep），Perl 自己维护自身的正则式形成了 Perl RE 语法（pgrep）。
 
@@ -152,7 +152,7 @@ macOS 上的 grep 不支持 pgrep 格式，因此跨平台有效的 RE Pattern �
 
 [微软的 RE2](https://docs.microsoft.com/en-us/deployedge/edge-learnmore-regex) 原出于微软中国研究院，刚发布时名为 greta，名声相当嘹亮，性能优秀，一出品时性能是当时的正则式引擎（boost.regexp）的 7 倍以上，着实是有相当的风头。我之所以对其印象如此深刻，是因为这家伙是 C++ 模板元编程实现的，质量很好（当然，写这类型的类库的人往往都很变态，所以可读性不要有什么期待）
 
-一晃也是二十年过去了，真是物是人非啊。现在你很难找到 Greta 的源流了，所以说时间真的可以湮没一切，即使有北极磁带备份又如何，Grate 甚至不值得一个维基词条，这既是一个悲哀，又是某种必然。
+一晃也是二十年过去了，真是物是人非啊。现在你很难找到 greta 的源流了，所以说时间真的可以湮没一切，即使有北极磁带备份又如何，greta 甚至不值得一个维基词条，这既是一个悲哀，又是某种必然。
 
 如果想了解正规表达式，可以阅读维基词条：
 
