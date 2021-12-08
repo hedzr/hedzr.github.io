@@ -305,7 +305,7 @@ gpg --keyserver hkps://keyserver.ubuntu.com --send-keys 17AFB9B1
 目前至少这些服务器是有效运转的：
 
 - hkps://keys.openpgp.org
-- pgp.mit.org
+- pgp.mit.edu
 - hkps://keyserver.ubuntu.com
 
 但请注意，keyserver.ubuntu.com 通常不是普通大众所使用的 keyserver，它主要用于开发目的，开发者会藉此做代码签名，软件包签名等行为。
