@@ -4,7 +4,7 @@ title: "从零开始制作 deb 文件"
 date: 2021-12-17 05:00:00 +0800
 last_modified_at: 2021-12-17 07:13:00 +0800
 Author: hedzr
-tags: [packaging,deb]
+tags: [packaging,deb,binary package]
 categories: packaging deb
 comments: true
 toc: true
