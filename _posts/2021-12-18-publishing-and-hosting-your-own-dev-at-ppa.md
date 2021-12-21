@@ -340,7 +340,7 @@ rm debian/*.{ex,EX}
 
 在 dh_make 运行之后，所生成的文件都在 debian/ 之中：
 
-![image-20211218104317092](_assets/2021-12-18-publishing-and-hosting-your-own-dev-at-ppa/146779565-123e23f4-69b5-4253-9088-aae09f6ce4ab.png)
+![image-20211218104317092](https://cdn.jsdelivr.net/gh/hzimg/blog-pics@master/uPic/146779565-123e23f4-69b5-4253-9088-aae09f6ce4ab.png)
 
 
 
