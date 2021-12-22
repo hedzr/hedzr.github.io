@@ -43,7 +43,7 @@ excerpt: >-
 
    1. Backstaging Information
 
-      参考：[creating deb from scratch]
+      参考：[creating deb from scratch](https://hedzr.com/packaging/deb/creating-deb-file-from-scratch/)
 
       参考：[creating deb from source tree]
 
@@ -70,7 +70,7 @@ excerpt: >-
 >
 > zypper 只不过是 rpm 的上层，和 yum、dnf 并无本质的差别。
 
-本文以及近来相似的文章都聚焦在 deb 发行方面。在 [从零开始制作 deb 包] 中我们已经介绍了 binary package 的构建，这样构建的 deb 包能够被用户直接下载并通过命令 `dpkg -i package.deb` 的方式安装，可以说是大大提高了用户取用的方便性。但这种 deb 包不那么容易被公开发行到包管理体系中——也不是绝对不行，但你需要为其准备太多的辅助文件才可以。
+本文以及近来相似的文章都聚焦在 deb 发行方面。在 [从零开始制作 deb 包](https://hedzr.com/packaging/deb/creating-deb-file-from-scratch/) 中我们已经介绍了 binary package 的构建，这样构建的 deb 包能够被用户直接下载并通过命令 `dpkg -i package.deb` 的方式安装，可以说是大大提高了用户取用的方便性。但这种 deb 包不那么容易被公开发行到包管理体系中——也不是绝对不行，但你需要为其准备太多的辅助文件才可以。
 
 而在本文中我们将会讲述 source package 的入门。这种方式前提在于你是源码构建人员，对于源代码的构建流程很熟悉，那么通过 [Debian 新维护者手册](https://www.debian.org/doc/manuals/maint-guide/) 的指导你就能非常容易地构建出包管理系统满意的发行包。此发行包（Bundle）中除了 deb 安装包之外，通常还包括源代码 tarball，以及具备版本跟踪记录的辅助文件。使用 Debian 提供的工具 dput，你可以将该发行包（Bundle）推送到公共服务器，用户能够使用 apt install package 的方式安装它，这也是 Debian 系发行版的最佳发行方案。
 
@@ -91,7 +91,7 @@ excerpt: >-
 
 PPA 是 Personal Package Archive 的缩写，顾名思义，ppa 代表着一个供个人开发者发布软件包的环境、平台，或者说基础架构。
 
-PPA 是由 launchpad.net 承载的。而 launchpad.net 是 Canonical 公司维护的网站，他允许软件开发者在这里自由地发行软件，通过 launchpad 发行的软件包，在 Ubuntu apt 体系中通过 ppa 的方式能够享有核心软件包的几乎同等的待遇。你可以这样安装来自于某个 ppa 所提供的软件包：
+PPA 是由 [launchpad.net](https://launchpad.net) 承载的。而 launchpad.net 是 Canonical 公司维护的网站，他允许软件开发者在这里自由地发行软件，通过 launchpad 发行的软件包，在 Ubuntu apt 体系中通过 ppa 的方式能够享有核心软件包的几乎同等的待遇。你可以这样安装来自于某个 ppa 所提供的软件包：
 
 ```bash
 $ sudo add-apt-repository ppa:hedzr/test-ppa
@@ -127,7 +127,7 @@ $ sudo apt install testpackage
 
 ```bash
 sudo apt install gnupg dput dh-make devscripts lintian gpg fakeroot
-sudo apt install git make build-essentials
+sudo apt install git make build-essential
 ```
 
 由于我们的案例是以 C++ 代码为例，所以也安装 build-essential。
@@ -776,6 +776,10 @@ sudo ppa-purge ppa:<lp-name>/<ppa-name>
 ```
 
 
+
+### Sources about this article
+
+同样地，上面所展示的 testpackage 的全部文件可以在 [这里](http://github.com/hedzr/deb-build-tutor) 找到。
 
 
 
