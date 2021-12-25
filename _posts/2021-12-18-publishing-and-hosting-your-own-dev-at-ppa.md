@@ -25,6 +25,8 @@ excerpt: >-
 
 ## Checklist
 
+About publishing and hosting your own deb at Ubuntu ppa:
+
 1. An Ubuntu Machine
 
 2. SSH Keys Ready
@@ -473,7 +475,9 @@ Description: A short description
 debuild -S -k$DEBSIGN_KEYID | tee /tmp/debuild.log 2>&1
 ```
 
--S 表示从源码编译构建；
+-S 表示从源码构建，但暂不编译二进制包；
+
+-F 表示从源码编译构建，同时构建出源码 tarball 以及二进制包；
 
 -us -uc 指定了签署的选项；
 
@@ -495,13 +499,13 @@ testpackage_0.0.0.1_source.changes
 
 ```bash
 Z="$(perl -ne 'print $1 if /dpkg-genchanges --build=source >(.*)/' /tmp/debuild.log)"
-dput ppa:hedzr/testppa $Z
+dput ppa:hedzr/test-ppa $Z
 ```
 
 它等价于：
 
 ```bash
-dput ppa:hedzr/testppa testpackage_0.0.0.1_source.changes
+dput ppa:hedzr/test-ppa testpackage_0.0.0.1_source.changes
 ```
 
 
