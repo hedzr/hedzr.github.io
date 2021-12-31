@@ -28,37 +28,20 @@ excerpt: >-
 About publishing and hosting your own deb at Ubuntu ppa:
 
 1. An Ubuntu Machine
-
 2. SSH Keys Ready
-
    参考：[ssh-short-guide] （略）
-
 3. Preparing your GPG Keys
-
    参考：[gpg-short-guide](https://hedzr.com/security/gpg/gpg-short-guide/)
-
 4. Setting up a Launchpad Account (aka: Ubuntu One Account)
-
 5. Creating your own PPA
-
 6. Publishing a first test package
-
    1. Backstaging Information
-
       参考：[creating deb from scratch](https://hedzr.com/packaging/deb/creating-deb-file-from-scratch/)
-
-      参考：[creating deb from source tree]
-
    2. Preparing the source code
-
    3. Preparing the Debian package control files
-
    4. Building the source package
-
    5. Uploading the package
-
 7. Using a PPA
-
    1. Installing the package
    2. Deleting a package
 
@@ -821,4 +804,3 @@ sudo ppa-purge ppa:<lp-name>/<ppa-name>
 
 
 :end:
-
