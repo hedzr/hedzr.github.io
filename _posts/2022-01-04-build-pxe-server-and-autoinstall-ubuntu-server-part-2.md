@@ -87,6 +87,8 @@ autoinstall:
 ...
 ```
 
+> 为了越过 GitHub Pages 以及 Jekyll 的 Markdown 运算限制，上述代码中的一切 `{ %` 或者 `{ {` 符号均额外插入了一个空格来防止被计算展开。
+
 配套的 meta-data 同样是一个 yaml 格式的文本文件：
 
 ```yaml
@@ -99,8 +101,6 @@ moore:
 ```
 
 真的很有幸福感。
-
-> 为了越过 GitHub Pages 以及 Jekyll 的 Markdown 运算限制，上述代码中的一切 `{%` 或者 `{{` 符号均额外插入了一个空格来防止被计算展开。
 
 
 
@@ -134,11 +134,11 @@ autoinstall:
 
 ```
 
-> 为了越过 GitHub Pages 以及 Jekyll 的 Markdown 运算限制，上述代码中的一切 `{%` 或者 `{{` 符号均额外插入了一个空格来防止被计算展开。
+> 为了越过 GitHub Pages 以及 Jekyll 的 Markdown 运算限制，上述代码中的一切 `{ %` 或者 `{ {` 符号均额外插入了一个空格来防止被计算展开。
 
 ### 小结
 
-enough！
+Enough！
 
 我本打算再水个几千字的。后来一想，有时候含蓄也是美，都把过筋过脉的 keypoint 点到这个程度了，剩下的还是你自己来吧。
 
