@@ -80,9 +80,9 @@ autoinstall:
   version: 1
   interactive-sections: [ ]
   identity:
-    hostname: "{{ ds.meta_data.moore.hostname }}"  # ubuntu-server
-    username: "{{ ds.meta_data.moore.default_user }}"  #hz
-    password: "{{ ds.meta_data.moore.default_user_password }}"
+    hostname: "{ { ds.meta_data.moore.hostname }}"  # ubuntu-server
+    username: "{ { ds.meta_data.moore.default_user }}"  #hz
+    password: "{ { ds.meta_data.moore.default_user_password }}"
 
 ...
 ```
@@ -99,6 +99,8 @@ moore:
 ```
 
 真的很有幸福感。
+
+> 为了越过 GitHub Pages 以及 Jekyll 的 Markdown 运算限制，上述代码中的一切 `{%` 或者 `{{` 符号均额外插入了一个空格来防止被计算展开。
 
 
 
@@ -126,13 +128,13 @@ autoinstall:
     allow-pw: no
     install-server: true
     authorized-keys:
-      {% for sk in ds.meta_data.moore.ssh_keys %}
-      - {{ sk }}
-      {% endfor %}
+      { % for sk in ds.meta_data.moore.ssh_keys %}
+      - { { sk }}
+      { % endfor %}
 
 ```
 
-
+> 为了越过 GitHub Pages 以及 Jekyll 的 Markdown 运算限制，上述代码中的一切 `{%` 或者 `{{` 符号均额外插入了一个空格来防止被计算展开。
 
 ### 小结
 
