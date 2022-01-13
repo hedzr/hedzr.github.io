@@ -13,7 +13,7 @@ header:
   overlay_image: /assets/images/ubuntuhero.jpg
   overlay_filter: rgba(32, 32, 0, 0.5)
 excerpt: >-
-  建立一个 PXE 服务器以便在 LAN 中提供 UbuntuServer 的自动化安装任务 / new post about building a pxe server and get unattended ubuntu server installation work. [...]
+  向云服务模式推进一步，使用 meta-data 来定义你的新主机开机参数 [...]
 ---
 
 
