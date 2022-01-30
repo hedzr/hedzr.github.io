@@ -18,8 +18,12 @@ excerpt: >-
 
 
 > **摘要**：  
-> 记录 BtrFS 的我所了解的
+> 记录 BtrFS 的我所了解的...
 > <!--MORE-->
+
+
+
+> A translated version at [here](btrfs-file-system-reviews-en/)
 
 
 
