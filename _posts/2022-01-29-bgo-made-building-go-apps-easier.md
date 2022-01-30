@@ -122,7 +122,7 @@ git submodules？很麻烦，很难用，会忘记状态，然后就杯具。
 
 唯一的问题是，它只收集 main 包所在的目录，也就是能够产出 executable 的那些目录，至于说你的带有 go.mod 的目录并不真的被纳入管理范围。
 
-这是 bgo 的限制，但本也就是 bgo 的设计目标：我们是扫描和管理一系列的 CLI apps 并以一种较轻便的方式完成相应的构建。我们并不提供以 go.mod 为标志的多个 modules 的管理，这种功能要么我们另行设计一款工具来说，要么不做，免得哪天 google 发神经有搞一套 go.zone 出来。
+这是 bgo 的限制，但本也就是 bgo 的设计目标：我们是扫描和管理一系列的 CLI apps 并以一种较轻便的方式完成相应的构建。我们并不提供以 go.mod 为标志的多个 modules 的管理，这种功能要么我们另行设计一款工具来说，要么不做，免得哪天 google 发神经又搞一套 go.zone 出来——然而往往总是牛头不对马嘴。
 
 > 当然，你可以为每个 go.mod 配一个 main.go 来让 bgo 兼管它。但总的来说，**bgo 管 exe 不管 lib**
 
@@ -186,11 +186,11 @@ docker run -it --rm -v $PWD:/app -v /tmp:/tmp -v /tmp/go-pkg:/go/pkg hedzr/bgo
 
 这样就和执行原生 bgo 作用一致。
 
-docker 容器可以从这些地方获取：
+docker 容器版本可以从这些地方获取：
 
 ```bash
 docker pull hedzr/bgo:latest
-docker push ghcr.io/hedzr/bgo:latest
+docker pull ghcr.io/hedzr/bgo:latest
 ```
 
 
@@ -594,7 +594,7 @@ app:
 
 `dir` 指明输出文件夹，可执行文件被指向这里。
 
-当你还可以指明 `split-to` 为每个 project 设定额外的子文件层次，例如可以是 `{ { .ProjecName}}`，等等。
+当然你还可以指明 `split-to` 为每个 project 设定额外的子文件层次，例如可以是 `{ { .ProjecName}}`，等等。
 
 `excludes` 是一个字符串数组，提供一组文件名通配符模板，和这些模板匹配的文件夹将不会被扫描。
 
@@ -722,7 +722,9 @@ type (
 
 ```
 
-最新版本请直接前往 或者 go.dev 处查阅。
+最新版本请直接前往 [build package](https://github.com/hedzr/bgo/tree/master/internal/logic/build) 或者 [go.dev](https://pkg.go.dev/github.com/hedzr/bgo) 处查阅。
+
+- [build package on go.dev](https://pkg.go.dev/github.com/hedzr/bgo@v0.2.17/internal/logic/build)
 
 
 
@@ -780,7 +782,7 @@ bgo -f
 
 这时除了配置文件中定义的 projects 之外，bgo 会再次扫描文件夹下的所有 cli apps。
 
-
+> 附加 `--save` 时则保存扫描结果到 `bgo.yml` 并退出。
 
 
 
@@ -890,7 +892,14 @@ bgo gen sh --zsh -o /some/where/for/_bgo
 
 ##### bash
 
-bash 自动完成脚本
+bash 自动完成脚本可以这样生成：
+
+```bash
+bgo gen sh --bash -o bgo.bash
+mv bgo.bash /etc/autocompletion.d/bgo
+```
+
+不同的平台中所需的前提以及复制到的目标位置可能有轻微的不同，具体则自行查询系统管理员。
 
 
 
@@ -935,6 +944,7 @@ bgo 如像是个 modules 管理器和构建辅助工具，但实际上它并不�
 - [GOOS/GOARCH combos on macOS - Marcelo Cantos](https://marcelocantos.com/posts/goos-goarch-survey/) 
 - 项目：[https://github.com/hedzr/bgo](https://github.com/hedzr/bgo)
 - 配置文件示例：[https://github.com/hedzr/bgo/blob/master/.bgo.yaml](https://github.com/hedzr/bgo/blob/master/.bgo.yaml)
+- go.dev: [这里](https://pkg.go.dev/github.com/hedzr/bgo)
 - Docker Hub： [hedzr/bgo - Docker Image | Docker Hub](https://hub.docker.com/r/hedzr/bgo) 
 
 
