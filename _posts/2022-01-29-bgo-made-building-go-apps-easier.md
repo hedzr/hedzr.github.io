@@ -4,7 +4,7 @@ title: 'bgo: 让构建 go 程序更容易'
 date: 2022-01-29 05:00:01 +0800
 last_modified_at: 2022-01-30 11:39:01 +0800
 Author: hedzr
-tags: [golang, compiler, builder]
+tags: [golang, compiler, build-tool]
 categories: golang ci
 comments: true
 toc: true
@@ -897,6 +897,9 @@ bash 自动完成脚本可以这样生成：
 ```bash
 bgo gen sh --bash -o bgo.bash
 mv bgo.bash /etc/autocompletion.d/bgo
+
+# might be:
+mv bgo.bash /usr/local/etc/bash_completion.d/bgo
 ```
 
 不同的平台中所需的前提以及复制到的目标位置可能有轻微的不同，具体则自行查询系统管理员。
