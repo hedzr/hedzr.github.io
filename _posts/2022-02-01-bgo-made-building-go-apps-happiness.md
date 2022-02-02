@@ -371,7 +371,8 @@ bgo init --output=.bgo.toml
 
 bgo 目前存在的问题：
 
-- 没有 Windows 系统下的有力测试，因此不太确定配置文件的加载位置是否能被有效识别。想必不会太有问题。
+- 没有 Windows 系统下的有力测试，因此不太确定配置文件的加载位置是否能被有效识别。
+- 配置文件中的 bash shell 可能会在 windows 中改为 powershell 还是 cmd？我不太知道，或许需要少许调整才能工作。
   - FEEL FREE TO ISSUE ME
 
 ![image-20220202111728058](https://cdn.jsdelivr.net/gh/hzimg/blog-pics@master/uPic/image-20220202111728058.png)
