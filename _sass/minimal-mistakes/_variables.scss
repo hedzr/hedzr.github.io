@@ -12,9 +12,35 @@ $doc-font-size: 16 !default;
 $paragraph-indent: false !default; // true, false (default)
 $indent-var: 1.3em !default;
 
-/* system typefaces */
-$serif: 'Playfair Display', 'Gayathri', Georgia, Times, serif !default;
-$sans-serif: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
+/* system typefaces 
+
+serif: 'Playfair Display', 'Gayathri', 'Abhaya Libre'
+sans-serif: Lato
+
+
+https://fonts.google.com/specimen/Abhaya+Libre?sort=alpha
+https://fonts.google.com/specimen/Lato
+https://fonts.google.com/specimen/Merriweather?sort=alpha&sidebar.open=true&selection.family=Headland+One&query=merriweather
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+family=Alegreya:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&
+
+Gelasio
+Headland One
+Alegreya
+Arapey
+Bitter
+
+*/
+$serif: 'Playfair Display', 'Merriweather', 'Abhaya Libre', 'Alegreya', Georgia, Times, serif !default;
+$sans-serif: -apple-system, BlinkMacSystemFont, 'Gayathri', "Roboto", "Segoe UI",
   "Helvetica Neue", "Lucida Grande", Arial, sans-serif !default;
 $monospace: 'Overpass Mono', 'Cascadia Code', 'Liga Cousine', 'Overpass', Monaco, Consolas, "Lucida Console", 'Andale Mono', Consolas, monospace !default;
 
@@ -30,8 +56,8 @@ $calisto: "Calisto MT", serif !default;
 $garamond: Garamond, serif !default;
 
 $global-font-family: 'Gayathri', $sans-serif !default;
-$header-font-family: 'Merriweather', $sans-serif !default;
-$caption-font-family: $serif !default;
+$header-font-family: 'Playfair Display', $sans-serif !default;
+$caption-font-family: 'Merriweather', $serif !default;
 
 /* type scale */
 $type-size-1: 2.441em !default; // ~39.056px
