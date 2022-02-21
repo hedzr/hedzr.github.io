@@ -38,8 +38,18 @@ Alegreya
 Arapey
 Bitter
 
+font-family: 'Abhaya Libre', serif;
+font-family: 'Alegreya', serif;
+font-family: 'Cormorant Garamond', serif;
+font-family: 'Gayathri', sans-serif;
+font-family: 'Merriweather', serif;
+font-family: 'Old Standard TT', serif;
+font-family: 'Overpass', sans-serif;
+font-family: 'Playfair Display', serif;
+'Abhaya Libre', 'Alegreya', 
+
 */
-$serif: 'Playfair Display', 'Merriweather', 'Abhaya Libre', 'Alegreya', Georgia, Times, serif !default;
+$serif: 'Playfair Display', 'Merriweather', Georgia, Times, serif !default;
 $sans-serif: -apple-system, BlinkMacSystemFont, 'Gayathri', "Roboto", "Segoe UI",
   "Helvetica Neue", "Lucida Grande", Arial, sans-serif !default;
 $monospace: 'Overpass Mono', 'Cascadia Code', 'Liga Cousine', 'Overpass', Monaco, Consolas, "Lucida Console", 'Andale Mono', Consolas, monospace !default;
@@ -55,8 +65,8 @@ $bodoni: "Bodoni MT", serif !default;
 $calisto: "Calisto MT", serif !default;
 $garamond: Garamond, serif !default;
 
-$global-font-family: 'Gayathri', $sans-serif !default;
-$header-font-family: 'Playfair Display', $sans-serif !default;
+$global-font-family: Georgia, $sans-serif !default;
+$header-font-family: 'Merriweather', 'Playfair Display', $sans-serif !default;
 $caption-font-family: 'Merriweather', $serif !default;
 
 /* type scale */
