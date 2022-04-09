@@ -57,7 +57,9 @@ Golang 的调试功能是指主程序处于运行状态下的追踪，断点等�
 
 其代码如下面两个文件：
 
-```go file=logger.vf.funcs.go
+`file=logger.vf.funcs.go`
+
+```go
 //+build !verbose
 
 package log
@@ -73,9 +75,9 @@ func VDebugf(msg string, args ...interface{}) {
 }
 ```
 
-以及
+以及 `file=logger.vt.funcs.go`
 
-```go file=logger.vt.funcs.go
+```go
 //+build verbose
 
 package log
@@ -149,7 +151,9 @@ func VDebugf(msg string, args ...interface{}) {
 
 值得一提的是，我也同时在 [hedzr/log](https://github.com/hedzr/log) 中包含另一种相反的策略，即 veryquiet。其骨干代码如下：
 
-```go file=logger.funcs.go
+`file=logger.funcs.go`
+
+```go
 //go:build !veryquiet
 // +build !veryquiet
 
@@ -166,9 +170,9 @@ func Debugf(msg string, args ...interface{}) {
 }
 ```
 
-以及
+以及 `file=logger.funcs.quiet.go`
 
-```go file=logger.funcs.quiet.go
+```go
 //go:build veryquiet
 // +build veryquiet
 
