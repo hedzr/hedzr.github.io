@@ -13,7 +13,7 @@ header:
   overlay_image: /assets/images/unsplash-image-3.jpg
   overlay_filter: rgba(128, 128, 0, 0.3)
 excerpt: >-
-  bgo 现在不仅仅是个 main 包批量构建器了 ...
+  埋点日志，与库作者谈研发 ...
 ---
 
 
