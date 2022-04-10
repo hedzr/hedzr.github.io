@@ -39,7 +39,7 @@ func init() {
 
 对应的源码是这样的：
 
-```go file=a.go
+```go
 package v
 
 func init() {
