@@ -4,8 +4,8 @@ title: 'gochecknoinits - init() 是不是真的很要不得'
 date: 2022-04-10 05:00:00 +0800
 last_modified_at: 2022-04-10 13:55:00 +0800
 Author: hedzr
-tags: [golang, logging]
-categories: golang logging
+tags: [golang, lint]
+categories: golang lint
 comments: true
 toc: true
 header:
@@ -13,7 +13,7 @@ header:
   overlay_image: /assets/images/unsplash-image-3.jpg
   overlay_filter: rgba(128, 128, 0, 0.3)
 excerpt: >-
-  bgo 现在不仅仅是个 main 包批量构建器了 ...
+  关于 lint 时遇到的 ...
 ---
 
 
