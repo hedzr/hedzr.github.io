@@ -15,7 +15,13 @@ excerpt: >-
   Golang 反射之一，deepcopy相关的内容...
 ---
 
+**May 2H22**: 时隔一年半，终于还是造了一个 deepcopy 类：
 
+> [容易定制的 deepcopy 反射库 evendeep](https://hedzr.com/golang/reflect/deepcopy-with-go-reflect/)
+>
+> 和 [https://github.com/hedzr/evendeep]([hedzr/evendeep: Per-field copying deeply, and comparing deeply abilities: deepcopy, deepdiff and more... (github.com)](https://github.com/hedzr/evendeep))
+>
+> 算是对历年来对反射情有独钟的一种交待吧。
 
 近期在考虑 deepcopy 功能，所以有下面的一些收集与思考。
 
