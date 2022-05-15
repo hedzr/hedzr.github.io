@@ -15,13 +15,22 @@ excerpt: >-
   Golang 反射之二，Map 的相关操作...
 ---
 
-**May 2H22**: 时隔一年半，终于还是造了一个 deepcopy 类：
-
-> [容易定制的 deepcopy 反射库 evendeep](https://hedzr.com/golang/reflect/deepcopy-with-go-reflect/)
+> **May 2H22** 补记: 时隔一年半，终于还是造了一个 deepcopy 类：
 >
-> 和 [https://github.com/hedzr/evendeep]([hedzr/evendeep: Per-field copying deeply, and comparing deeply abilities: deepcopy, deepdiff and more... (github.com)](https://github.com/hedzr/evendeep))
+> 1. [容易定制的 deepcopy 反射库 evendeep](https://hedzr.com/golang/reflect/deepcopy-with-go-reflect/)
+>
+> 2. 和 [https://github.com/hedzr/evendeep]([hedzr/evendeep: Per-field copying deeply, and comparing deeply abilities: deepcopy, deepdiff and more... (github.com)](https://github.com/hedzr/evendeep))
 >
 > 算是对历年来对反射情有独钟的一种交待吧。
+
+
+
+> 本阶段讨论反射共两篇：
+>
+> 1. [Golang Reflect 系列一 - 和 deepcopy 有关的](https://hedzr.com/golang/reflect/golang-reflect-1/)
+> 2. [Golang Reflect 系列二 - 和 Map 操作有关的](https://hedzr.com/golang/reflect/golang-reflect-2/)
+>
+> 接续 [Golang Reflect 系列一 - 和 deepcopy 有关的](https://hedzr.com/golang/reflect/golang-reflect-1/) 谈反射问题。
 
 通过反射方式对 map 进行操作，实际上未必会有多么复杂，它包含了如下的一系列 reflect 中的方法以及一个迭代对象 MapIter：
 
