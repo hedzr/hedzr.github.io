@@ -18,7 +18,7 @@ excerpt: >-
 
 ## evendeep
 
-实际上，我想要实现一个 deepcopy 库很久了，很多年了，大约 15 年的时候就渴望手中有这个武器，但是那时候我自己对 reflect 都还没弄明白，写的时候就非常的磕磕绊绊，也就放下了。
+实际上，我想要实现一个 deepcopy 库很久了，很多年了，大约在 15 年的时候就渴望手中有这个武器，但是那时候我自己对 reflect 都还没弄明白，写的时候就非常的磕磕绊绊，也就放下了。
 
 后来有一些可堪使用的 deepcopy 库了，就更是放下了。
 
@@ -276,7 +276,7 @@ func TestWithIgnoreNames(t *testing.T) {
 }
 ```
 
-`evendeep.WithByOrdinalStrategyOpt` 是默认的，但是为了避免 opts 叠加带来的边际效应，这里显式宣告来保证遍历模式。
+`evendeep.WithByOrdinalStrategyOpt` 是默认的，但是为了避免 opts 叠加带来的边际效应，这里显式宣告来保证遍历模式。除此而外，你也可以采用 `WithByNameStrategyOpt` 的方式来遍历结构成员。
 
 `evendeep.WithSyncAdvancing(false)` 是默认的，这种方式下，当源的字段被判定忽略之后，相应的目标字段不会向后推进。在示例中，这等效于目标字段的指针保持在 "C"，所以下一个源字段 “D” 被处理为复制到目标的 "C"。
 
@@ -313,7 +313,7 @@ expectFalse(t, output)
 
 可以指定一个全局的 Source Field Extractor 选项，当核心逻辑在遍历字段时会尝试使用这个 extractor 来抽取源值。
 
-由于这一功能依赖于你有明确的字段名列表，所以当 extractor 被显式指明时，核心逻辑会采用以目标结构的字段名为导向的方式来做遍历。这样才能有适当的字段名称供给 extractor 用以抽取源值。
+由于这一功能依赖于你有明确的字段名列表，所以当 extractor 被显式指明时，核心逻辑会采用以目标结构的字段名为导向的方式来做遍历（等同于采用了 `WithByNameStrategyOpt` ）。这样才能有适当的字段名称供给 extractor 用以抽取源值。
 
 反之，正常情况下核心逻辑是以源结构的字段名列表（或者下标顺序）为导向，据此寻找正确的目标字段名并完成复制（或合并）的。
 
@@ -342,7 +342,7 @@ func TestStructWithSourceExtractor(t *testing.T) {
 }
 ```
 
-这种方式需要目标是一个 struct 或者 map，因为只有如此才能拿到目标字段名列表，甚至于对于空 map 的目标来说，次功能也无法有效工作。
+这种方式需要目标是一个 struct 或者 map，因为只有如此才能拿到目标字段名列表，甚至于对于空 map 的目标来说，此功能也无法有效工作。
 
 
 
