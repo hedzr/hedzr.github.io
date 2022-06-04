@@ -22,7 +22,7 @@ minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "
 locale                   : "zh-CN"
 title                    : "hzSomthing"
 title_separator          : "|"
-subtitle                 : "There's something." # site tagline that appears below site title in masthead
+subtitle                 : "There's something. Beautiful things do never ask for attention." # site tagline that appears below site title in masthead
 name                     : "hedzr"
 description              : "There's something, recording by hedzr."
 url                      : "https://hedzr.com" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
