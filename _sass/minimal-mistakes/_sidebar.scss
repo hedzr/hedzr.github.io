@@ -118,6 +118,14 @@
     width: $right-sidebar-width;
     margin-right: -1 * $right-sidebar-width;
   }
+
+  .toc__menu {
+    a {
+      &:hover {
+        color: darken($text-color, 15%);
+      }
+    }
+  }
 }
 
 .splash .sidebar__right {

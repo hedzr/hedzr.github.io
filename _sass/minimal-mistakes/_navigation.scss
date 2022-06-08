@@ -541,6 +541,7 @@
 
     &:hover {
       color: $text-color;
+      filter: brightness(85%);
     }
   }
 
