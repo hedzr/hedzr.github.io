@@ -42,7 +42,9 @@ policy-based programming 是一个超级大的话题。我没有准备好要开�
 
 和这种技法相对应的是 C++ 语言中的纯虚函数，或者 interface。
 
-> 是的，C++ 也有 interface，只不过它是扩展性的，MSVC 提供了这一支持，一般被用于 IDL/MIDL 开发场景。
+> 是的，C++ 也有 interface，只不过它是扩展性的，MSVC（至少从 VC6 开始） 提供了这一支持，一般被用于 IDL/MIDL 开发场景。
+>
+> 此外，作为非标准拓展，interface 关键字常常都是可用的（在 gcc，clang 中也可以，但不一定是你想要的那种方式：[C++ Interface (Using the GNU Compiler Collection (GCC))](https://gcc.gnu.org/onlinedocs/gcc/C_002b_002b-Interface.html)）。
 
 #### 纯虚函数方式
 
