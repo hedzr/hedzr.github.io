@@ -197,13 +197,17 @@ defer profile.Start(profile.MemProfile).Stop()
 defer profile.Start(profile.MutexProfile).Stop()
 ```
 
-但一次只能加入一种性能数据的调用。如果你想要同时添加多种，需要这样做调用：
-
-```go
-defer profile.Start(profile.MutexProfile, profile.MemProfile).Stop()
-```
-
-此方法可以继续延展，因为 Start(...) 采用了 Options Pattern。
+> **2022-07-28**:
+>
+> 经 @vimiix 提示，以下表述不正确，pkg/profile 是单调的，不能一次性叠加，需要多次调用。
+>
+> ~~但一次只能加入一种性能数据的调用。如果你想要同时添加多种，需要这样做调用：~~
+>
+> ```go
+> defer profile.Start(profile.MutexProfile, profile.MemProfile).Stop()
+> ```
+>
+> ~~此方法可以继续延展，因为 Start(...) 采用了 Options Pattern。~~
 
 不过，如果你想要更多定制特性时，或许不得不通过 `runtime/pprof` 自行编码以便支持个性化选项。
 
