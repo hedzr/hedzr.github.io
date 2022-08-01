@@ -136,7 +136,7 @@ OS 按照自己的设计目标来选择接管 BIOS 中断，或者完全抛弃 B
 
 - [Hashed and Hierarchical Timing Wheels: Data Structures for the Efficient Implementation of a Timer Facility - the morning paper](https://blog.acolyer.org/2015/11/23/hashed-and-hierarchical-timing-wheels/) 
 
-- [Apache Kafka, Purgatory, and Hierarchical Timing Wheels | Confluent](https://www.confluent.io/blog/apache-kafka-purgatory-hierarchical-timing-wheels/) 
+- [Apache Kafka, Purgatory, and Hierarchical Timing Wheels - Confluent](https://www.confluent.io/blog/apache-kafka-purgatory-hierarchical-timing-wheels/) 
 
 
 
