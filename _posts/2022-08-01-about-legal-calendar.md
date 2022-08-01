@@ -9,11 +9,11 @@ categories: c++ algorithm
 comments: true
 toc: true
 header:
-  teaser: https://cdn.jsdelivr.net/gh/hzimg/blog-pics@master/uPic/image-20220728173918324.png
+  teaser: https://cdn.jsdelivr.net/gh/hzimg/blog-pics@master/uPic/800px-World_Time_Zones_Map.png
   overlay_image: /assets/images/3953273590_704e3899d5_m.jpg
   overlay_filter: rgba(16, 16, 32, 0.73)
 excerpt: >-
-  介绍一个 Scheduler 类库的实现，不但支持 Timer/Ticker，也能提供行事历周期任务的支持...
+  历法知识整编 序...
 ---
 
 
@@ -46,7 +46,7 @@ excerpt: >-
 2. 历史源流
 3. 依赖于天文的时间标准
 4. 依赖于物理量的时间标准
-5. 授时
+5. 授时与授时服务
 6. 历法相关
 
 
