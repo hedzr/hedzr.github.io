@@ -36,18 +36,20 @@ excerpt: >-
 
 我自己觉得这个还不如跟随 c++20 calendar 计划走，自己做太冤屈了。至于说网上有很多什么千年的、黄历天干的各类代码，也有开源的，其中还有几个是很规范的，但大多都不能讲精确，有着各种各样的近似法，所以我暂时也不觉得 port 这些算法的意义有多大。
 
-好，今后几个帖子会把有关历法、时间的一些知识收集发布出来。
+好，未来几天内会依次把有关历法、时间的一些知识收集略微整理后发布出来。
 
-但是不会特别成体系，只能说是个笔记兼收集的杂烩吧。
+但是也并不会特别成体系，只能说是个笔记兼收集的杂烩吧。
 
+> 因为我并不打算深入学天文，所以也就比较草草了事了。
 
+1. [关于计时系统现状](https://hedzr.com/c++/algorithm/about-legal-calendar-p1/)
+2. [历史源流](https://hedzr.com/c++/algorithm/about-legal-calendar-p2/)
+3. [依赖于天文的时间标准](https://hedzr.com/c++/algorithm/about-legal-calendar-p3/)
+4. [依赖于物理量的时间标准](https://hedzr.com/c++/algorithm/about-legal-calendar-p4/)
+5. [授时与授时服务](https://hedzr.com/c++/algorithm/about-legal-calendar-p5/)
+6. [历法相关](https://hedzr.com/c++/algorithm/about-legal-calendar-p6/)
 
-1. 关于计时系统现状
-2. 历史源流
-3. 依赖于天文的时间标准
-4. 依赖于物理量的时间标准
-5. 授时与授时服务
-6. 历法相关
+> NOTE: 且等后面几日挨个整理完毕后发出来
 
 
 
