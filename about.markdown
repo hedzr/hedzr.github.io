@@ -19,7 +19,7 @@ He may solve the problems with a they-should approach, at the DevOps domain, tot
 
 And he obviously loves programming. I'm saying that, programming is a thing, or an action in which somebody's making a dream of somewhere. I'm not saying a farmer, nonetheless, why not.
 
-He lives in [^hedzr-at-github], and Chongqing, in China.
+He lives in GitHub[^hedzr-at-github], and Chongqing, in China.
 
 
 
