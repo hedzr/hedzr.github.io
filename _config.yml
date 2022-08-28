@@ -11,10 +11,10 @@
 # https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
 
 # For debugging locally, don't use remote_theme
-# theme                  : "minimal-mistakes-jekyll"
+theme                  : "minimal-mistakes-jekyll"
 
 # For Github publishing (always, suspress the warings)
-remote_theme             : "mmistakes/minimal-mistakes"
+# remote_theme             : "mmistakes/minimal-mistakes"
 
 minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
@@ -106,11 +106,11 @@ author:
   avatar           : https://avatars1.githubusercontent.com/u/12786150?s=400&v=4 # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "#modern-cxx #golang #rust #kotlin #dotnetcore #devops"
   location         : "Chongqing, CN"
-  # email            : hedzrz@gmail.com
+  # email            : hedzr@duck.com
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:hedzrz@gmail.com"
+      url: "mailto:hedzr@duck.com"
     - label: "Website"
       icon: "fas fa-fw fa-link"
       url: "https://hedzr.com"
