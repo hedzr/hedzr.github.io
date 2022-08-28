@@ -6,6 +6,16 @@
 *.sublime-project
 *.sublime-workspace
 
+# vscode
+*.code-workspace
+
+# drafts
+*-todo.md
+ref/
+todo/
+in-progress/
+_assets/
+
 # Ruby Gem
 *.gem
 .bundle
@@ -27,8 +37,3 @@ codekit-config.json
 .sass-cache
 _asset_bundler_cache
 _site
-
-ref/
-todo/
-in-progress/
-_assets/
