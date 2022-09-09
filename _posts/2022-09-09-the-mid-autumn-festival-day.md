@@ -13,7 +13,7 @@ header:
   overlay_image: /assets/images/unsplash-gallery-image-1-th.jpg
   overlay_filter: rgba(16, 16, 32, 0.73)
 excerpt: >-
-  女儿拿到了通知书...
+  中秋佳节，天马行空...
 ---
 
 
