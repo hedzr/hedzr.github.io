@@ -2,6 +2,7 @@
 layout: single
 title: "各种各样的镜像加速"
 date: 2020-05-10 08:20:00 +0800
+last_modified_at: 2022-09-13 16:10:00 +0800
 Author: hedzr
 tags: [mirrors, programming, devops]
 categories: programming tips
@@ -11,13 +12,6 @@ header:
   overlay_image: /assets/images/whats-devops.jpg
   overlay_filter: rgba(32, 32, 0, 0.5)
 excerpt: "为了引用各种公开的、开源的开发资源，或者为了能够做开发 [...]"
-#header:
-#  overlay_image: /assets/images/unsplash-image-1.jpg
-#  overlay_filter: rgba(0, 0, 0, 0.15)
-#  caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
-#  actions:
-#    - label: "More Info"
-#      url: "https://unsplash.com"
 ---
 
 
@@ -40,24 +34,168 @@ excerpt: "为了引用各种公开的、开源的开发资源，或者为了能�
 ###### 如何更好的浏览/阅读这篇文章：
 
 1. 可以寻找chrome插件 Github Markdown Outline Extension，但是我好像是拿来修订了之后才能使用的。
+
 2. 可以寻找chrome插件 HTML5 Outliner
+
 3. 在阅读平台上（仅有首版，不再更新，怪麻烦的）：
    1. <https://juejin.im/post/5da57638f265da5b932e7418>
    2. <https://segmentfault.com/a/1190000020693560>
+   
+4. 在GH Pages：
+
+   <https://hedzr.github.io/programming/tips/mirror-list-snapshot/>
+
+
 
 ## License
 
-本文源码像代码一样，MIT，随便用。
+本文中给出的源码像其它软件开发代码一样采用 MIT，随便用。
 
-本文的内容，基本上没版权，在公共域。
+本文的内容，基本上没版权，在公共域。部分内容摘抄自公共服务器，此时请直接查看相应的原始内容，我尽力给出链接指向。有的内容是摘编后的成品，则统一使用内容创作共用 CC4-BY-NC-SA。
 
-本文的排版和组织，我拿住版权了，哈哈，MIT，你还是可以用，随便。
-
-少部分的闹骚，如果有的话，没版权，我放弃，你看不见。
+本文的排版和组织，如果有所谓，MIT，你还是可以用，随便。
 
 
 
-## China Mirrors
+## Tools
+
+### `proxy_set`
+
+在 zsh/bash 环境中，你可能需要一个小型工具，其主体内容是这样的（有时候也许你需要少少的订正）：
+
+```bash
+# PROXY_LINK='http://127.0.0.1:7890'
+proxy_set() {
+  local onoff=${1:-usage}
+  if is_darwin; then
+    local pip=$(ipconfig getifaddr en0 || ipconfig getifaddr en1) 
+  else
+    local pip=$(hostname -I|awk '{print $1}')
+  fi
+  local link=${PROXY_LINK:-http://$pip:7890}
+  proxy_print_status() {
+    [ "$http_proxy" != "" ] && echo "http_proxy=$http_proxy"
+    [ "$HTTP_PROXY" != "" ] && echo "HTTP_PROXY=$HTTP_PROXY"
+    [ "$https_proxy" != "" ] && echo "https_proxy=$https_proxy"
+    [ "$HTTPS_PROXY" != "" ] && echo "HTTPS_PROXY=$HTTPS_PROXY"
+    [ "$all_proxy" != "" ] && echo "all_proxy=$all_proxy"
+    [ "$ALL_PROXY" != "" ] && echo "ALL_PROXY=$ALL_PROXY"
+  }
+  proxy_set_off() {
+    unset all_proxy ALL_PROXY http_proxy https_proxy HTTP_PROXY HTTPS_PROXY
+  }
+  proxy_set_on() {
+    export http_proxy=$link
+    export https_proxy=$http_proxy HTTPS_PROXY=$http_proxy HTTP_PROXY=$http_proxy all_proxy=$http_proxy ALL_PROXY=$http_proxy
+  }
+  proxy_set_invoke(){
+    # for better compatibilities under macOS we assumed a child shell for cleanup the envvars.
+    # but its can be simplify to these following:
+    # proxy_set_on && eval "$@" && proxy_set_off
+    bash -c "
+    set -e
+    proxy_set_off() {
+      unset all_proxy ALL_PROXY http_proxy https_proxy HTTP_PROXY HTTPS_PROXY
+    }
+    proxy_set_on() {
+      export http_proxy=$link
+      export https_proxy=\$http_proxy HTTPS_PROXY=\$http_proxy HTTP_PROXY=\$http_proxy all_proxy=\$http_proxy ALL_PROXY=\$http_proxy
+    }
+    trap 'proxy_set_off' EXIT ERR
+    proxy_set_on
+    $*
+    "
+  }
+  case $onoff in
+  on|ON|1|yes|ok|enable|enabled|open|allow)
+    proxy_set_on
+    echo 'HTTP Proxy on (http)'
+    ;;
+  off|OFF|0|no|bad|disable|disabled|close|disallow|deny)
+    proxy_set_off
+    echo 'HTTP Proxy off (http)'
+    ;;
+  status|st)
+    proxy_print_status
+    ;;
+  usage|help|info)
+    echo 'Usage: proxy_set on|off|enable|disable|allow|deny|status'
+    echo 'Or run proxy_set just like "tsock": proxy_set curl -iL https://google.com/'
+    echo 'Type "proxy_set help" for more information.'
+    proxy_print_status
+    ;;
+  *)
+    proxy_set_invoke "$@"
+    ;;
+  esac
+}
+```
+
+将它粘贴到你的 ~/.zshrc 或者 ~/.bashrc 的末尾就可以了。
+
+重新打开终端窗口即可生效。
+
+如果在终端环境中需要启动 HTTP 代理，则
+
+```bash
+proxy_set on
+```
+
+反之则
+
+```bash
+proxy_set off
+```
+
+这是有备无患的工具。终端中总是有着各种各样的情况，这个工具的作用像 tsock，只不过需要独立运行并启用。
+
+如果你想像使用 tsock 那样使用 proxy_set，现在可以这样：
+
+```bash
+proxy_set curl -iL https://google.com/
+```
+
+`proxy_set help` 可以查看 proxy_set 的使用方法。
+
+只想看看状态的话：
+
+```bash
+proxy_set
+```
+
+这将会显示出当前的 HTTP_PROXY 值。
+
+> 如果使用 Zsh+Powerlevel10K 等环境的话，你可以借助于 [定制额外的 Modifier（segment）小组件](https://github.com/romkatv/powerlevel10k#batteries-included) 来帮助解决状态问题。一个可能的定制环境是这样的：
+>
+> ![image-20220914105628812](_assets/README/image-20220914105628812.png)
+>
+> 在提示符的右侧显示了当前的代理状态以及 shell 嵌套层级。
+
+### `is_darwin`
+
+`is_darwin` 是来自于我的 [bash.sh](https://github.com/hedzr/bash.sh) 中的一个小型工具函数。其实现很简短：
+
+```bash
+is_darwin() { [[ $OSTYPE == darwin* ]]; }
+```
+
+所以你可以按需采用。
+
+对于希望集成更多类似小工具的朋友，请查看我们的 [bash.sh](https://github.com/hedzr/bash.sh) ，它提供了编写完整的 shell 脚本/ devops 工具脚本的最佳起点 `bash.sh`，以及：
+
+- 一个额外的、可以被直接引入到 `.zshrc/.bashrc` 的等价物 `bash.config`：
+
+  ```bash
+  [ -f $HOME/.bash.sh/bash.config ] && source $HOME/.bash.sh/bash.config
+  ```
+
+  上面的句子可以添加到你的 zshrc 中。
+
+- 一个轻型版本：`bash-lite.sh`。它带有更少的函数集合，算是 `bash.sh/bash.config` 的轻量级版本。
+
+
+
+## China Mainland Mirrors
 
 
 
@@ -69,7 +207,7 @@ excerpt: "为了引用各种公开的、开源的开发资源，或者为了能�
 
 对于大型仓库，改走SSH协议进行clone的话，走到正常速度的几率较大，但此时的速度相较于HTTPS而言通常会有所损耗。
 
-#### 修改 hosts 文件
+#### 修改 hosts 文件 (基本失效)
 
 但下面还有一种较为费事的方法，通过修改 hosts 文件来完成提速，无需科学也无需代理加速也无需镜像加速（GitHub是不太可能有镜像的）。具体来说请接下去阅读：
 
@@ -147,6 +285,78 @@ host github.com
 对的。一台国外的VPS，美国、日本、香港都是被推荐的地点，在那里下载或者拖到目标内容，无论是 GitHub 还是 golang 的内容，然后 rsync 到本地，看似很复杂，然而往往可以在10min 之内搞定一切事情，胜似在本机上折腾 proxy 8h。
 
 > Nothing serious, only explodes without reason.
+
+
+
+
+
+### 使用 GitHub 镜像网站
+
+近两年来，即使没有间歇性抽风，全世界也仍然制造了一些 GitHub 的全量镜像网站，它们是有各种各样原因的，一个主要的因素在于 GH 自己泛政治化倾向过于糟糕了，另一方面当然是由于并非只有兔子国才有长城。
+
+所以，如果你并不是在操心怎么 push，仅仅只是为了 pull/fetch/clone 的话，可以使用这些镜像网站来做加速。这个能力对于那些做 DevOps 安装配置工作的人来说是一种福音。
+
+当下，这些镜像网站是值得参考的：
+
+#### gitclone.com
+
+它特别在于不仅仅只针对 github，为了启用它，执行一条命令：
+
+```bash
+git config --global url."https://gitclone.com/".insteadOf https://
+```
+
+或者做精确的限制：
+
+```bash
+git config --global url."https://gitclone.com/github.com/".insteadOf https://github.com/
+```
+
+然后就可以透明地使用它了，你的 clone 命令无需做任何修改：
+
+```bash
+git clone https://github.com/hedzr/cmdr.git
+```
+
+详情请参阅 [官网](https://gitclone.com/docs/feature/gitclone_web)。
+
+#### fastgit.org
+
+fastgit 是针对 GitHub 做全量副本的，启用方式为：
+
+```bash
+git config --global url."https://hub.fastgit.xyz/".insteadOf https://github.com/
+```
+
+参阅：[Home Page | FastGit UK Document](https://doc.fastgit.org/en-gb/)
+
+#### More
+
+此外还有如：https://github.com.cnpmjs.org/
+
+
+
+### 此外，GitHub 可以直达
+
+在很多时候你可能没有注意到 GitHub 的网页，以及 git clone 都是可以直达的。
+
+也就是说，咱们这边也并没有刻意关闭大家的编程、分享路径。
+
+> 当然，githubusercontents 等等资源站域名还是需要代理才能访问的。
+
+但是确确实实地 GH 上有很多政治化倾向很严重的 repos。不仅如此，GH 自己也封锁了太多敌对国程序员的帐户。
+
+我是一个纯粹的技术人，对于技术的政治化是不赞同的。然而即使不去看那些 fan-zhong 的 repos，也不能忽视一个非常严重的问题：GitHub 也会在未来某一天封掉我的帐户，只因为我是中国人，或者采用中国的 IP 访问这里。作为对于中美关系悲观的一个想做纯粹技术人而不可得的我，无可奈何地看到这个未来的事实，感觉是很奇特的。
+
+尽管我也在寻求其它的技术贡献的去政治化的途径，但天下哪有什么净土！Gitlab，BitBucket，Google，它们在政治化封锁上又能比 GitHub 和 Microsoft 好到哪里去呢？
+
+我应该学俄语吗，去那边找找开源托管平台？想到恩格斯5、60岁用了几个月时间就学会了一门外语，我想我也不应该服老，对不对？
+
+> 这些感触，其实从疫情开始、中美恶化时就已经有了，不过一直未有宣诸于口。
+>
+> 但是还是应该记录下来，正好此刻更新一下 proxy_set 脚本的实现，就顺便存档吧。
+
+
 
 
 
@@ -233,6 +443,84 @@ sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/reposi
 更新软件包缓存： `sudo pacman -Syy`
 
 
+
+
+
+### curl
+
+可以给 curl 挂上 socks5 的代理。
+
+在~/.curlrc文件中输入代理地址即可。
+
+```bash
+socks5 = "127.0.0.1:1080"
+```
+
+也可以一次性：
+
+```bash
+curl -x socks5://127.0.0.1:1080 https://www.google.com
+```
+
+如果临时不需要代理使用以下参数：
+
+```bash
+curl --noproxy "*" https://www.google.com
+```
+
+#### EnvVar
+
+环境变量 ALL_PROXY, HTTP_PROXY, HTTPS_PROXY 也对 curl 有效
+
+##### Special
+
+你甚至可以通过 http_proxy 直接使用 socks5 代理：
+
+```bash
+export http_proxy=socks5://127.0.0.1:1080
+export https_proxy=$http_proxy
+```
+
+经验证明，这种方式（通过 http_proxy 来使用 socks5 代理）通常是不好使的，你应该寻求一个转换工具将 socks5 转换到 http 代理，才能在命令行中最好地借用代理的能力。
+
+
+
+> 环境变量如果区分大小写（如Linux/mac)，则上述语句应该为大写形式重复一次，以免遗漏。
+
+
+
+#### 快速别名
+
+```bash
+alias setproxy="export http_proxy=socks5://127.0.0.1:1080; export https_proxy=$http_proxy; echo 'HTTP Proxy on';"
+alias unsetproxy="unset http_proxy; unset https_proxy; echo 'HTTP Proxy off';"
+```
+
+#### 更好的
+
+同时适用于 zsh 和 bash 的脚本片段如下，将其粘贴到 .bashrc/.zshrc 中重新开启终端会话即可享受：
+
+```bash
+proxy_set(){
+  local onoff=${1:-usage}
+  case $onoff in
+  on|ON|1|yes|ok|enable|enabled|open|allow)
+    export http_proxy=http://127.0.0.1:8001
+    export https_proxy=$http_proxy https_proxy=$http_proxy HTTPS_PROXY=$http_proxy
+    echo 'HTTP Proxy on (http)'
+    ;;
+  off|OFF|0|no|bad|disable|disabled|close|disallow|deny)
+    unset all_proxy http_proxy https_proxy HTTP_PROXY HTTPS_PROXY
+    echo 'HTTP Proxy off (http)'
+    ;;
+  usage)
+    echo 'Usage: proxy_set on|off|enable|disable|allow|deny'
+    ;;
+  esac
+}
+```
+
+使用时，直接 `proxy_set on` 或者 `proxy_set off` 即可。
 
 
 
@@ -351,21 +639,33 @@ allprojects {
 $ gem sources --remove https://rubygems.org
 ```
 
-
-
 ##### 添加国内最新镜像
 
 ```bash
 $ gem sources -a https://gems.ruby-china.com
 ```
 
-
-
 ##### 查看当前镜像
 
 ```bash
 $ gem sources -l
 ```
+
+编辑 `~/.gemrc` 也可以
+
+
+
+#### bundler
+
+对于 Ruby 开发，bundler可能需要如下的操作：
+
+```bash
+bundle config mirror.https://rubygems.org https://mirrors.tuna.tsinghua.edu.cn/rubygems
+```
+
+> 参考清华镜像：https://mirrors.tuna.tsinghua.edu.cn/help/rubygems/
+>
+> 或者：http://bundler.io/v1.16/man/bundle-config.1.html#MIRRORS-OF-GEM-SOURCES
 
 
 
@@ -582,11 +882,21 @@ $ echo 'export PUB_HOSTED_URL="https://mirrors.tuna.tsinghua.edu.cn/dart-pub/"' 
 
 可以更换镜像：
 
-- 阿里：`yarn config set registry https://registry.npm.taobao.org`
+- 阿里：`yarn config set registry https://registry.npmmirror.com`
 - 华为：`yarn config set registry https://mirrors.huaweicloud.com/repository/npm/`
 - Node-Sass：`npm config set sass_binary_site https://mirrors.huaweicloud.com/node-sass/`
 
 
+
+```bash
+npm config delete registry
+
+yarn --registry=https://registry.company.com/
+
+yarn config get registry
+yarn config delete registry
+yarn config set registry 
+```
 
 
 
@@ -740,7 +1050,46 @@ export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
 
 
 
+#### Fixup
 
+对于上面的镜像站的提示来说，有一定的问题，你有可能遇到这样的问题：
+
+```
+warning: Signature verification failed for 'https://mirrors.tuna.tsinghua.edu.cn/rustup/dist/channel-rust-stable.toml'
+```
+
+这是由于它们提供的方法有微小的问题：你不应该使用 `RUSTUP_DIST_SERVER` 环境变量，而是应该使用 `RUSTUP_UPDATE_ROOT` 变量名。所以正确的环境变量设置应该以下面的示例为准：
+
+```bash
+export CARGO_HOME=$HOME/.cargo
+export RUSTUP_HOME=$HOME/.rustup
+#export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
+#export RUSTUP_UPDATE_ROOT=$RUSTUP_DIST_SERVER/rustup
+export RUSTUP_UPDATE_ROOT=https://mirrors.tuna.tsinghua.edu.cn/rustup/rustup
+```
+
+此外，旧的升级方法也有所废弃，现在你要升级 rustc 和 cargo 版本的话，需要如下的命令：
+
+```bash
+rustup update stable
+```
+
+其它的旧指令都可以忘记。
+
+另外，一个“正确”的 `$HOME/.cargo/config` 文件应该如此：
+
+```toml
+[source]
+
+[source.crates-io]
+# registry = "https://github.com/rust-lang/crates.io-index"
+replace-with = 'ustc'
+
+[source.ustc]
+registry = "git://mirrors.ustc.edu.cn/crates.io-index"
+```
+
+不要给出多余的 registry 变量，它可能会是 `Update cargo.io indexes` 挂起的原因。
 
 
 
@@ -827,6 +1176,28 @@ sudo sed -i 's%us.archive.ubuntu.com/ubuntu/%mirrors.ubuntu.com/mirrors.txt%' /e
 
 
 
+### Ubuntu PPA Source
+
+PPA 一般我都是硬来。但是久而久之也就不能忍了，所以它也可以替换国内源的，就干吧。
+
+#### `launchpad.proxy.ustclug.org` 废了
+
+本来 `launchpad.proxy.ustclug.org` 是很不错的镜像，但是已经废了：
+
+```bash
+sudo add-apt-repository ppa:longsleep/golang-backports
+find /etc/apt/sources.list.d/ -type f -iname '*.list' -exec sudo sed -ibak -r 's/ppa.launchpad.net/launchpad.proxy.ustclug.org/' {} \;
+
+sudo apt update
+sudo apt install golang-1.18 golang-go
+```
+
+
+
+
+
+
+
 ### Vagrant
 
 没有简单的办法。一些周知的镜像，可以通过这些地方加速：
@@ -855,12 +1226,9 @@ sudo sed -i 's%us.archive.ubuntu.com/ubuntu/%mirrors.ubuntu.com/mirrors.txt%' /e
 
 ## Conclusion
 
-License: CC4-BY-NC-SA
+LICENSE: CC4-BY-NC-SA
 
 
 
+https://github.com/hedzr/mirror-list
 
-
-
-
-## 🔚
