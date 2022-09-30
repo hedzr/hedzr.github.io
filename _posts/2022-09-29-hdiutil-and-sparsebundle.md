@@ -37,9 +37,9 @@ excerpt: >-
 
 ### 什么是 sparsebundle？
 
-sparsebundle 是一种磁盘镜像文件，它可以由 Disk Utilty 这一 app 来创建。sparsebundle 是一种稀疏磁盘镜像文件。稀疏的含义是预先声明一个 size，但并不实际分配磁盘空间，实际使用的磁盘空间为事实上消耗的内容。
+sparsebundle 是一种磁盘镜像文件，它可以由 Disk Utilty 这一 app 来创建。sparsebundle 是一种稀疏磁盘镜像文件。稀疏的含义是预先声明一个 size，但并不实际分配宿主磁盘空间，实际使用的宿主磁盘空间为事实上消耗（存入）的内容。
 
-也就是说，我们创建一个 sparsebundle 磁盘镜像文件 `aa.sparsebundle`，它本声明为 10GB 大小，然后我们将其 mount 到宿主系统中的 /Volumes/aa 这个位置，并向内拷贝 1GB 的文件和文件夹，接下来我们 umount 这个装载点。回头再看 `aa.sparsebundle` 的文件大小，它应该是大约 1GB 多一点。
+也就是说，我们创建一个 sparsebundle 磁盘镜像文件 `aa.sparsebundle`，它自身被声明为 10GB 大小，然后我们将其 mount 到宿主系统中的 `/Volumes/aa` 这个位置，并向内拷贝 1GB 的文件和文件夹，接下来我们 umount 这个装载点。回头再看 `aa.sparsebundle` 的文件大小，它应该是大约 1GB 多一点。
 
 所以 sparsebundle 和 .dmg 的区别就在于你放入多少，它就占用多少。而 .dmg 则不管那么多，声明了 10GB 大小的 .dmg 它就会事实上占用 10GB 的宿主文件系统空间，至于你放入多少内容就没有影响。
 
@@ -98,7 +98,7 @@ hdiutil create test.sparseimage -size 200G
 ...
 ```
 
-创建一个 200GB 的 .sparseimage
+创建一个 200GB 的 .sparsebundle
 
 ```bash
 hdiutil create test.sparsebundle -size 200G
@@ -107,9 +107,7 @@ drwxr-xr-x@ 6 hz  admin   192B Sep 29 11:38 test.sparsebundle/
 ...
 ```
 
-
-
-一旦创建了一个磁盘镜像文件，然后我们就可以装载它、然后如同宿主 FS 那样使用它，事后再卸载它，整体地复制这个镜像到另一个位置。
+一旦创建了一个磁盘镜像文件，然后我们就可以装载它、然后如同宿主 FS 那样使用它，事后再卸载它。此后，你也可以整体地复制这个镜像文件（夹）到另一个位置。
 
 
 
@@ -128,6 +126,8 @@ Resize 一个镜像文件：
 ```
 
 第一条命令显示当前的上下限。
+
+你将要做的 resize 操作所给定的新尺寸应该在限度之内。
 
 第二条命令重新调整内部 FS 的大小到大约 500GB。但这可能不是恰当的，如果内部 FS 并非 macOS 所支持的 FS 的话。我们不建议你在 sparsebundle 或者其他磁盘镜像上进行 resize，取而代之的更好的办法是在初始创建时就声明一个足够的大小，例如，1TB？既然它是动态尺寸的，为什么不事先准备好足够大呢？
 
@@ -154,7 +154,7 @@ rm test.sparseimage
 
 可以有两种方法在你的系统中启用大小写敏感分区。
 
-首先我们需要知道的是，当你需要 checkout 某些源代码例如 linux kernel 时，你首先需要一个大小写敏感分区，因为源码中某些文件是同名的、除了大小写的区别之外。这些文件被存储到你的正常分区时（macOS 默认使用大小写不敏感分区），将会导致存储失败、或者是旧文件内容被替代。
+在此之前，首先我们需要知道的是，当你需要 checkout 某些源代码例如 linux kernel 时，你将需要的是一个大小写敏感分区，因为源码中某些文件是同名的、除了大小写的区别之外。这些文件被存储到你的正常分区时（macOS 默认使用大小写不敏感分区），将会导致存储失败、或者是旧文件内容被替代。
 
 其次一点，一定不要将你的主分区修改为大小写敏感分区。你的宿主环境必须是大小写不敏感分区。这一限制并不是因为 macOS 核心系统不能良好支持敏感分区，而是因为太多常用软件在敏感分区上无法正常工作（包括大多数 Adobe 大型设计软件）。此外，很多小型实用工具软件也不能在敏感分区上良好工作。
 
@@ -182,10 +182,10 @@ macOS 允许你在主分区上动态地切割出一个新的分区，无需像 W
 
 > 对于新的 macOS 操作系统来说，现在不在有 Mac OS Extended 分区类型了，取而代之的是 APFS：
 >
-> - *APFS:* Uses the APFS format. Choose this option if you don’t need an encrypted or case-sensitive format.
-> - *APFS (Encrypted):* Uses the APFS format and encrypts the volume.
-> - *APFS (Case-sensitive):* Uses the APFS format and is case-sensitive to file and folder names. For example, folders named “Homework” and “HOMEWORK” are two different folders.
-> - *APFS (Case-sensitive, Encrypted):* Uses the APFS format, is case-sensitive to file and folder names, and encrypts the volume. For example, folders named “Homework” and “HOMEWORK” are two different folders.
+> - ***APFS**:* Uses the APFS format. Choose this option if you don’t need an encrypted or case-sensitive format.
+> - ***APFS** (Encrypted):* Uses the APFS format and encrypts the volume.
+> - ***APFS** (Case-sensitive):* Uses the APFS format and is case-sensitive to file and folder names. For example, folders named “Homework” and “HOMEWORK” are two different folders.
+> - ***APFS** (Case-sensitive, Encrypted):* Uses the APFS format, is case-sensitive to file and folder names, and encrypts the volume. For example, folders named “Homework” and “HOMEWORK” are two different folders.
 >
 >  [File system formats available in Disk Utility on Mac - Apple Tugi (EE)](https://support.apple.com/et-ee/guide/disk-utility/dsku19ed921c/mac) 
 
@@ -199,6 +199,8 @@ macOS 允许你在主分区上动态地切割出一个新的分区，无需像 W
 
 这种方法最被推荐。
 
+新分区的尺寸是动态的，它和原来的主分区共享整块磁盘的可用空间。你所预先声明的分区大小是被作为新分区的理论上限，由于文件系统本身在分配文件夹、文件名簿记系统算法各有各的不同，因而不太可能向你随时提供确切的剩余可用空间。
+
 但它有一个问题，你能指定的新分区的大小不能大于物理 SSD 的大小。事实上，由于macOS 系统文件以及用户已使用的空间的原因，新分区大小还要小的多。
 
 
@@ -211,13 +213,13 @@ macOS 允许你在主分区上动态地切割出一个新的分区，无需像 W
 
 它的优势在于你可以宣告一个足够大的尺寸，甚至超出物理 SSD 的尺寸，例如 500GB。
 
-创建
+##### 创建
 
 ```bash
 hdiutil create -size 500G -type SPARSEBUNDLE -fs 'Case-sensitive Journaled HFS+' -autostretch -volname Projects Projects.sparsebundle
 ```
 
-装载
+##### 装载
 
 ```bash
 hdiutil attach Projects.sparsebundle
@@ -225,15 +227,19 @@ hdiutil attach Projects.sparsebundle
 [ -L ./Projects ] || ln -s /Volumes/Projects ./Projects
 ```
 
-卸载
+##### 卸载
 
 ```bash
 hdiutil detach /Volumes/Projects
 ```
 
-它的问题在于，这个稀疏磁盘镜像文件并不会在下一次启动后被自动装载，而是需要你双击 `.sparsebundle` 文件来手动装载它。当然也可以使用上面的装载命令。
+##### 小结
 
-一个可能的办法是使用 launchctl 来新增一条登录后运行命令，将 hdiutil attach 命令写入。或者使用 .zshrc 等机制。
+使用 sparsebundle 文件的好处很多，自由是最大优点。
+
+它的问题在于，这个稀疏磁盘镜像文件并不会在下一次启动后被自动装载，而是需要你双击 `.sparsebundle` 文件来手动装载它。当然也可以使用上面的装载命令从命令行来完成。
+
+一个可能的办法是使用 launchctl 来新增一条登录后运行命令（作为 launch agent 来运行），将 hdiutil attach 命令写入。或者使用 .zshrc 等机制。
 
 它并不是我的问题，我更喜欢是在要从事 osdev 开发的时候打开 vscode workspace，然后键入 attach 命令行来显式地装载工作区，并开展工作。所以我不在文中提供进一步操作的具体步骤，请自行搜索。
 
@@ -249,7 +255,7 @@ hdiutil 能够操作 .dmg，.sparseXXX，也能操作 .iso 文件。
 
 ### 一些用法实例
 
-##### 装载一个 .iso 文件
+#### 装载一个 .iso 文件
 
 ```bash
 > hdiutil attach mydisk.iso
@@ -257,32 +263,40 @@ hdiutil 能够操作 .dmg，.sparseXXX，也能操作 .iso 文件。
 MyDisk
 ```
 
-##### 你可以建立加密的文件系统：
+#### 加密的文件系统
+
+你可以建立加密的文件系统：
 
 ```bash
 > hdiutil create -encryption -size 500m -volname encdata test.dmg -fs HFS+J
 ```
 
-##### 如果你有刻录机，那么可以将磁盘镜像烧录到光盘上。首先插入可写光盘，然后：
+此后将会提示你输入密码和重复确认之。
+
+要注意该密码丢失之后是没有找回的途径的，那将意味着你的某些内容永久性的丢失。这一点和 Disk Utility 所创建的加密分区略微有点不同，因为后者的密码是采用 macOS 帐户密码联动的。
+
+#### 烧录到 CD-R
+
+如果你有刻录机，那么可以将磁盘镜像烧录到光盘上。首先插入可写光盘，然后：
 
 ```bash
 hdiutil burn test.dmg
 hdiutil burn mudisk.iso
 ```
 
-##### 查看镜像文件的信息：
+#### 查看镜像文件的信息
 
 ```bash
 hdiutil imageinfo test.dmg
 ```
 
-##### 当前已装载文件系统信息：
+#### 当前已装载文件系统信息
 
 ```bash
 hdiutil info
 ```
 
-##### 转换到不同的格式：
+#### 转换到不同的格式
 
 ```bash
 hdiutil convert test.dmg -format UDSB -tgtimagekey sparse-band-size=2048 -o "test-100Mb.sparsebundle"
@@ -290,7 +304,9 @@ hdiutil convert test.dmg -format UDSB -tgtimagekey sparse-band-size=2048 -o "tes
 
 
 
-##### 更多信息参考 hdiutil 的帮助手册：
+#### 更多信息
+
+参考 hdiutil 的帮助手册：
 
 ```bash
 man hdiutil
@@ -381,13 +397,13 @@ Examples:
 
 正常情况下，你需要的是 create, attach, detach 命令。
 
-##### 创建大小写敏感文件系统
+#### 创建大小写敏感文件系统
 
 ``` bash
 $ mac-sparse-disk.bash create good-test 1g
 ```
 
-##### 装载
+#### 装载
 
 ```bash
 $ mac-sparse-disk.bash attach good-test
@@ -395,7 +411,7 @@ $ mac-sparse-disk.bash attach good-test
 
 装载镜像文件之后，/Volumes 下会有一个装载点，同时当前文件夹下会有一个链接文件夹指向该装载点，你可以在当前文件夹下直接开始工作。
 
-##### 卸载
+#### 卸载
 
 ```bash
 $ mac-sparse-disk.bash detach good-test
