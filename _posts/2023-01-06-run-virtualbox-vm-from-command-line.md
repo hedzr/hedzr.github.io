@@ -1,8 +1,8 @@
 ---
 layout: single
-title: Ubuntu Server 安装提要
+title: vagrant_run - 更方便地从命令行启动 vagrant 虚拟机
 date: 2023-01-06 19:07:00 +0800
-last_modified_at: 2023-01-07 12:38:00 +0800
+last_modified_at: 2023-01-06 20:55:00 +0800
 Author: hedzr
 tags: [linux, ubuntu, bash, vm, devops]
 categories: devops linux
