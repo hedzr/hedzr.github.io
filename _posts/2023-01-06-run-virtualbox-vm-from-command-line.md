@@ -28,7 +28,7 @@ excerpt: "工具脚本 ..."
 
 > **Hash 文件夹**
 >
-> 即 `Filename Expansion` 之我所谓。这个概念以前我有文章介绍过：
+> 即 `Named Folder` 之我所谓。这个概念以前我有文章介绍过：
 >
 >  [Tilde 展开以及命名目录](https://hedzr.com/devops/shell/tlide-expansion-and-named-directories/) 
 
