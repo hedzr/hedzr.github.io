@@ -119,10 +119,10 @@ The Docker Desktop vmdisk:
 理所当然地，`vm` 必须能够启停虚拟机：
 
 ```bash
-❯ vm run ops-sh.local halt    # = stop,
-❯ vm run ops-sh.local up      # = start
-❯ vm run ops-sh.local         # = up
-❯ vm run ops-sh.local destroy # vagrant VM only
+❯ vm run ops-sh halt    # = stop,
+❯ vm run ops-sh up      # = start
+❯ vm run ops-sh         # = up
+❯ vm run ops-sh destroy # vagrant VM only
 ```
 
 为什么不进一步缩短它，改为 `vm u20s.local up` 呢？主要还是因为懒做优化了。
@@ -148,11 +148,11 @@ The Docker Desktop vmdisk:
 
 在我的电脑中，通过 `.zshrc` 我首先引入了 `bash.config` ，所以这些工具函数是就地可用的。但当你想要独立使用 vm.sh 的时候，就需要摘抄它们了。它们很容易被截取，所以这不会是个问题。
 
-其次，通过一点点定制脚本，我在载入 `bash.config` 之后同时也预加载了少许的脚本以及提供了一个懒加载机制，于是像这里提到的 vm.sh 将会被自动载入，所以 `vm`  这个主命令是随时待命的，然后 vmware_run.sh 和 vagrant_run.sh 则视乎世纪情况被自动 sourced in 并被调用。
+其次，通过一点点定制脚本，我在载入 `bash.config` 之后同时也预加载了少许的脚本以及提供了一个懒加载机制，于是像这里提到的 vm.sh 将会被自动载入，所以 `vm`  这个主命令是随时待命的，然后 vmware_run.sh 和 vagrant_run.sh 则视乎实际情况被自动 sourced in，其中的函数则会被自动调用。
 
 #### `bash.sh` 提供的多级命令开发框架
 
-通过 commander 这个工具函数，你可以轻易地建立多级命令结构。例如开发一个 dns 领导的命令结构体系：
+通过 `commander` 这个工具函数，你可以轻易地建立多级命令结构。例如开发一个 dns 领导的命令结构体系：
 
 
 ```bash
@@ -223,7 +223,7 @@ dns() {
 }
 ```
 
-注意 dns 将参数转发给 dns_entry，而 `dns_entry` 通过 commander 来解释这些参数。fn_name 会取得当前函数名，strip_r 则从字符串右侧移除给定的后缀。所以 `dns_entry` 就等于调用了 `commander "dns" "$@"`，第一个参数 `"dns"` 给出的是所处的命令层级，当你发出 dns ls 这个命令行时，commander 最终会据此尝试将请求转发给 dns_ls 这个函数。
+注意 `dns` 将参数转发给 dns_entry，而 `dns_entry` 通过 `commander` 来解释这些参数。`fn_name` 会取得当前函数名，`strip_r` 则从字符串右侧移除给定的后缀。所以 `dns_entry` 就等于调用了 `commander "dns" "$@"`，第一个参数 `"dns"` 给出的是所处的命令层级，当你发出 `dns ls` 这个命令行时，`commander` 最终会据此尝试将请求转发给 dns_ls 这个函数。
 
 所以上面的脚本实际上代表了如下的用法：
 
@@ -248,6 +248,8 @@ ls 和 list 指令查证 vmware 虚拟机的运行情况，以及 vagrant 管理
 1. vmware 虚拟机被建立在 `~/Downloads/VMs/vmware` 之中
 2. virtualbox 虚拟机被建立在 `~/Downloads/VMs/virtualbox` 之中
 3. vagrant 虚拟机采用 virtualbox 引擎，且在 `~/.vagrant.hosts` 中登记为一个入口
+
+> 这些约定能够在脚本源码中被调整，甚至也能够通过环境变量来实时改变。
 
 所以 list 指令本身的实现如同这样：
 
@@ -294,7 +296,7 @@ ls 和 list 指令查证 vmware 虚拟机的运行情况，以及 vagrant 管理
 
 
 
-#### size 指令
+#### size(s) 指令
 
 我使用 sizes 指令来列举全部虚拟机，甚至也包括别的虚拟机（例如 Android Emulator 的 AVDs，Docker Desktop 的虚拟机磁盘等等）。
 
@@ -317,6 +319,8 @@ size 和 sizes 被实现为同义词，它们的核心技术都是 `du -sh xxx |
 ```
 
 我们前面提到了 `vagrant_run.sh` 以及 `vmware_run.sh` 在我的 zsh 环境中是懒加载的，所以这里的实现代码本身非常简单，直接调用目标函数入口即可，别的杂务将有 lazyloader 负责处理。
+
+> 此外，我们也提到为了躲懒采用了这两个转发命令入口，实际上还可以进一步优化以便缩短二级命令的使用。
 
 
 
