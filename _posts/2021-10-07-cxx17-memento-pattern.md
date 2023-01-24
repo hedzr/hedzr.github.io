@@ -226,7 +226,7 @@ Undo Manager 实现中，可以有一些典型的实现方案：
 
 #### 主要设计
 
-下面开始真正介绍 [undo-cxx](https;//github.com/hedzr/undo-cxx) 开源库的实现思路。
+下面开始真正介绍 [undo-cxx](https://github.com/hedzr/undo-cxx) 开源库的实现思路。
 
 
 

@@ -19,7 +19,7 @@ excerpt: >-
 >
 > 1. [容易定制的 deepcopy 反射库 evendeep](https://hedzr.com/golang/reflect/deepcopy-with-go-reflect/)
 >
-> 2. 和 [https://github.com/hedzr/evendeep]([hedzr/evendeep: Per-field copying deeply, and comparing deeply abilities: deepcopy, deepdiff and more... (github.com)](https://github.com/hedzr/evendeep))
+> 2. 和 [https://github.com/hedzr/evendeep](https://github.com/hedzr/evendeep)
 >
 > 算是对历年来对反射情有独钟的一种交待吧。
 

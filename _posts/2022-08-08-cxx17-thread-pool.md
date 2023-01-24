@@ -329,7 +329,7 @@ mutable threaded_message_queue<std::packaged_task<void()>> _tasks{}; // the futu
 
 ## 结束
 
-完整的源码在 GitHub 中可以找到。我们已经提到过，这些代码都会在 [hicc-cxx](https:://github.com/hedzr/hicc) 中发酵，稳定之后即迁移到 [cmdr-cxx](https://github.com/hedzr/cmdr-cxx) 中。
+完整的源码在 GitHub 中可以找到。我们已经提到过，这些代码都会在 [hicc-cxx](https://github.com/hedzr/hicc) 中发酵，稳定之后即迁移到 [cmdr-cxx](https://github.com/hedzr/cmdr-cxx) 中。
 
 所以尽管文章一直没有发，但是代码是早已发布了。
 

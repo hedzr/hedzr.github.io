@@ -212,7 +212,8 @@ JulianCentry = JDFromJ2000 / 365.25 / 100
 - [曆法](https://zh.wikipedia.org/wiki/曆法)
 - [陽曆](https://zh.wikipedia.org/wiki/陽曆) **·** [陰曆](https://zh.wikipedia.org/wiki/陰曆) **·** [陰陽曆](https://zh.wikipedia.org/wiki/陰陽曆)
 - [農曆](https://zh.wikipedia.org/wiki/農曆) **·** [西曆](https://zh.wikipedia.org/wiki/西曆)（[格里曆](https://zh.wikipedia.org/wiki/格里曆)為主） **·** [希伯來曆](https://zh.wikipedia.org/wiki/希伯來曆) **·** [伊斯蘭曆](https://zh.wikipedia.org/wiki/伊斯蘭曆) **·** [天文計年](https://zh.wikipedia.org/wiki/天文計年) **·** [ISO 8601](https://zh.wikipedia.org/wiki/ISO_8601) **·** [UNIX時間](https://zh.wikipedia.org/wiki/UNIX時間)
-- [天文学基础（时间和历法）- sirlis](http://sirlis.cn/astronomy-basic-time-calender/)
+- 
+- [天文学基础（时间和历法）- sirlis](http://sirlis.cn/posts/astronomy-basic-time-calender/)
 - 
 - [中国传统历法](https://zh.wikipedia.org/wiki/中國傳統曆法)
 - [历法](https://zh.wikipedia.org/wiki/曆法)、[历法列表](https://zh.wikipedia.org/wiki/历法列表)
@@ -232,7 +233,7 @@ JulianCentry = JDFromJ2000 / 365.25 / 100
 - [香港天文台1901至2100年西历与农历日期对照表](https://web.archive.org/web/20111017124826/http://www.weather.gov.hk/gts/time/conversionc.htm)
 - [台湾](https://zh.wikipedia.org/wiki/臺灣)[中央气象局](https://zh.wikipedia.org/wiki/中央氣象局)[日历资料表](https://web.archive.org/web/20150926233254/http://www.cwb.gov.tw/V7/astronomy/cdata/calpdf/calpdf.htm)
 - [台湾](https://zh.wikipedia.org/wiki/臺灣)[中央研究院](https://zh.wikipedia.org/wiki/中央研究院)数位文化中心[两千年中西历变换](http://sinocal.sinica.edu.tw/)（西元元年2月11日至2100年2月9日）
-- [台湾](https://zh.wikipedia.org/wiki/臺灣)[台北市](https://zh.wikipedia.org/wiki/臺北市)立天文科学教育馆[阴阳历对照+历象表](http://tamweb.tam.gov.tw/v3/tw/list.asp?mtype=c8)
+- [台湾](https://zh.wikipedia.org/wiki/臺灣)[台北市](https://zh.wikipedia.org/wiki/臺北市)立天文科学教育馆  [陰陽曆對照表+曆象表](https://www.tam.gov.taipei/News_Content.aspx?n=2D5F18609004C0CE&sms=3AABB000A3E78431&s=AC19298B0509F078) 
 - [国历农历查询](http://ppg.naif.org.tw/naif/MarketInformation/Other/Calendar_V3.aspx) - 畜产行情 - 中华民国[行政院农业委员会](https://zh.wikipedia.org/wiki/行政院農業委員會)
 
 

@@ -450,7 +450,7 @@ int calculate_foo_factor (const T& t) {
 }
 ```
 
-它采用了 declval 的*伪造实例*的技术，对此可以参考我们的 [std::declval 和 decltype](https::/hedzr.com/c++/algorithm/cxx-std-declval-and-decltype) 一文。
+它采用了 declval 的*伪造实例*的技术，对此可以参考我们的 [std::declval 和 decltype](https://hedzr.com/c++/algorithm/cxx-std-declval-and-decltype) 一文。
 
 
 

@@ -23,10 +23,6 @@ excerpt: >-
 
 
 
-> A translated version at [here](btrfs-file-system-reviews-en/)
-
-
-
 ## 引子
 
 近日来因 Linux 内核 5.17 释出，又唤起了我对 BtrFS 的关注。

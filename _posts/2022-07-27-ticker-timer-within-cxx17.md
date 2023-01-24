@@ -211,7 +211,7 @@ int timer_delete (timer_t timerid);
 
 ## 实现
 
-原本打算首先在 [hicc-cxx](https://github.com/hedzr/hicc) 中实验：[hz-ticker.hh](https://github.com/hedzr/hicc/blob/master/libs/hicc/include/hicc/hz-ticker.hh) (BROKEN)。此外还计划将其正式版迁移到 [cmdr-cxx](https://github.com/hedzr/cmdr-cxx/blob/master/libs/cmdr11/include/cmdr11/cmdr_ticker.hh) 中，我们提到过，通常 cmdr-cxx 才是正式的发布点。
+原本打算首先在 [hicc-cxx](https://github.com/hedzr/hicc) 中实验：[hz-ticker.hh](https://github.com/hedzr/hicc/blob/master/libs/hicc/include/hicc/hz-ticker.hh) (BROKEN)。此外还计划将其正式版迁移到 [cmdr-cxx](https://github.com/hedzr/cmdr-cxx) 中，我们提到过，通常 cmdr-cxx 才是正式的发布点。
 
 但是最终我们打算单独发行这个库：[ticker-cxx](https://github.com/hedzr/ticker-cxx)。
 
