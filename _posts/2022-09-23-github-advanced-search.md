@@ -4,7 +4,7 @@ title: "GitHub 高级搜索"
 date: 2022-09-23 05:25:00 +0800
 last_modified_at: 2022-09-23 15:10:00 +0800
 Author: hedzr
-tags: [tech,search]
+tags: [tech,github,search]
 categories: tech nology
 comments: true
 toc: true
