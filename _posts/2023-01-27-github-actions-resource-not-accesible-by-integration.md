@@ -54,7 +54,7 @@ excerpt: >-
 
 对此，在 Repository Settings 的 Actions/General 中有相关的控制项，当我授权了 Read/Write 之后，不能发版的问题也就解决了。授权可读写的状态如下：
 
-![Screenshot 2023-01-27 at 06.45.54](./_assets/2023-01-27-github-actions-resource-not-accesible-by-integration/Screenshot 2023-01-27 at 06.45.54-4775748.png)
+![Screenshot 2023-01-27 at 06.45.54](https://cdn.jsdelivr.net/gh/hzimg/blog-pics@master/uPic/Screenshot 2023-01-27 at 06.45.54.png)
 
 我并没有搞什么花哨的玩意，在 [hedzr/progressbar](https://github.com/hedzr/progressbar) 的 Workflow 里面我和以前一样，规规矩矩地 coverage，build-release 然后 upload assets to release，没想到就这么死了一会。
 
@@ -79,7 +79,7 @@ excerpt: >-
 
 在我的旧项目里是这样子的：
 
-![image-20230127071920515](./_assets/2023-01-27-github-actions-resource-not-accesible-by-integration/image-20230127071920515-4775761.png)
+![image-20230127071920515](https://cdn.jsdelivr.net/gh/hzimg/blog-pics@master/uPic/image-20230127071920515.png)
 
 我发誓这不是我做的。
 
