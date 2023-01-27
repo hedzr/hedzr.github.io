@@ -48,6 +48,8 @@ excerpt: >-
 
 还可能有一些神仙般的要求。
 
+FROM：https://www.fireebok.com/resource/how-to-change-login-screen-wallpaper-in-macos-ventura.html
+
 
 
 ## 我可证实的
@@ -68,6 +70,10 @@ excerpt: >-
 它的限制是当 macOS 开机时，或者你的账户不是当前已登录态时，你的壁纸不会显示，尝尝会还是 Vertura Graphic。
 
 不过这都是无所谓了，已经算是很不错了。
+
+FROM：
+
+https://discussions.apple.com/thread/254318261
 
 
 
