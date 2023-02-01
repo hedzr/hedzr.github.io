@@ -92,8 +92,6 @@ man 3p connect
 $ man 手册名
 ```
 
-
-
 man 手册页分为很多区块。完整的列表可以参考: [man-pages(7)](https://man.archlinux.org/man/man-pages.7)。
 
 man 手册页通过名称和所属分类标识。有些不同分类的 man 手册页名字可能相同，比如 man(1) 和 man(7)，这时需要额外指明分类以访问需要的手册。例如：
@@ -103,6 +101,29 @@ $ man 5 passwd
 ```
 
 会显示有关文件`/etc/passwd`，而非命令 `passwd`，的内容。
+
+读分区1的常规命令手册页时通常省略 `1`：
+
+```bash
+$ man ls         # 等价于 man 1 ls
+```
+
+上面的命令查看的是 `ls` 命令行帮助信息，这个信息文本被存储在一个名为 `ls.1` 的文件中，并被储存在你的机器上的某个 manpage 可搜索位置（例如 `/usr/share/man/` 之中，可以查阅 `$MANPATH` 的值来确定）中。
+
+如果你是一个开发者，查看开源代码中的 command.1 文件时，可以直接查阅它，并不需要将这个文件 gzip 并复制到某个 MANPATH 之中才能阅读：
+
+```bash
+$ man ./command.1
+$ man -l ./command.1   # -l localfile.1
+```
+
+你也可以 inplace 地设置一个额外的搜索路径以便能够搜索当前路径中的 `command.1`：
+
+```bash
+$ man -M . command
+```
+
+注意这个方法通常要求文件位于：`./man1/command.1`，然后此时无需后缀 `.1` ，因为对其采用的是 man 命令 语法而不是在打开一个本地文件。
 
 
 
