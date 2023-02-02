@@ -4,7 +4,7 @@ title: "实现一个定时任务库：ticker-cxx"
 date: 2022-07-27 05:00:00 +0800
 last_modified_at: 2022-07-27 07:50:00 +0800
 Author: hedzr
-tags: [c++,c++11,c++17,packaged_task,scheduler,GTD,timer,ticker,timing wheel]
+tags: [c++17,scheduler,GTD,timer,ticker,timing,calendar,timing wheel]
 categories: c++ algorithm
 comments: true
 toc: true
