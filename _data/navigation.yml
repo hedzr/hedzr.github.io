@@ -20,8 +20,8 @@ main:
     url: /categories/
   - title: "Tags"
     url: /tags/
-  - title: "Web Dev"
-    url: /web-dev/
+  # - title: "Web Dev"
+  #   url: /web-dev/
   - title: "DevOps"
     url: /devops/
   # - title: "Pages"              # ??
