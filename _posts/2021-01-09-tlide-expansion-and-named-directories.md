@@ -144,6 +144,12 @@ With no arguments or options, hash will list the entire command hash table. The 
 
 
 
+> PS:
+>
+> hash 命令取决于不同的上下文，bash or zsh，以及 shell 的版本的不同，则其命令行参数可能会很不一样。
+>
+> 基本上来说，-d 和 -r 的表现是相同的。别的参数就未必有效了。
+
 
 
 ### Builtin Commands
@@ -235,7 +241,7 @@ The string that would be displayed by ‘dirs -N’
 
 
 
-
+- About `Named Directory`: <https://zsh.sourceforge.io/Doc/Release/Expansion.html#Static-named-directories>
 
 
 
