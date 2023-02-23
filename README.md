@@ -19,7 +19,7 @@ bundle
 # Or bundle update
 ```
 
-The second step is start a local server to serve for Jelly Pages:
+The second step is start a local server to serve for Jekyll Pages:
 
 ```bash
 bundle exec jekyll serve --verbose --drafts --watch --host 0.0.0.0 --port 3999
