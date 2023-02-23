@@ -12,7 +12,6 @@ main:
   #   url: /sitemap/
 
 
-# main:
   # - title: "Quick-Start Guide"
   #   url: /docs/quick-start-guide/
   - title: "Posts"              # ??
@@ -23,10 +22,10 @@ main:
     url: /tags/
   - title: "Web Dev"
     url: /web-dev/
-  - title: "Apple Diag"
-    url: /apple-diag/
-  #- title: "Pages"              # ??
-  #  url: /page-archive/
+  - title: "DevOps"
+    url: /devops/
+  # - title: "Pages"              # ??
+  #   url: /page-archive/
   # - title: "Collections"
   #   url: /collection-archive/
   # - title: "Pets"
@@ -56,6 +55,30 @@ sidebar-docs:
 #    https://fontawesome.com/icons?d=gallery&s=regular&m=free
 
 sidebar-meta:
+
+  - title: "Collections"
+    children:
+      - title: "DevOps"
+        url: /devops/
+        description: DevOps
+        icon: far fa-fw fa-newspaper
+      - title: "Web Dev"
+        url: /web-dev/
+        description: Web Developing
+        icon: far fa-fw fa-window-restore
+      # - title: "Calligraph"
+      #   url: /calligraph/
+      #   description: Calligraph and Arts
+      #   icon: far fa-fw fa-window-restore
+      # - title: "Life Style"
+      #   url: /lifestyle/
+      #   description: life style
+      #   icon: far fa-fw fa-window-restore
+      # - title: "Security"
+      #   url: /security/
+      #   description: Security
+      #   icon: far fa-fw fa-window-restore
+
   - title: "Open Source Projects"
     children:
       - title: "CMDR Docs"
@@ -66,7 +89,8 @@ sidebar-meta:
         url: /notes-hi/
         description: A github template repository that allows building a MkDocs site faster.
         icon: far fa-fw fa-window-restore
-  - title: "META"
+
+  - title: "Meta"
     children:
       - title: "License"
         url: /license/
@@ -75,6 +99,18 @@ sidebar-meta:
         url: /terms/
         icon: "far fa-fw fa-flag"
 
+
+sidebar-collections:
+  - title: "Collections"
+    children:
+      - title: "DevOps"
+        url: /devops/
+        description: DevOps
+        icon: far fa-fw fa-newspaper
+      - title: "Web Dev"
+        url: /web-dev/
+        description: Web Developing
+        icon: far fa-fw fa-window-restore
 
 # sidebar navigation list sample
 sidebar-sample:

@@ -359,13 +359,37 @@ compress_html:
 collections:
   recipes:
     output: true
-    permalink: /:collection/:path/
+    permalink: /:collection/:path
   pets:
     output: true
-    permalink: /:collection/:path/
+    permalink: /:collection/:path
   portfolio:
     output: true
-    permalink: /:collection/:path/
+    permalink: /:collection/:path
+  devops:
+    output: true
+    permalink: /:collection/:path
+  lifestyle:
+    output: true
+    permalink: /:collection/:path
+  calligraph:
+    output: true
+    permalink: /:collection/:path
+  security:
+    output: true
+    permalink: /:collection/:path
+  webdev:
+    output: true
+    permalink: /:collection/:path
+  cmake:
+    output: true
+    permalink: /:collection/:path
+  cmdr:
+    output: true
+    permalink: /:collection/:path
+  cxx:
+    output: true
+    permalink: /:collection/:path
 
 
 
@@ -379,7 +403,8 @@ defaults:
       layout: single
       author_profile: true
       sidebar:
-        nav: sidebar-meta
+        meta: sidebar-meta
+        coll: sidebar-collections
       read_time: true
       comments: true # true
       share: true           # 是否在文章末尾显示分享信息
@@ -415,6 +440,62 @@ defaults:
   - scope:
       path: ""
       type: portfolio
+    values:
+      layout: single
+      author_profile: false
+      share: true
+  - scope:
+      path: ""
+      type: devops
+    values:
+      layout: single
+      author_profile: false
+      share: true
+  - scope:
+      path: ""
+      type: lifestyle
+    values:
+      layout: single
+      author_profile: false
+      share: true
+  - scope:
+      path: ""
+      type: calligraph
+    values:
+      layout: single
+      author_profile: false
+      share: true
+  - scope:
+      path: ""
+      type: security
+    values:
+      layout: single
+      author_profile: false
+      share: true
+  - scope:
+      path: ""
+      type: cmdr
+    values:
+      layout: single
+      author_profile: false
+      share: true
+  - scope:
+      path: ""
+      type: cmake
+    values:
+      layout: single
+      author_profile: false
+      share: true
+  - scope:
+      path: ""
+      type: cxx
+    values:
+      layout: single
+      author_profile: false
+      share: true
+  - scope:
+      path: ""
+      type: webdev
     values:
       layout: single
       author_profile: false
