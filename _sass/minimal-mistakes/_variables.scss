@@ -62,7 +62,7 @@ $sans-serif: -apple-system, BlinkMacSystemFont, 'Gayathri', "Roboto", "Segoe UI"
 $monospace: 'Overpass Mono', 'Cascadia Code', 'Liga Cousine', 'Overpass', Monaco, Consolas, "Lucida Console", 'Andale Mono', Consolas, monospace !default;
 
 /* sans serif typefaces */
-$sans-serif-narrow: $sans-serif !default;
+$sans-serif-narrow: 'Copernicus', Georgia, $sans-serif !default;
 $helvetica: Helvetica, "Helvetica Neue", Arial, sans-serif !default;
 
 /* serif typefaces */
