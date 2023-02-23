@@ -21,6 +21,10 @@ main:
     url: /categories/
   - title: "Tags"
     url: /tags/
+  - title: "Web Dev"
+    url: /web-dev/
+  - title: "Apple Diag"
+    url: /apple-diag/
   #- title: "Pages"              # ??
   #  url: /page-archive/
   # - title: "Collections"
