@@ -1,4 +1,5 @@
 # hedzr.github.io
+
 main gh io pages and sites
 
 1. Open this blog at [hedzr.com](https://hedzr.com).
@@ -9,4 +10,19 @@ main gh io pages and sites
 4. More
 5. Special [hedzr/hedzr](https://github.com/hedzr/hedzr)
 
+## Run at local
 
+First thing is install and prepare Gems environment by install gems packages:
+
+```bash
+bundle
+# Or bundle update
+```
+
+The second step is start a local server to serve for Jelly Pages:
+
+```bash
+bundle exec jekyll serve --verbose --drafts --watch --host 0.0.0.0 --port 3999
+```
+
+And open <http://localhost:3999/> at browser.
