@@ -53,3 +53,25 @@ npm install -g npm
 npm install -g yarn
 yarn -v
 ```
+
+
+
+
+
+## WebFonts Generators
+
+- <https://www.whatfontis.com/Webfont-Generator.html>
+- <https://www.fontspace.com/web-font-generator>
+- <https://www.creativefabrica.com/webfont-generator/>
+- <https://www.fontsquirrel.com/tools/webfont-generator>
+- <https://transfonter.org/>
+- 
+
+
+
+
+
+
+
+
+
