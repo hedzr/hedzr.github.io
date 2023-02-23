@@ -56,7 +56,7 @@ body, p {
 }
 
 */
-$serif: 'Playfair Display', 'Merriweather', Georgia, Times, serif !default;
+$serif: 'Copernicus', 'Playfair Display', 'Merriweather', Georgia, Times, serif !default;
 $sans-serif: -apple-system, BlinkMacSystemFont, 'Gayathri', "Roboto", "Segoe UI",
   "Helvetica Neue", "Lucida Grande", Arial, sans-serif !default;
 $monospace: 'Overpass Mono', 'Cascadia Code', 'Liga Cousine', 'Overpass', Monaco, Consolas, "Lucida Console", 'Andale Mono', Consolas, monospace !default;
@@ -66,13 +66,13 @@ $sans-serif-narrow: $sans-serif !default;
 $helvetica: Helvetica, "Helvetica Neue", Arial, sans-serif !default;
 
 /* serif typefaces */
-$georgia: Georgia, serif !default;
+$georgia: 'Copernicus', Georgia, serif !default;
 $times: Times, serif !default;
 $bodoni: "Bodoni MT", serif !default;
 $calisto: "Calisto MT", serif !default;
 $garamond: Garamond, serif !default;
 
-$global-font-family: Georgia, $sans-serif !default;
+$global-font-family: 'Copernicus', Georgia, $sans-serif !default;
 $header-font-family: 'Copernicus', 'Merriweather', 'Playfair Display', $sans-serif !default;
 $caption-font-family: 'Copernicus', 'Merriweather', $serif !default;
 
