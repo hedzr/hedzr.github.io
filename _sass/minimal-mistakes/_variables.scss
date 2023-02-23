@@ -48,6 +48,13 @@ font-family: 'Overpass', sans-serif;
 font-family: 'Playfair Display', serif;
 'Abhaya Libre', 'Alegreya', 
 
+font-family: Sabon MT W02,Georgia,微軟正黑體, sans-serif, Apple LiGothic Medium, Heiti TC, LiHei Pro
+
+body, p {
+  font-family: Georgia, Apple LiGothic Medium, sans-serif; /*, 微軟正黑體, sans-serif, Apple LiGothic Medium, Heiti TC, LiHei Pro;
+  font-size: 1.1em;
+}
+
 */
 $serif: 'Playfair Display', 'Merriweather', Georgia, Times, serif !default;
 $sans-serif: -apple-system, BlinkMacSystemFont, 'Gayathri', "Roboto", "Segoe UI",
@@ -66,8 +73,8 @@ $calisto: "Calisto MT", serif !default;
 $garamond: Garamond, serif !default;
 
 $global-font-family: Georgia, $sans-serif !default;
-$header-font-family: 'Merriweather', 'Playfair Display', $sans-serif !default;
-$caption-font-family: 'Merriweather', $serif !default;
+$header-font-family: 'Copernicus', 'Merriweather', 'Playfair Display', $sans-serif !default;
+$caption-font-family: 'Copernicus', 'Merriweather', $serif !default;
 
 /* type scale */
 $type-size-1: 2.441em !default; // ~39.056px
