@@ -1,14 +1,34 @@
 ---
-permalink: /apple-diag/
+# permalink: /apple-diag/
 title: "Apple MBP & macOS Diagnosis"
+excerpt: "Foo Bar design system including logo mark, website design, and branding applications."
 last_modified_at: 2023-02-22
 toc: true
 sidebar:
   nav: sidebar-meta
+header:
+  image: /assets/images/foo-bar-identity.jpg
+  teaser: /assets/images/foo-bar-identity-th.jpg
+sidebar:
+  - title: "Role"
+    image: http://placehold.it/350x250
+    image_alt: "logo"
+    text: "Designer, Front-End Developer"
+  - title: "Responsibilities"
+    text: "Reuters try PR stupid commenters should isn't a business model"
+gallery:
+  - url: /assets/images/unsplash-gallery-image-1.jpg
+    image_path: assets/images/unsplash-gallery-image-1-th.jpg
+    alt: "placeholder image 1"
+  - url: /assets/images/unsplash-gallery-image-2.jpg
+    image_path: assets/images/unsplash-gallery-image-2-th.jpg
+    alt: "placeholder image 2"
+  - url: /assets/images/unsplash-gallery-image-3.jpg
+    image_path: assets/images/unsplash-gallery-image-3-th.jpg
+    alt: "placeholder image 3"
 ---
 
 > Original Post at: [macOS/MBP/MacBook Pro 维护页面集合](/lifestyle/review/mbp-maintain-collections).
-
 
 这些页面集中一下，罗列出来，有时候查询比较方便。
 
@@ -83,7 +103,7 @@ MBP 出现问题，首先是自我检查，做一个粗略的评估和判断。
 
  [How to Repair Disk and File System Problems on Your Mac](https://www.howtogeek.com/236978/how-to-repair-disk-and-file-system-problems-on-your-mac/) 
 
-
+{% include gallery caption="This is a sample gallery to go along with this case study." %}
 
 ## Mac 的启动组合键
 

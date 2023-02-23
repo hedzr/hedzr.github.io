@@ -1,10 +1,10 @@
 ---
-title: Web Dev
+title: DevOps
 layout: collection
-permalink: /web-dev/
-collection: webdev
+permalink: /devops/
+collection: devops
 entries_layout: grid
-classes: wide
+# classes: wide
 last_modified_at: 2023-02-22
 toc: true
 sidebar:

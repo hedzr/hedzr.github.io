@@ -9,6 +9,7 @@ categories: devops linux
 comments: true
 toc: true
 header:
+  teaser: https://cdn.jsdelivr.net/gh/hzimg/blog-pics@latest/uPic/image-20230223182822880.png
   overlay_image: /assets/images/ubuntuhero.jpg
   overlay_filter: rgba(32, 32, 0, 0.5)
 excerpt: "工具脚本 AGAIN AGAIN 以及 lazyloader ..."
@@ -306,7 +307,7 @@ ls 和 list 指令查证 vmware 虚拟机的运行情况，以及 vagrant 管理
 
 size 和 sizes 被实现为同义词，它们的核心技术都是 `du -sh xxx | sort -rh` ，所以具体的实现代码就请移步 gist 处直接观察。
 
-
+![image-20230223182822880](https://cdn.jsdelivr.net/gh/hzimg/blog-pics@latest/uPic/image-20230223182822880.png)
 
 #### run 指令以及 vmware 指令
 
@@ -354,7 +355,7 @@ size 和 sizes 被实现为同义词，它们的核心技术都是 `du -sh xxx |
 
 ## Bonus
 
-### lazyloader
+### lazy-loader
 
 在 zsh 中实现懒加载功能，也就是说用到一个命令时才载入相应的脚本文件，这需要拦截 zsh 的 unkown command 处理函数。
 

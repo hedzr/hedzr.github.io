@@ -9,6 +9,7 @@ categories: devops linux
 comments: true
 toc: true
 header:
+  teaser: https://cdn.jsdelivr.net/gh/hzimg/blog-pics@latest/uPic/image-20230223182822880.png
   overlay_image: /assets/images/ubuntuhero.jpg
   overlay_filter: rgba(32, 32, 0, 0.5)
 excerpt: "工具脚本 AGAIN ..."

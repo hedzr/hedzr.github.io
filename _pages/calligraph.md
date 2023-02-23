@@ -1,8 +1,8 @@
 ---
-title: Web Dev
+title: Calligraph
 layout: collection
-permalink: /web-dev/
-collection: webdev
+permalink: /calligraph/
+collection: calligraph
 entries_layout: grid
 classes: wide
 last_modified_at: 2023-02-22
@@ -12,3 +12,4 @@ sidebar:
   coll: sidebar-collections
 ---
 
+END.
