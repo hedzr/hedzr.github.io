@@ -66,6 +66,14 @@ sidebar-meta:
         url: /web-dev/
         description: Web Developing
         icon: far fa-fw fa-window-restore
+      - title: "Golang Dev"
+        url: /golang/
+        description: Golang Developing
+        icon: far fa-fw fa-window-restore
+      - title: "C++ Dev"
+        url: /cxx/
+        description: C++ Developing
+        icon: far fa-fw fa-window-restore
       # - title: "Calligraph"
       #   url: /calligraph/
       #   description: Calligraph and Arts
