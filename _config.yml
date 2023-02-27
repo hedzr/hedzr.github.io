@@ -390,6 +390,9 @@ collections:
   cxx:
     output: true
     permalink: /:collection/:path
+  golang:
+    output: true
+    permalink: /:collection/:path
 
 
 
@@ -496,6 +499,13 @@ defaults:
   - scope:
       path: ""
       type: webdev
+    values:
+      layout: single
+      author_profile: false
+      share: true
+  - scope:
+      path: ""
+      type: golang
     values:
       layout: single
       author_profile: false
