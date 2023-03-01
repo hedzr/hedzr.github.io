@@ -9,6 +9,8 @@ categories: golang
 comments: true
 toc: true
 header:
+  image: https://cdn.jsdelivr.net/gh/hzimg/blog-pics@master/uPic/nested-go.mod-is-is-possible.png
+  teaser: https://cdn.jsdelivr.net/gh/hzimg/blog-pics@master/uPic/nested-go.mod.png
   overlay_image: /assets/images/unsplash-image-1.jpg
   overlay_filter: rgba(128, 128, 0, 0.3)
 excerpt: >-
@@ -18,6 +20,8 @@ excerpt: >-
 
 
 ## 如何使得嵌套 go.mod 可行
+
+![nested-go.mod-is-is-possible](https://cdn.jsdelivr.net/gh/hzimg/blog-pics@master/uPic/nested-go.mod-is-is-possible.png)
 
 ### 场景
 

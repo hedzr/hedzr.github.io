@@ -9,6 +9,7 @@ categories: golang
 comments: true
 toc: true
 header:
+  teaser: https://cdn.jsdelivr.net/gh/hzimg/blog-pics@master/uPic/images.png
   overlay_image: /assets/images/unsplash-image-1.jpg
   overlay_filter: rgba(128, 128, 0, 0.3)
 excerpt: >-

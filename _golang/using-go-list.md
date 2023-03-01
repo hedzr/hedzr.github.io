@@ -5,7 +5,7 @@ date: 2023-02-25 00:07:11 +0800
 last_modified_at: 2023-02-25 00:29:11 +0800
 Author: hedzr
 tags: [golang]
-categories: golfing
+categories: golang
 comments: true
 toc: true
 header:
