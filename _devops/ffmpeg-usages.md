@@ -7,8 +7,8 @@ toc: true
 sidebar:
   nav: sidebar-meta
 header:
-  image: /assets/images/foo-bar-identity.jpg
-  teaser: /assets/images/foo-bar-identity-th.jpg
+  image: https://cdn.jsdelivr.net/gh/hzimg/blog-pics@master/uPic/FFmpeg_4.4_screenshot.png
+  teaser: https://cdn.jsdelivr.net/gh/hzimg/blog-pics@master/uPic/FFmpeg_4.4_screenshot.png
 sidebar:
   - title: "Role"
     image: http://placehold.it/350x250
