@@ -1,6 +1,6 @@
 ---
 # permalink: /apple-diag/
-title: "FFMPEG Tool Usages"
+title: "FFMPEG Usages"
 excerpt: "The most used commands with ffmpeg"
 last_modified_at: 2023-02-22
 toc: true

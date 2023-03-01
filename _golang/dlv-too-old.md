@@ -1,11 +1,11 @@
 ---
 layout: single
-title: 'print/println function'
+title: 'GoLand warn: Version of Delve is too old'
 date: 2023-02-25 00:07:11 +0800
 last_modified_at: 2023-02-25 00:29:11 +0800
 Author: hedzr
 tags: [golang]
-categories: golfing
+categories: golang
 comments: true
 toc: true
 header:
@@ -13,7 +13,7 @@ header:
   overlay_image: /assets/images/unsplash-image-1.jpg
   overlay_filter: rgba(128, 128, 0, 0.3)
 excerpt: >-
-  Golang builtin functions ...
+  Wrokaround for dlv too old in goland ...
 ---
 
 
