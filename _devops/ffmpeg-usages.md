@@ -59,13 +59,25 @@ SRC 和 TGT 表示源影片以及抽出的片段的输出文件名。为了保�
 ffmpeg -i input.mp4 -vf "crop=480:270:200:100" -c:v ffv1 -c:a copy output.mkv
 ```
 
-如果你的 ffmpeg 没有 ffv1 解码器，尝试下面一条命令：
+如果你的 ffmpeg 没有 ffv1 解码器，或者转换出现问题，尝试下面一条命令：
 
 ```bash
 ffmpeg -i input.mp4 -vf "crop=480:270:200:100" -c:v libx264 -crf 0 -c:a copy output.mp4
 ```
 
 注意两者的区别。后者使用 x.264 编码视频流。
+
+有时候你可能只是需要避免显式指定音频流策略，哪怕只是在指定完全原样复制：
+
+```bash
+# CAN'T WORK
+ffmpeg -i input.mp4 -vf "crop=480:270:200:100" -c:v libx264 -crf 0 -c:a copy output.mp4
+
+# THIS WORKS
+ffmpeg -i input.mp4 -vf "crop=480:270:200:100" -c:v libx264 -crf 0 output.mp4
+```
+
+
 
 crop 参数 `"crop=480:270:200:100"` 的含义依次为：目标区域的宽度，高度，切割起点的左侧起点，上方起点。
 
