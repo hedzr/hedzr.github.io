@@ -4,7 +4,7 @@ title: 'Tilde 展开以及命名目录'
 date: 2021-1-9 21:46:00 +0800
 last_modified_at: 2021-1-9 21:46:00 +0800
 Author: hedzr
-tags: [shell, bash, zsh, tlide expansion, named directory, named folder]
+tags: [shell, bash, zsh, tilde expansion, named directory, named folder]
 categories: devops shell
 comments: true
 toc: true

@@ -31,7 +31,7 @@ excerpt: "工具脚本 ..."
 >
 > 即 `Named Folder` 之我所谓。这个概念以前我有文章介绍过：
 >
->  [Tilde 展开以及命名目录](https://hedzr.com/devops/shell/tlide-expansion-and-named-directories/) 
+>  [Tilde 展开以及命名目录](https://hedzr.com/devops/shell/tilde-expansion-and-named-directories/) 
 
 首先，这个大大的脚本需要一个前置函数 `__vms_reg`。
 
