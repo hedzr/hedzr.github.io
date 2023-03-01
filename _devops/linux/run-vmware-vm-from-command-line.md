@@ -23,7 +23,7 @@ excerpt: "工具脚本 AGAIN ..."
 
 而实际上关于运维和 DevOps 这一块来说，诸如用 Ansible 或者在 [bash.sh](https://github.com/hedzr/bash.sh) 之上建立的 `ops.sh` 呢，暂时还没精力整理出来，还要等等。毕竟我主业还是 C++ 和 Golang，而不是每天监视服务器。
 
-好接续上一篇 [vagrant_run - 更方便地从命令行启动 vagrant 虚拟机](https://hedzr.com/devops/linux/run-virtualbox-vm-from-command-line/) ，这次是 vmware_run，面对的是 VMware Fusion，但应该可以适用于 VMware Workstation。
+好接续上一篇 [vagrant_run - 更方便地从命令行启动 vagrant 虚拟机](https://hedzr.com/devops/linux/run-virtualbox-vm-from-command-line) ，这次是 vmware_run，面对的是 VMware Fusion，但应该可以适用于 VMware Workstation。
 
 ## vmware_run
 

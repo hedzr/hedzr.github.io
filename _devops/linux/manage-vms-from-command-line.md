@@ -17,13 +17,13 @@ excerpt: "工具脚本 AGAIN AGAIN 以及 lazyloader ..."
 
 ## 缘起
 
-接续上上一篇 [vagrant_run - 更方便地从命令行启动 vagrant 虚拟机](https://hedzr.com/devops/linux/run-virtualbox-vm-from-command-line/) 以及  [vmware_run - 更方便地从命令行启动 vmware 虚拟机](https://hedzr.com/devops/linux/run-vmware-vm-from-command-line/) ，再来一次吧，这次准备综合一下，进一步提升易用性，所以打算制造一个 vm 命令。
+接续上上一篇 [vagrant_run - 更方便地从命令行启动 vagrant 虚拟机](https://hedzr.com/devops/linux/run-virtualbox-vm-from-command-line) 以及  [vmware_run - 更方便地从命令行启动 vmware 虚拟机](https://hedzr.com/devops/linux/run-vmware-vm-from-command-line) ，再来一次吧，这次准备综合一下，进一步提升易用性，所以打算制造一个 vm 命令。
 
 这样，也就算是成为一个小小系列：
 
-1. [vagrant_run - 更方便地从命令行启动 vagrant 虚拟机](https://hedzr.com/devops/linux/run-virtualbox-vm-from-command-line/)
-2. [vmware_run - 更方便地从命令行启动 vmware 虚拟机](https://hedzr.com/devops/linux/run-vmware-vm-from-command-line/)
-3. vm - 从命令行管理虚拟机
+1. [vagrant_run - 更方便地从命令行启动 vagrant 虚拟机](https://hedzr.com/devops/linux/run-virtualbox-vm-from-command-line)
+2. [vmware_run - 更方便地从命令行启动 vmware 虚拟机](https://hedzr.com/devops/linux/run-vmware-vm-from-command-line)
+3. [vm - 从命令行管理虚拟机](https://hedzr.com/devops/linux/manage-vms-from-command-line)
 
 
 
