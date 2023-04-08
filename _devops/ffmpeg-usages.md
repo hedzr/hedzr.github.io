@@ -537,6 +537,183 @@ ffprobe input.mp4
 
 ffprobe 是随 ffmpeg 安装包发行的可执行文件。类似的还有 ffplay 等等。
 
+也可以直接列举：
+
+```bash
+ffmpeg -i input.mp4
+```
+
+
+
+
+
+
+
+### 抽取字幕
+
+简单方法是：
+
+```bash
+ffmpeg -i input_file out.srt
+```
+
+如果输入视频有多条字幕轨道，那么应该用下面的形式：
+
+```
+ffmpeg -i Movie.mkv -map 0:s:0 subs.srt
+```
+
+- [-i](https://ffmpeg.org/ffmpeg.html#Main-options): Input file URL/path.
+- [-map](https://ffmpeg.org/ffmpeg.html#Advanced-options): Designate one or more input streams as a source for the output file.
+- [s:0](https://ffmpeg.org/ffmpeg.html#Stream-specifiers): Select the subtitle stream.
+
+This would download the first subtitle track. If there are several, use `0:s:1` to download the second one, `0:s:2` to download the third one, and so on.
+
+- [ExtractSubtitles – FFmpeg](https://trac.ffmpeg.org/wiki/ExtractSubtitles)
+- [How to extract subtitle from video using ffmpeg? - Super User](https://superuser.com/questions/583393/how-to-extract-subtitle-from-video-using-ffmpeg)
+- [Extract every audio and subtitles from a video with ffmpeg](https://newbedev.com/extract-every-audio-and-subtitles-from-a-video-with-ffmpeg)
+
+#### 抽出 dvdsub 格式
+
+dvdsub 格式常见于 DVD 发行的碟片或者源于此的 mkv 中，通常都是有一堆多条字幕轨。有时候它也被称作 vobsub。dvdsub 格式是位图方式的，所以抽取出来之后应该是 .idx 和 .sub 两个文件配套。
+
+抽取的方法需要两个步骤：
+
+```bash
+i=0; ffmpeg -y -i "$SRC" -c dvdsub -f matroska -map 0:s:$i "sub-$i.mkv" && mkvextract sub-$i.mkv tracks 0:sub
+```
+
+i 用于指定抽出哪条字幕轨，然后要用到 mkvextract 工具来将 sub-0.mkv 中写入的信息转换为 idx+sub。最终得到的结果为 sub.idx, sub.sub，注意中间文件 sub-0.mkv 即可删除。
+
+- <https://mkvtoolnix.download/doc/mkvextract.html>
+
+#### 转换到 srt
+
+Linux 中有 vobsub2srt 软件包可以将 idx/sub 转换为 srt。
+
+macOS 中可以试试 brew install sub2srt 这个工具。
+
+
+
+#### 查看字幕、音轨、影轨信息
+
+如下例，
+
+```bash
+$ ffprobe -v error -show_entries stream=index,codec_name,codec_type "$SRC"                            13:57:53 ✗ TTY:s005
+[matroska,webm @ 0x7fcf7e7051c0] 0x00 at pos 18555347367 (0x451fc21a7) invalid as first byte of an EBML number
+[STREAM]
+index=0
+codec_name=hevc
+codec_type=video
+[/STREAM]
+[STREAM]
+index=1
+codec_name=aac
+codec_type=audio
+[/STREAM]
+[STREAM]
+index=2
+codec_name=dvd_subtitle
+codec_type=subtitle
+[/STREAM]
+[STREAM]
+index=3
+codec_name=dvd_subtitle
+codec_type=subtitle
+[/STREAM]
+[STREAM]
+index=4
+codec_name=dvd_subtitle
+codec_type=subtitle
+[/STREAM]
+[STREAM]
+index=5
+codec_name=dvd_subtitle
+codec_type=subtitle
+[/STREAM]
+[STREAM]
+index=6
+codec_name=dvd_subtitle
+codec_type=subtitle
+[/STREAM]
+[STREAM]
+index=7
+codec_name=dvd_subtitle
+codec_type=subtitle
+[/STREAM]
+[STREAM]
+index=8
+codec_name=dvd_subtitle
+codec_type=subtitle
+[/STREAM]
+[STREAM]
+index=9
+codec_name=dvd_subtitle
+codec_type=subtitle
+[/STREAM]
+[STREAM]
+index=10
+codec_name=dvd_subtitle
+codec_type=subtitle
+[/STREAM]
+[STREAM]
+index=11
+codec_name=dvd_subtitle
+codec_type=subtitle
+[/STREAM]
+[STREAM]
+index=12
+codec_name=dvd_subtitle
+codec_type=subtitle
+[/STREAM]
+[STREAM]
+index=13
+codec_name=dvd_subtitle
+codec_type=subtitle
+[/STREAM]
+[STREAM]
+index=14
+codec_name=dvd_subtitle
+codec_type=subtitle
+[/STREAM]
+[STREAM]
+index=15
+codec_name=dvd_subtitle
+codec_type=subtitle
+[/STREAM]
+[STREAM]
+index=16
+codec_name=dvd_subtitle
+codec_type=subtitle
+[/STREAM]
+[STREAM]
+index=17
+codec_name=dvd_subtitle
+codec_type=subtitle
+[/STREAM]
+[STREAM]
+index=18
+codec_name=dvd_subtitle
+codec_type=subtitle
+[/STREAM]
+[STREAM]
+index=19
+codec_name=dvd_subtitle
+codec_type=subtitle
+[/STREAM]
+[STREAM]
+index=20
+codec_name=dvd_subtitle
+codec_type=subtitle
+[/STREAM]
+[STREAM]
+index=21
+codec_name=dvd_subtitle
+codec_type=subtitle
+[/STREAM]
+```
+
 
 
 
