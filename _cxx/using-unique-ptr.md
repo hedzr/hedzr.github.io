@@ -15,7 +15,9 @@ excerpt: >-
   C++ 惯用法：使用 `std::unique_ptr` ...
 ---
 
-
+>**DRAFT**
+>
+>本文内容尚未审定，不确定是否存在错误解说之处，请谨慎阅读，欢迎纠错。
 
 -  [如何：创建和使用 unique_ptr 实例 - Microsoft Learn](https://learn.microsoft.com/zh-cn/cpp/cpp/how-to-create-and-use-unique-ptr-instances?view=msvc-170) 
 -  [条款21：优先使用std::make_unique和std::make_shared而不是直接使用new · Effective-Modern-Cpp-Zh](https://vivym.gitbooks.io/effective-modern-cpp-zh/content/SmartPointers/21-Prefer-std-make_unique-and-std-make_shared-to-direct-use-of-new.html) 
