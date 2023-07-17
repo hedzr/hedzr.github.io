@@ -465,6 +465,8 @@ hash("Hubert", "Farnsworth") = 17622465712001802105 (using MyHash)
 
 所以这个问题不值得问。
 
+
+
 ### 进一步
 
 每次谈论到未来规范，C++ 行走这么多年，就由不得不感慨 C# 真特么大冤种啊，语法层面上如此完美，但却因为不跨平台而活生生地垂死病中，这几年 dotnet(Core) 挣扎有点用，但又会有几多用处呢？
@@ -473,15 +475,8 @@ hash("Hubert", "Farnsworth") = 17622465712001802105 (using MyHash)
 
 ### REFs
 
-- 
-- 
+- [Namespaces - cppreference.com](https://en.cppreference.com/w/cpp/language/namespace)
 - [Namespace - Wikipedia](https://en.wikipedia.org/wiki/Namespace)
 - [名前空間 - Wikipedia](https://ja.wikipedia.org/wiki/%E5%90%8D%E5%89%8D%E7%A9%BA%E9%96%93)
-- 
-- 
-- [名前空間 (C++) | Microsoft Learn](https://learn.microsoft.com/ja-jp/cpp/cpp/namespaces-cpp?view=msvc-170)
-- [命名空间 (C++) | Microsoft Learn](https://learn.microsoft.com/zh-cn/cpp/cpp/namespaces-cpp?view=msvc-170)
-- 
-- 
-- 
-- 1
+- [名前空間 (C++) - Microsoft Learn](https://learn.microsoft.com/ja-jp/cpp/cpp/namespaces-cpp?view=msvc-170)
+- [命名空间 (C++) - Microsoft Learn](https://learn.microsoft.com/zh-cn/cpp/cpp/namespaces-cpp?view=msvc-170)
