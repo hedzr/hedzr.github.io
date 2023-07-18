@@ -21,12 +21,12 @@ minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "
 # Site Settings
 locale                   : "zh-CN"
 title                    : "hzSomthing"
-title_separator          : "|"
+title_separator          : "-"
 subtitle                 : "There's something. Beautiful things do never ask for attention." # site tagline that appears below site title in masthead
 name                     : "hedzr"
 description              : "There's something, recording by hedzr."
 url                      : "https://hedzr.com" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-baseurl                  : # the subpath of your site, e.g. "/blog"
+baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "hedzr/hedzr.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : "assets/images/500x300.hz.png"  # https://via.placeholder.com/728x90.png?text=teaser+for+hedzr.github.io  # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : "assets/images/88x88.logo.png"  # https://via.placeholder.com/88x88.png?text=hzSth. # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
@@ -104,7 +104,7 @@ analytics:
 author:
   name             : "hedzr"
   avatar           : https://avatars1.githubusercontent.com/u/12786150?s=400&v=4 # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "#modern-cxx #golang #rust #kotlin #dotnetcore #devops"
+  bio              : "#modern-c++ #golang #rust #kotlin #dotnetcore #devops"
   location         : "Chongqing, CN"
   # email            : hedzr@duck.com
   links:
