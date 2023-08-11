@@ -263,4 +263,4 @@ Monitor Object 正是这种场景下的一种惯用手段。事实上诸如生�
 
 - [Monitor (synchronization) - Wikipedia](https://en.wikipedia.org/wiki/Monitor_(synchronization))
 - [Monitor Object – MC++ BLOG](https://www.modernescpp.com/index.php/monitor-oject/)
-- [C++ Monitor Pattern | C++ Blog](https://cppguru.wordpress.com/2009/01/05/c-monitor-pattern/)
+- [C++ Monitor Pattern - C++ Blog](https://cppguru.wordpress.com/2009/01/05/c-monitor-pattern/)
