@@ -245,7 +245,7 @@ int main() {
 
 
 
-## Conclusion
+### Conclusion
 
 所以，线程安全（Thread-safe）是这么一种概念：即面对公共资源 CR，在多个线程中对其操作时，应该采取某种互斥的手段来保证 CR 不被同时读写。这是由于现代 CPU 的多核特性或者是堆叠 CPU 的主板都准许同时访问的可能，但如果有一个或者多个线程正在写入 CR，而其它线程尝试读取时，则会因为 CPU 流水线，CPU 时钟周期，总线时钟周期等多方面因素而导致读取失败，并且多个写入线程也会导致写入失败（或者违例，取决于 CPU 设计）。
 
@@ -259,7 +259,7 @@ Monitor Object 正是这种场景下的一种惯用手段。事实上诸如生�
 
 
 
-### REFs
+### References
 
 - [Monitor (synchronization) - Wikipedia](https://en.wikipedia.org/wiki/Monitor_(synchronization))
 - [Monitor Object – MC++ BLOG](https://www.modernescpp.com/index.php/monitor-oject/)
