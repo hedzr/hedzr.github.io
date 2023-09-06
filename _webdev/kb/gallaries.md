@@ -110,7 +110,9 @@ https://raw.fastgit.org/hzimg/blog-pics/master/Picsee/image-20221020223129469.pn
 
 
 
-### pixabay https://pixabay.com/zh/
+### pixabay 
+
+https://pixabay.com/zh/
 
 pixabay是一个免费的商用图库。你可以根据自己的需求定向搜索各种内容、尺寸、颜色的照片、矢量图、插画甚至视频。
 
@@ -118,13 +120,17 @@ pixabay是一个免费的商用图库。你可以根据自己的需求定向搜�
 
 
 
-### pexels https://www.pexels.com/
+### pexels
+
+https://www.pexels.com/
 
 pexels是一个免费的商用图库。国内用户打开国外网站，加载速度一直是个问题。但pexels的加载速度还不错，大家可以一试。
 
 
 
-### stocksnap https://stocksnap.io/
+### stocksnap
+
+https://stocksnap.io/
 
 StockSnap是一个可以自由下载的高清图片素材库，所提供的资源相当实用。搜索出来的结果，还可以按照下载量、收藏量、浏览量等数据进行排列，让你更快得找到好素材。
 
@@ -132,7 +138,9 @@ StockSnap是一个可以自由下载的高清图片素材库，所提供的资�
 
 
 
-### Shopify Free Stock Photos https://burst.shopify.com/
+### Shopify Free Stock Photos
+
+https://burst.shopify.com/
 
 均为CC0许可图片，对上传的要求较为严苛，首次上传邮件联系，有身份认证（签署合同）和入门样片审核。图片总数虽然较少，但商务场景图片多，要求供图者提供Model Release。
 
