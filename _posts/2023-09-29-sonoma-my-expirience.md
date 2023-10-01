@@ -2,7 +2,7 @@
 layout: single
 title: '关于 Sonoma 的体验'
 date: 2023-9-28 08:00:00 +0800
-last_modified_at: 2023-9-6 10:33:00 +0800
+last_modified_at: 2023-9-29 10:33:00 +0800
 Author: hedzr
 tags: [macOS]
 categories: lifestyle review
