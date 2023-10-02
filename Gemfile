@@ -1,7 +1,8 @@
-source "https://rubygems.org"
+# source "https://rubygems.org"
 
+gem "minimal-mistakes-jekyll"
 gem "github-pages", group: :jekyll_plugins
-gem "jekyll-include-cache", group: :jekyll_plugins
+# gem "jekyll-include-cache", group: :jekyll_plugins
 
 gem "tzinfo-data"
 gem "wdm", "~> 0.1.0" if Gem.win_platform?
@@ -23,7 +24,9 @@ end
 # gem "kramdown", ">= 2.3.1"
 # gem "kramdown-parser-gfm"
 
-# gem "minimal-mistakes-jekyll"
+# to constraint to ruby 2.6.x instead of >= ruby 2.7
+# gem "activesupport", "<7.0.0"
+# gem "nokogiri", "<1.14"
 
 # gemspec
 # gem "jekyll-archives"
