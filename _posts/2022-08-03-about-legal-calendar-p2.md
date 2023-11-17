@@ -4,7 +4,7 @@ title: "关于历法的一系列知识整编 - P2"
 date: 2022-08-03 00:00:00 +0800
 last_modified_at: 2022-08-03 00:43:00 +0800
 Author: hedzr
-tags: [c++17,timer,ticker,timing,calendar]
+tags: [c++17,timer,ticker,timing,lunar,calendar]
 categories: c++ algorithm
 comments: true
 toc: true
