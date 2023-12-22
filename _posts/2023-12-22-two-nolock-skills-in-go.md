@@ -13,7 +13,7 @@ header:
   overlay_image: /assets/images/unsplash-image-3.jpg
   overlay_filter: rgba(128, 128, 0, 0.3)
 excerpt: >-
-  这阵子有时候遇到想到 go 协程里面的一些有效技法，就记录一下 ...
+  这阵子有时候遇到想到 go 协程里面的一些有效技法，就记录一下。对了，今天是冬至日 ...
 ---
 
 ## 两个有用的无锁编程技法
