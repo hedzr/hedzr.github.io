@@ -119,7 +119,7 @@ type generatorT[T any] func() T
 使用它的方式是：
 
 ```go
-var objHelper = Pool[](newBuf, func(buf *Buf, txt string) []byte {
+var objHelper = Pool(newBuf, func(buf *Buf, txt string) []byte {
 	buf.buf = append(buf.buf, txt...)
 	return buf.buf
 })
