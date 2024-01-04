@@ -15,8 +15,13 @@ excerpt: >-
   Here Document in a nutshell，介绍 Bash/Linux Heredoc
 ---
 
-
 ## 认识 Here Document
+
+> 按，2024-1-5 凌晨，回顾历年来的文字时，突然想要动一动，就 review 了一下这一篇，然后对叙述上有空白的地方做了改进，然后补充了一点点 `.editorconfig` 配套的文字。
+>
+> 就是这样。
+>
+> 仍然是保持原貌。
 
 ### 基础
 
@@ -104,7 +109,11 @@ YES IT IS A STRING
 $ tr a-z A-Z <<<"$var"
 ```
 
-
+> 理解 Here String：
+>
+> 就地提供一个字符串，将其隐式转换为一个 Unix 文件然后提供给接收者。
+>
+> 例如 `tr a-z A-Z <<<"$var"` 就是接受 var 变量中的值以文件方式从标准输入（stdin）的途径供给给 tr 使用，tr 接收到 stdin 中的字符串后完成其例行任务（在这里是从小写转换为大写字母）后打印结果到标准输出设备（这里将会是终端窗口，屏幕显示，但是你还可以将该输出管道传输给下一个接收者，或者重定向结果到一个文件中）
 
 
 
@@ -121,7 +130,7 @@ These contents will be written to the file.
 EOF
 ```
 
-你可以注意到这种写法不同于经常性的写法：
+你可能也会注意到这种写法不同于经常性的写法：
 
 ```bash
 cat >/tmp/1<<EOF
@@ -131,7 +140,15 @@ EOF
 
 但两者都是对的。
 
-###### root
+```bash
+cat <<EOF
+s
+EOF >/tmp/1
+```
+
+
+
+###### get root (sudo)
 
 但当需要 root 权限时，'>' 并不能很好地工作，此时需要 `sudo tee` 上场：
 
@@ -141,7 +158,7 @@ s
 EOF
 ```
 
-###### 子shell
+###### child shell
 
 标准输出的重定向，还可以通过子 shell 的方式来构造：
 
@@ -402,6 +419,24 @@ done <"$Filename"              # Redirects stdin to file $Filename.
 
 #### 新的缩进和对齐语法
 
+在批处理文件、bash 脚本文件中你会遇到这样的问题，在函数中（或者只要发生了缩进的情况）使用 HEREDOC 时每一行的前面的空格会引发需求之外的结果：
+
+```bash
+#!/usr/bin/env bash
+
+if true ; then
+    cat <<EOF > /tmp/yourfilehere
+    The leading spaces are kept.
+EOF
+fi
+```
+
+在这里，“The leading spaces are kept.” 的前置字符均被保留结束标记 EOF 必须位于行首，否则语法识别会出错。
+
+这就导致很多尴尬的问题：首先我不希望 EOF 乃至于每一行都从第一列开始排布，然后如果每一行都缩进了，前置的空格我又不想要，而且还无法解决 EOF 的缩进问题。
+
+这就是下面的新语法被引入的原因了。
+
 ##### 删除 TAB 缩进字符
 
 `<<-IDENT` 是新的语法，市面上的 Bash 均已支持这种写法。它的特殊之处就在于 HEREDOC 正文内容中的所有前缀 TAB 字符都会被删除。
@@ -428,6 +463,37 @@ function a () {
 注意如果TAB字符缩进在这里没有被严格遵守的话，Bash解释器可能会报出错误。
 
 像在正文中的 `- Uses UTF-8` 除开行首的 TAB字符缩进之外，还包含两个空格字符，这不会受到 `<<-` 的影响而被删除。
+
+> 因为这个新语法的原因，现在为编辑器提供 `.editorconfig` 文件时应该采用这样的片段：
+>
+> ```editorconfig
+> [*]
+> # charset = utf-8
+> # end_of_line = lf
+> # indent_size = 4
+> # indent_style = space
+> # insert_final_newline = false
+> # max_line_length = 120
+> # tab_width = 4
+> trim_trailing_whitespace = false
+> 
+> [*.{bash,sh,zsh,fish}]
+> indent_size = 2
+> indent_style = tab
+> tab_width = 2
+> 
+> [{.zshrc,.zprofile,.zshenv,zshrc,zprofile,zshenv,.bashrc,.bash_profile,.profile}]
+> indent_size = 2
+> indent_style = tab
+> tab_width = 2
+> 
+> ```
+>
+> 其中脚本文件最重要强调的是缩进自动采用 Tab 字符。
+>
+> 在支持 `.editoconfig` 的编辑器中配合这样的设置能够让你在无需额外干预的情况下连续键击和编码，而在以新语法输入 heredoc 内容时，能够自动缩进到恰当的位置，能够在存盘格式化时自动将前置的空格以最优解的方式转换为 tab 字符来保持缩进效果满足键击输入时的效果。
+>
+> 口头上的解说较为苍白，我也不想为此录制 gif，所以你可以在 vscode/idea/goland 等新式编辑器中自行试验。
 
 ##### 禁止变量展开
 
