@@ -2,7 +2,7 @@
 layout: single
 title: '使用 CMake Presets'
 date: 2024-01-05 03:00:00 +0800
-last_modified_at: 2023-01-05 05:50:00 +0800
+last_modified_at: 2024-01-05 05:50:00 +0800
 Author: hedzr
 tags: [c++, cmake, presets]
 categories: c++ algorithm
