@@ -55,8 +55,8 @@ git config --global --replace-all core.pager "less -iRFX"
 由于 `git log` 和 `git diff` 都会使用操作系统环境变量 PAGER 的参数，所以上述方法同时作用于这些命令。而且，如果你想要临时变更而不是永久变更的话，也可以这样：
 
 ```bash
-$ PAGE='less -iRFX' git log
-$ PAGE='less -iRFX' git diff
+$ PAGER='less -iRFX' git log
+$ PAGER='less -iRFX' git diff
 ```
 
 ## 使用 `delta`
