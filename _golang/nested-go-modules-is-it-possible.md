@@ -138,4 +138,16 @@ replace "github.com/user/private-go-lib" => ..
 
 
 
+## 后后记
+
+2024 年，随着 go 1.21 的 go.work 具体表现更加稳定，现在我们有了比较靠谱的嵌套 go.mod 组织方法。这在我的 [hedzr/go-socketlib](https://github.com/hedzr/go-socketlib) 上做了公开实践。实际上在内部（私有）环境中它的表现也没有问题，请查阅更新的博文：
+
+[go.work 在开源库开发中的运用](https://hedzr.com/golang/arch/go-work-for-library-dev/)
+
+那边介绍这个思路。
+
+这个也不算我的发明，大约要算个综合体了吧，因为这么实践的、或者基本类似的实例也很多了。
+
+
+
 🔚
