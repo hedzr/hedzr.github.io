@@ -144,7 +144,7 @@ replace "github.com/user/private-go-lib" => ..
 
 [go.work 在开源库开发中的运用](https://hedzr.com/golang/arch/go-work-for-library-dev/)
 
-那边介绍这个思路。
+那边介绍了新的思路。
 
 这个也不算我的发明，大约要算个综合体了吧，因为这么实践的、或者基本类似的实例也很多了。
 
