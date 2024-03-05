@@ -74,7 +74,7 @@ struct Job
  
 int main()
 {
-    Job jobs[]{{"Annika"}, {"Buru"}, {"Chuck"}};
+    Job jobs[]{ {"Annika"}, {"Buru"}, {"Chuck"} };
  
     std::latch work_done{std::size(jobs)};
     std::latch start_clean_up{1};
