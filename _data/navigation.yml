@@ -93,8 +93,8 @@ sidebar-meta:
         url: /cmdr-docs/
         description: The Documentation for cmdr (Golang)
         icon: far fa-fw fa-newspaper
-      - title: "Tmpl Repo"
-        url: /notes-hi/
+      - title: "Mirror-list"
+        url: /mirror-list/
         description: A github template repository that allows building a MkDocs site faster.
         icon: far fa-fw fa-window-restore
 
