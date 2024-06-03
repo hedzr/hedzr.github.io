@@ -95,7 +95,7 @@ sidebar-meta:
         icon: far fa-fw fa-newspaper
       - title: "Mirror-list"
         url: /mirror-list/
-        description: A github template repository that allows building a MkDocs site faster.
+        description: 各种各样的镜像加速，Live Page Here
         icon: far fa-fw fa-window-restore
 
   - title: "Meta"
