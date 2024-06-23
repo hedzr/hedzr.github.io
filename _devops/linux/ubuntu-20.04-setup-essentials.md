@@ -44,7 +44,7 @@ Ubuntu 已经（早已，2020-04-23）发布了 20.04 LTS 版本，代号为 Foc
 
 但这个版本也有其问题，官方推荐的最低系统是 双核4GBRAM。这在云上未免会带来价格上的更审慎的评估。
 
-
+## Ubuntu 服务器初装后
 
 ### 提要
 
@@ -237,8 +237,6 @@ $hz    ALL=(ALL) NOPASSWD: ALL
 
 总而言之，是否该使用控制台自动登录功能是由目的和环境决定的。
 
-
-
 [^30]: <https://askubuntu.com/questions/819117/how-can-i-get-autologin-at-startup-working-on-ubuntu-server-16-04-1>
 
 为了启用控制台自动登录功能，可以这样[^30]：
@@ -252,9 +250,11 @@ sudo systemctl edit getty@tty1.service
 ```
 [Service]
 ExecStart=
-ExecStart=-/sbin/agetty --noissue --autologin myusername %I $TERM
+ExecStart=-/sbin/agetty --noissue --autologin hz %I $TERM
 Type=idle
 ```
+
+> 替换 `hz` 为你的帐户登录名。
 
 存盘退出，背后将会发生这些事情：
 
@@ -263,7 +263,25 @@ Type=idle
 
 这样一来，一个专属于 getty 账户的系统服务将会在开机时起到作用并完成自动登录控制台的功能。重启您的服务器即可验证到这一点。
 
+##### 对于 Ubuntu 22.04 Server 及以后
 
+沿用上面的方法将不会奏效。
+
+原因是 getty@tty1.service 的配置文件现在改为了即时合成的方式，所以直接通过 systemctl edit 编辑的配置文件的变更总是在下一次重启之后被合成的内容所冲刷。
+
+解决的办法是使用 `.d` 文件夹和 override.conf 文件：
+
+```bash
+sudo mkdir /etc/systemd/system/getty@tty1.service.d
+cat <<EOF | sudo tee /etc/systemd/system/getty@tty1.service.d/override.conf
+[Service]
+ExecStart=
+ExecStart=-/sbin/agetty --noissue --autologin hz %I $TERM
+Type=idle
+EOF
+```
+
+存盘，然后重启服务器来查看其效果。
 
 #### 重启、关闭服务器
 
