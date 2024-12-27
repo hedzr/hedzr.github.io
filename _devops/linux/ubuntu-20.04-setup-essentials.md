@@ -203,7 +203,7 @@ root@u18svr:~# sudo groupadd -g 201 power
 然后将想要授信的用户加入到这个组中：
 
 ```bash
-root@u18svr:~# sudo usermod -aG power hz
+root@u18svr:~# sudo usermod -aG power $USER
 ```
 
 接下来，我们将整个power组的sudoer特性进行提权：
