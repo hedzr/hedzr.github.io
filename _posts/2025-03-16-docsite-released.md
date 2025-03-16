@@ -1,7 +1,7 @@
 ---
 layout: single
 title: Docsite Released
-date: 2025-03-16 09:58:00 +0800
+date: 2025-03-15 09:58:00 +0800
 last_modified_at: 2025-03-16 09:58:00 +0800
 Author: hedzr
 tags: [nextjs]
