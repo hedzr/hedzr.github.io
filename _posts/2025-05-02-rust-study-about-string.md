@@ -10,10 +10,10 @@ comments: true
 toc: true
 header:
   teaser: https://cdn.jsdelivr.net/gh/hzimg/blog-pics@master/upgit/2025/05/20250502_1746142520.jpg
-  overlay_image: /assets/images/sddefault.jpg
+  overlay_image: /assets/images/rust-string.jpg
   overlay_filter: rgba(32, 32, 0, 0.5)
 excerpt: >-
-  docs.hedzr.com released [...]
+  Rust 初学笔记，关于字符串 [...]
 ---
 
 
@@ -174,6 +174,8 @@ fn test_strings() {
 有关 Rust 字符串的操作的更多内容，敬请期待下一篇。
 
 图片直接取自网络，此致。
+
+其中，overlay_image 取自 Youtube 一个课程 `String and &str | Learn Rust part 7`。不给链接了，请自行去搜索——因为 ads 和内容链接的缘故，微信说我的文档博客站涉嫌非法诱导#$@!&*^\$，我觉得吧，我也没指望过微信等等。
 
 ### 如何学习 Rust？
 
