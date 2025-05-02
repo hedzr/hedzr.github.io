@@ -113,6 +113,30 @@ let db2 = &db; // got a `&String`
 >
 > 这样也是个办法。
 
+进一步地，如果需要可变对象呢，那就需要 `&mut str` 类型，此时的语法就要更新为：
+
+```rust
+#[test]
+fn test_str() {
+    let mut db = String::from("you");
+    {
+        let ab = &*db; // got a `&str`
+        println!("ab:  {}", ab);
+    }
+    let mut mab = &mut *db; // got a `&mut str`
+    let mut dc = String::from("her");
+
+    assert_eq!(mab, "you");
+    mab = &mut *dc;
+    assert_eq!(mab, "her");
+    println!("mab: {}", mab);
+}
+```
+
+这段测试代码毫无用处，仅仅向你展示 `&mut *a_str` 这种语法。
+
+
+
 ##### `String` 是什么？`&str` 呢？
 
 Rust 设计 `String` 管理一个内存 buffer 区，就像字节数组一样。
