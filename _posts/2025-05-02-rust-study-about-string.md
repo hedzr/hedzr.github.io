@@ -79,7 +79,8 @@ let db = String::from("you");
 let dc: String = a.to_string(); // from a `&str`
 let dd = a.into();
 let de = a.clone().to_string(); // make a clone
-println!("{}, {}, {}, {}, {}\n", da, db, dc, dd, de);
+let df = "hi".to_string(); // also got a String
+println!("{}, {}, {}, {}, {}\n", da, db, dc, dd, de, df);
 ```
 
 这里展示了从字面量得到 `String` 声明的方法，以及从一个 `&str` 转换为 `String` 的方法。
