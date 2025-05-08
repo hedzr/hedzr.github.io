@@ -257,8 +257,7 @@ println!("{} characters printed.", n1.chars().count());
 
 然后可以用迭代器上的 `collect()` 来搜集字符，抽出其中的 slice 片段重组一个 vec 乃至于 string。
 
-```rist
-```
+
 
 
 
