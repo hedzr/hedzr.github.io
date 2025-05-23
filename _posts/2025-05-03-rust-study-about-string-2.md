@@ -13,7 +13,7 @@ header:
   overlay_image: /assets/images/rust-string.jpg
   overlay_filter: rgba(32, 32, 0, 0.5)
 excerpt: >-
-  Rust 初学笔记，关于字符串 [...]
+  Rust 初学笔记，关于字符串之二 [...]
 ---
 
 
