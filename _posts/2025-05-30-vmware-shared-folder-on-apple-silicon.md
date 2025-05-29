@@ -36,7 +36,7 @@ excerpt: >-
 sudo zypper in bindfs
 ```
 
-如果你不是在使用 openSUSE，那么使用恰当的宝管理器，例如在 Ubuntu 中这样安装：
+如果你不是在使用 openSUSE，那么使用恰当的包管理器，例如在 Ubuntu 中这样安装：
 
 ```bash
 sudo apt-get install bindfs
@@ -65,7 +65,7 @@ $SUDO mount -a
 ls -la /mnt/hgfs/Downloads
 ```
 
-这一策略很关键，而且相当轻便，根本不必编译 vmtools，直接就可以生效。
+这一策略很关键，而且相当轻便（直接使用 fuse），根本不必编译 vmtools，直接就可以生效。
 
 这是由于 openSUSE 16.0 的内置驱动支持力度加强了。
 
