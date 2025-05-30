@@ -118,4 +118,12 @@ $SUDO mount -a
 
 
 
+### 参考材料
+
+- [The Unofficial Fusion 13 for Apple Silicon Companion Guide (pdf)](https://seaphages.org/media/forums/attachments/56c9bf43-93bc-46c6-bc09-a94088bee0fa.pdf)
+- [Sharing | UTM Documentation](https://docs.getutm.app/settings-qemu/sharing/)
+- [Linux | UTM Documentation](https://docs.getutm.app/guest-support/linux/)
+
+
+
 🔚
