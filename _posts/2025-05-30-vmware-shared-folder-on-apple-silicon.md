@@ -4,13 +4,13 @@ title: '让 VMware Fusion 共享文件夹在 Apple Silicon 上工作'
 date: 2025-05-29 20:00:00 +0800
 last_modified_at: 2025-05-30 01:17:00 +0800
 Author: hedzr
-tags: [opensuse, shared-folder]
+tags: [opensuse, shared-folder, vm]
 categories: devops opensuse
 comments: true
 toc: true
 header:
-  teaser: /assets/images/ubuntuhero.jpg
-  overlay_image: /assets/images/git-banner.jpeg
+  teaser: /assets/images/unsplash-gallery-image-3.jpg
+  overlay_image: /assets/images/unsplash-gallery-image-3-th.jpg
   overlay_filter: rgba(32, 32, 0, 0.3)
 excerpt: >-
   在宿主机上远程接入到虚拟机中进行开发，同一份代码 ...
