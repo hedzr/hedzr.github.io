@@ -20,6 +20,18 @@ excerpt: >-
 
 ## Golang 正则式语法概述
 
+> 按：
+>
+> 由于当初并未认真阅读 Wiki 词条和学界渊源，所以对于正则式的简史介绍有若干错误。
+>
+> 今次因而剔除错误，但也并不重写相应段落。
+>
+> 盖因正则式历史描述起来略长，本文若是将其收入，未免篇幅超出预期。
+>
+> 所以暂定为另起一个系列文章来叙述正则式语法及其引擎的实现，该工程规模略大，且实现一个 re-engine 也很难，所以要等到我完成了该引擎之后才能最终成文，目前不能预期到 deadline 为哪一天。
+>
+> 2025-11-11 记
+
 Golang 实际上支持两种正则式语法，其一为标配语法，这是源于 RE2 的语法规则，稍后将会完整阐释，其二为 POSIX ERE 规范，这种规范源于 Perl 正则式规范但有所变化，此规范本文内不做介绍。
 
 ### Examples
@@ -33,7 +45,7 @@ egrep 'a*b?c'
 grep -E 'a(.*?)c'
 ```
 
-详细介绍这种所谓的扩展的正则式语法，不是本文的目标，故而略过。
+详细介绍这种扩展的正则式语法，不是本文的目标，故而略过。
 
 golang 中可以使用 [CompilePOSIX](https://pkg.go.dev/regexp#CompilePOSIX) 和 [MustCompilePOSIX](https://pkg.go.dev/regexp#MustCompilePOSIX)，简短示例如下：
 
@@ -78,13 +90,17 @@ func main() {
 
 [RE2](https://github.com/google/re2)  语法在 [https://golang.org/s/re2syntax](https://golang.org/s/re2syntax) 有完整的描述，本文基于该描述进行阐释。它的一个微有节选的易读版本在 [https://pkg.go.dev/regexp/syntax](https://pkg.go.dev/regexp/syntax) 可以访问，两者可以同时对照以便阅读和相互印证。
 
-注意此 [RE2](https://github.com/google/re2)  和 [微软的 RE2](https://docs.microsoft.com/en-us/deployedge/edge-learnmore-regex) 相同而又有所不同。简而言之，[RE2](https://github.com/google/re2) 是 [微软的 RE2](https://docs.microsoft.com/en-us/deployedge/edge-learnmore-regex) 的 Golang 实现版本，由 Google 官方进行维护。
+简而言之，[RE2](https://github.com/google/re2) 是 Russ Cox 实现的 C++ 开源代码库，用发展的眼光来看，这是目前主流正则式引擎中相对最好的一个，优于 PCRE 和 POSIX RE 各实现版本。
 
 
 
 #### 区别
 
-RE2 和 POSIX/Perl 兼容的正则式的区别较为难以叙述，其中一个原因在于 Perl 正则式自己曾经发生过演变与分叉，形成了所谓古典的 Perl regexp 和现代的 Perl regexp 的区别，此外，POSIX regexp 和 RE2 也略有区别，这主要表现在 submatch 的处理上，POSIX 将会尽量返回更长版本（默认为贪婪模式），而 RE2 则会返回尽可能短的版本（默认为非贪婪模式）。
+RE2 和 POSIX ERE/PCRE 的区别细节太多，较为难以叙述，但确实有人这么做了，一个地方是 [Regular Expressions Reference Table of Contents](https://www.regular-expressions.info/refflavors.html)，这里精细地描述了区别，但阅读起来比较费劲；另一个地方是 [Regex cheatsheet](https://remram44.github.io/regex-cheatsheet/regex.html)，较为清晰和概要。简而言之，PCRE/POSIX ERE 和 RE2 的主要区别在 submatch 的处理上，PCRE/POSIX ERE 将会尽量返回更长版本（默认为贪婪模式），而 RE2 则会返回尽可能短的版本（默认为非贪婪模式）。
+
+> 按：
+>
+> 下面的示例有误，限于时间和其它因素不做订正而保留于此。
 
 ```go
 package main
@@ -102,18 +118,16 @@ func main() {
 	rPOSIX, _ := regexp.CompilePOSIX(pattern)
 
 	matchesPCRE := rPCRE.Find(str)
-	fmt.Println("RE2: ", string(matchesPCRE))
+	fmt.Println("PCRE: ", string(matchesPCRE))
 	// prints "foo"
 
 	matchesPOSIX := rPOSIX.Find(str)
-	fmt.Println("POSIX: ", string(matchesPOSIX))
+	fmt.Println("POSIX ERE: ", string(matchesPOSIX))
 	// prints "foobar"
 }
 ```
 
-注意，这个示例源于 [playground](https://play.golang.org/p/kldUzzH8ZO)，但源码中的命名有一个问题：PCRE 是 *Perl Compatible Regular Expressions* 的意思，在一个很大的程度上它几乎也是 POSIX Regular Expressions 的代名词。
-
-所以 `matchesPCRE` 变量名应该命名为 `matchesRE2` 才是正确的。
+这个示例源于 [playground](https://play.golang.org/p/kldUzzH8ZO)。
 
 
 
@@ -138,21 +152,15 @@ func main() {
 
 发觉有必要简述一下正则式的各种分支版本。
 
-正则表达式的 POSIX 规范，分为基本型正则表达式（Basic Regular Expression，BRE）和扩展型正则表达式（Extended Regular Express，ERE）两大流派。在兼容 POSIX 的 UNIX 系统上，grep 和 egrep 之类的工具都遵循 POSIX 规范，一些数据库系统中的正则表达式也匹配 POSIX 规范。grep、vi、sed 都属于 BRE，是历史最早的正则表达式，因此元字符必须转译之后才具有特殊含义。egrep、awk 则属于 ERE，元字符不用转译。（源自 [Wiki](https://zh.wikipedia.org/wiki/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F)）
+> 按，
+>
+> 以下的简史介绍有若干错误之处，故而删除。
 
-Perl 的正则式解析器原采用 PCRE，但在分叉之后就形成了 egrep 和 pgrep 两种版本。PCRE 继续单独开发，形成了 Extended RE（ERE，egrep），Perl 自己维护自身的正则式形成了 Perl RE 语法（pgrep）。
+~~正则表达式的 POSIX 规范，分为基本型正则表达式（Basic Regular Expression，BRE）和扩展型正则表达式（Extended Regular Express，ERE）两大流派。在兼容 POSIX 的 UNIX 系统上，grep 和 egrep 之类的工具都遵循 POSIX 规范，一些数据库系统中的正则表达式也匹配 POSIX 规范。grep、vi、sed 都属于 BRE，是历史最早的正则表达式，因此元字符必须转译之后才具有特殊含义。egrep、awk 则属于 ERE，元字符不用转译。（源自 [Wiki](https://zh.wikipedia.org/wiki/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F)）~~
 
-macOS 上的 grep 不支持 pgrep 格式，因此跨平台有效的 RE Pattern 最好以 ERE 风格来编写，即采用 POSIX RE 标准。
+~~Perl 的正则式解析器 ......~~
 
-实际上，POSIX 标准中还有一种标准型正则表达式（Simple RE，SRE）。不过由于其简单性，没有什么实作案例，通常也不推荐采用这种规范。
-
-在现代浏览器应用开发中，Javascript 也通过 ECMA 标准维护着一套正则式规范。ECMAScript 中的正则式基本上是 POSIX RE 的一种拓展版本。不过要由我个人观点来看，渐入歧途吧。
-
-但 RE2 当然是一个不同的家伙。
-
-[微软的 RE2](https://docs.microsoft.com/en-us/deployedge/edge-learnmore-regex) 原出于微软中国研究院，刚发布时名为 greta，名声相当嘹亮，性能优秀，一出品时性能是当时的正则式引擎（boost.regexp）的 7 倍以上，着实是有相当的风头。我之所以对其印象如此深刻，是因为这家伙是 C++ 模板元编程实现的，质量很好（当然，写这类型的类库的人往往都很变态，所以可读性不要有什么期待）
-
-一晃也是二十年过去了，真是物是人非啊。现在你很难找到 greta 的源流了，所以说时间真的可以湮没一切，即使有北极磁带备份又如何，greta 甚至不值得一个维基词条，这既是一个悲哀，又是某种必然。
+~~......~~
 
 如果想了解正规表达式，可以阅读维基词条：
 
@@ -161,9 +169,7 @@ macOS 上的 grep 不支持 pgrep 格式，因此跨平台有效的 RE Pattern �
 
 如果想了解 PCRE 语法，请查阅 [Regular expression - Wikipedia](https://en.wikipedia.org/wiki/Regular_expression) ，这里完整但缺乏样例。
 
-如果想了解 Greta/RE2 语法，可以查阅 [微软的 RE2](https://docs.microsoft.com/en-us/deployedge/edge-learnmore-regex) ，也是完整但缺乏样例。
-
-如果想了解 Golang 标配的 RE2 语法，请注意它和 [微软的 RE2](https://docs.microsoft.com/en-us/deployedge/edge-learnmore-regex) 并无区别，但你当然可以在这里进行查阅：
+如果想了解 RE2 语法，可以查阅：
 
 - [RE2](https://github.com/google/re2)  语法在 [https://golang.org/s/re2syntax](https://golang.org/s/re2syntax) 有完整的描述
 - 一个微有节选的易读版本在 [https://pkg.go.dev/regexp/syntax](https://pkg.go.dev/regexp/syntax) 可以访问，两者可以同时对照以便阅读和相互印证。
