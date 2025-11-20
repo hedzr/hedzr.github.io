@@ -82,6 +82,31 @@ tmutil deletelocalsnapshots [<mount_point> | <snapshot_date>]
 
 
 
+##### 2025-11 Updated
+
+简单的方法如下，系统为 Sequoia 15.7.2：
+
+```bash
+$ tmutil listlocalsnapshots /
+Snapshots for disk /:
+com.apple.TimeMachine.2025-11-09-064653.local
+com.apple.TimeMachine.2025-11-14-080155.local
+$ tmutil deletelocalsnapshots 2025-11-09-064653
+Deleted local snapshot '2025-11-09-064653'
+```
+
+手工清除后，系统的统计信息将会陷入混乱状态，主要表现为 System Settings/General/Storage 的空闲空间的统计将会出错，从上面的 tmutil deletelocalsnapshots 释放的空间被错误地加在了 free space 的尺寸上，而事实上这部分被释放的空间原本就已经被视为 free space 的一部分了。
+
+此问题仅仅影响显示，可以确认这是一个 BUG。
+
+如果重启电脑，则 System Settings/General/Storage 的空闲空间值将会恢复正常。但系统内部的 Purgeable Space 尺寸依旧错误，被释放的空间没有被从该尺寸中减除。要修复这一问题，需要手工做一次 TM 备份。
+
+> 静置数十分钟后系统内务也会修补该问题。
+
+总的来说，这个方法没有什么根本性的不妥，但不那么“可靠”，需要你理解其内在本质。
+
+
+
 #### Boot Camp Assistant
 
 其次的方法是通过一个间接手段：
