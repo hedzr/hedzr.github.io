@@ -1,8 +1,8 @@
 ---
 layout: single
 title: '对 dotfiles 备份的几种方法'
-date: 2025-11-25 01:00:00 +0800
-last_modified_at: 2025-11-25 07:17:00 +0800
+date: 2025-12-31 01:00:00 +0800
+last_modified_at: 2025-12-31 12:25:00 +0800
 Author: hedzr
 tags: [shell,skills]
 categories: devops bash
@@ -28,7 +28,7 @@ excerpt: >-
 
 - Shell 环境文件，例如 .bashrc，.zshrc 等等
 - 终端应用的配置，通常在 ~/.config 中，或者 ~/.npmrc 这样，也有的在 ~/.local/share/nvim 这样的文件夹中
-- XDG 文件夹，例如 XDG_CONFIG_DIR 和 XDG_DATA_DIR，实际上在大多数 Linux 和 macOS，它们被解释到 `~/.config/<app>` 和 `~/.local/share<app>` 等位置。
+- XDG 文件夹，例如 XDG_CONFIG_DIR 和 XDG_DATA_DIR，实际上在大多数 Linux 和 macOS，它们被解释到 `~/.config/<app>` 和 `~/.local/share/<app>` 等位置。
 
 对于 macOS 来说，下面的位置也可能包含 app 的有效配置数据：
 
