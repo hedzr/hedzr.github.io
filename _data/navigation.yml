@@ -89,9 +89,17 @@ sidebar-meta:
 
   - title: "Open Source Projects"
     children:
-      - title: "CMDR Docs"
+      - title: "HzDocs Site"
+        url: https://docs.hedzr.com/
+        description: The Documentation of Mine Open Projects
+        icon: far fa-fw fa-newspaper
+      - title: "CMDR Docs v2"
+        url: https://docs.hedzr.com/docs/cmdr.v2/
+        description: The Documentation for cmdr v2 (Golang)
+        icon: far fa-fw fa-newspaper
+      - title: "CMDR Docs v1 (Obseleted)"
         url: /cmdr-docs/
-        description: The Documentation for cmdr (Golang)
+        description: The Documentation for cmdr v1 (Golang)
         icon: far fa-fw fa-newspaper
       - title: "Mirror-list"
         url: /mirror-list/
