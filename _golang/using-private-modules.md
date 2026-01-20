@@ -18,15 +18,15 @@ excerpt: >-
 
 ## 方法
 
-假设有一个私有仓库 hedzr/go-lb-ref 放在 github 上，如何使用它呢？以下是关键性的要点的节录，以充作快速查阅之用。
+假设有一个私有仓库 hedzr/go-lb 放在 github 上，如何使用它呢？以下是关键性的要点的节录，以充作快速查阅之用。
 
-1. 建立私有仓库并推入 [github.com/hedzr/go-lb-ref](https://github.com/hedzr/go-lb-ref)。嗯，其他人请勿点击该链接进入，毕竟是我用来测试的。该源码实际上早已开源在 [hedzr/lb](https;//github.com/hedzr/lb)。所以你可以出门往左去瞅瞅。
+1. 建立私有仓库并推入 [github.com/hedzr/go-lb](https://github.com/hedzr/go-lb)。嗯，其他人请勿点击该链接进入，毕竟是我用来测试的。该源码实际上早已开源在 [hedzr/lb](https://github.com/hedzr/lb)。所以你可以出门往左去瞅瞅。
 
 2. 修改本地的 git 全局配置文件 `$HOME/.gitconfig`，加入如下的片段：
 
    ```ini
    [url "ssh://git@github.com/hedzr"]
-   	insteadOf = https://github.com/hedzr
+    insteadOf = https://github.com/hedzr
    ```
 
    注意这个设定的意图是将所有的我的仓库全都从 https 协议自动切换为 ssh 协议。
@@ -37,7 +37,7 @@ excerpt: >-
 
    ```ini
    [url "ssh://git@github.com"]
-   	insteadOf = https://github.com
+    insteadOf = https://github.com
    ```
 
    请放心，这些设定完全不会影响到你的日常开源项目的管理和维护。这是因为你在维护常规项目时已经做好了 SSH Key 方面的配置。 如果尚未做好，请查阅 [Adding a new SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) 去完成它。
@@ -70,7 +70,7 @@ excerpt: >-
 
    ```ini
    [url "ssh://git@mydomain.com"]
-   	insteadOf = https://mydomain.com
+    insteadOf = https://mydomain.com
    ```
 
 2. 本地的 GOPRIVATE 设定
@@ -80,9 +80,5 @@ excerpt: >-
    ```
 
 这就是全部了。
-
-
-
-
 
 🔚
