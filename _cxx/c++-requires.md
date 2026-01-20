@@ -26,7 +26,7 @@ C++ 元编程技术笔记
 
 using template class as template parameters
 
- [C++ template template parameter - Stack Overflow](https://stackoverflow.com/questions/52803490/c-template-template-parameter) 
+ [C++ template template parameter - Stack Overflow](https://stackoverflow.com/questions/52803490/c-template-template-parameter)
 
 ```cpp
 template<typename X>
@@ -50,9 +50,7 @@ int main()
 }
 ```
 
-
-
-### 定义别名时注意：
+### 定义别名时注意
 
 ```cpp
 template<typename T, typename = void>
@@ -76,17 +74,13 @@ using ggw = wrapper<gg, T>;
 // 此时注意不要使用 wrapper<gg<T>, T> 这样的写法
 ```
 
-
-
-
-
 ## 继承基类的构造函数
 
- [using 声明 - cppreference.com](https://zh.cppreference.com/w/cpp/language/using_declaration) 
+ [using 声明 - cppreference.com](https://zh.cppreference.com/w/cpp/language/using_declaration)
 
 ```cpp
-using typename(可选) 嵌套名说明符 无限定标识 ;		(C++17 前)
-using 声明符列表 ;		(C++17 起)
+using typename(可选) 嵌套名说明符 无限定标识 ;  (C++17 前)
+using 声明符列表 ;  (C++17 起)
 ```
 
 示例：
@@ -155,19 +149,13 @@ int main()
 }
 ```
 
-
-
-
-
-## Extract...
-
-
+## Extract
 
 ### template parameter class
 
-- [C++ type traits to extract template parameter class - Stack Overflow](https://stackoverflow.com/questions/11056714/c-type-traits-to-extract-template-parameter-class) 
--  [c++ - Extract first template parameter from a template template parameter and using it inside the class? - ZaiZheLe Developer Zone](https://zaizhele.net/qa/?qa=305700/) 
-- 
+- [C++ type traits to extract template parameter class - Stack Overflow](https://stackoverflow.com/questions/11056714/c-type-traits-to-extract-template-parameter-class)
+- [c++ - Extract first template parameter from a template template parameter and using it inside the class? - ZaiZheLe Developer Zone](https://zaizhele.net/qa/?qa=305700/)
+-
 
 1.
 
@@ -199,7 +187,7 @@ struct MyTemplate
 };
 ```
 
-Online demo : http://ideone.com/mbyvj
+Online demo : <http://ideone.com/mbyvj>
 
 ------
 
@@ -213,25 +201,17 @@ struct extract_value_type<X<T, Args...>>   //specialization
 };
 ```
 
-Demo : http://ideone.com/SDEgq
+Demo : <http://ideone.com/SDEgq>
 
-
-
-
-
-## Constraint...
+## Constraint
 
 收集和研究各种约束手法
-
-
-
-
 
 ### template type to copy-assignable
 
 要求模板参数类必须为带有拷贝构造函数实现的。
 
-From: https://stackoverflow.com/questions/63802972/c-how-to-constrain-template-type-to-copy-assignable-types
+From: <https://stackoverflow.com/questions/63802972/c-how-to-constrain-template-type-to-copy-assignable-types>
 
 #### static_assert
 
@@ -301,8 +281,6 @@ int main() {
 }
 ```
 
-
-
 #### good
 
 注意，一个 class 中会有自动生成的复制构造函数，除非：
@@ -338,12 +316,6 @@ inline test_T1(){
 }
 ```
 
-
-
-
-
-
-
 ## iterator_traits
 
 例子 1
@@ -361,8 +333,6 @@ int main() {
   return 0;
 }
 ```
-
-
 
 `iterator_traits` 往往被用在 iterator 实现类中，以便能取出一个代名词（通过类型别名），例如 pointer 能够更好地指代用户类型的指针形式，这比直接使用 T* 要更具备可读性以及可写性。
 
@@ -402,12 +372,6 @@ struct iterator_traits
 };
 ```
 
-
-
-
-
-
-
 ## Sanitize & Google Sanitizers
 
 sanitize 是一种动态代码分析技术。
@@ -419,23 +383,19 @@ sanitize 是一种动态代码分析技术。
 - Profiler - CMake Profiling
 - Code coverage
 
-
-
 ### Google Sanitizers
 
-- [Google sanitizers - CLion](https://www.jetbrains.com/help/clion/google-sanitizers.html#AsanChapter) 
--  [c++ - What's the proper way to enable AddressSanitizer in CMake that works in Xcode - Stack Overflow](https://stackoverflow.com/questions/44320465/whats-the-proper-way-to-enable-addresssanitizer-in-cmake-that-works-in-xcode) 
--  [c++ - Enabling AddressSanitizer with Cmake - Stack Overflow](https://stackoverflow.com/questions/50897079/enabling-addresssanitizer-with-cmake) 
--  [cmake - C++ AddressSanitizer with CMakeLists.txt results in asan errors - Stack Overflow](https://stackoverflow.com/questions/50163828/c-addresssanitizer-with-cmakelists-txt-results-in-asan-errors) 
--  [Add sanitizers only to debug build in CMake - Stack Overflow](https://stackoverflow.com/questions/61059783/add-sanitizers-only-to-debug-build-in-cmake) 
--  [c++ - LLVM address sanitizer with CMake - Stack Overflow](https://stackoverflow.com/questions/47603005/llvm-address-sanitizer-with-cmake) 
--  [Integrating sanitizer tools to CMake builds](http://www.stablecoder.ca/2018/02/01/analyzer-build-types.html) 
--  [Compiler sanitizers — conan 1.18.5 documentation](https://docs.conan.io/en/1.18/howtos/sanitizers.html) 
-- 
-- 
-- 
-
-
+- [Google sanitizers - CLion](https://www.jetbrains.com/help/clion/google-sanitizers.html#AsanChapter)
+- [c++ - What's the proper way to enable AddressSanitizer in CMake that works in Xcode - Stack Overflow](https://stackoverflow.com/questions/44320465/whats-the-proper-way-to-enable-addresssanitizer-in-cmake-that-works-in-xcode)
+- [c++ - Enabling AddressSanitizer with Cmake - Stack Overflow](https://stackoverflow.com/questions/50897079/enabling-addresssanitizer-with-cmake)
+- [cmake - C++ AddressSanitizer with CMakeLists.txt results in asan errors - Stack Overflow](https://stackoverflow.com/questions/50163828/c-addresssanitizer-with-cmakelists-txt-results-in-asan-errors)
+- [Add sanitizers only to debug build in CMake - Stack Overflow](https://stackoverflow.com/questions/61059783/add-sanitizers-only-to-debug-build-in-cmake)
+- [c++ - LLVM address sanitizer with CMake - Stack Overflow](https://stackoverflow.com/questions/47603005/llvm-address-sanitizer-with-cmake)
+- [Integrating sanitizer tools to CMake builds](http://www.stablecoder.ca/2018/02/01/analyzer-build-types.html)
+- [Compiler sanitizers — conan 1.18.5 documentation](https://docs.conan.io/en/1.18/howtos/sanitizers.html)
+-
+-
+-
 
 Sanitizers are tools that perform checks during a program’s runtime and returns issues, and as such, along with unit testing, code coverage and static analysis, is another tool to add to the programmers toolbox. And of course, like the previous tools, are tragically simple to add into any project using CMake, allowing any project and developer to quickly and easily use.
 
@@ -468,41 +428,25 @@ A quick rundown of the tools available, and what they do:
 
 - [MemorySanitizer](https://clang.llvm.org/docs/MemorySanitizer.html) detects uninitialized reads.
 
-
-
-
-
-
-
-
-
 ## ReactiveX
 
- [ReactiveX/RxCpp: Reactive Extensions for C++](https://github.com/ReactiveX/RxCpp) 
+ [ReactiveX/RxCpp: Reactive Extensions for C++](https://github.com/ReactiveX/RxCpp)
 
- [ericniebler/range-v3: Range library for C++14/17/20, basis for C++20's std::ranges](https://github.com/ericniebler/range-v3) 
+ [ericniebler/range-v3: Range library for C++14/17/20, basis for C++20's std::ranges](https://github.com/ericniebler/range-v3)
 
- [**Reactor 3 参考指南**](https://easywheelsoft.github.io/reactor-core-zh/index.html) 
-
-
-
-
+ [**Reactor 3 参考指南**](https://easywheelsoft.github.io/reactor-core-zh/index.html)
 
 ### 适用场景
 
 [Rx操作符决策树](https://link.juejin.cn/?target=http%3A%2F%2Freactivex.io%2Fdocumentation%2Foperators.html%23tree)
 
-
-
 ### rxjava 操作符
 
+1. <https://reactivex.io/documentation/operators.html#categorized>
 
+2. [**Operators · ReactiveX文档中文翻译**](https://mcxiaoke.gitbooks.io/rxdocs/content/Operators.html)
 
-1. https://reactivex.io/documentation/operators.html#categorized
-
-2. [**Operators · ReactiveX文档中文翻译**](https://mcxiaoke.gitbooks.io/rxdocs/content/Operators.html) 
-
-3. https://reactivex.io/assets/operators/legend.png
+3. <https://reactivex.io/assets/operators/legend.png>
 
    **Filtering Observables**
 
@@ -523,11 +467,9 @@ A quick rundown of the tools available, and what they do:
 
 - [RxJava2.0实用操作符总结及原理简析](https://juejin.cn/post/6844903517438607367)
 
+![op](data:image/svg+xml,%3Csvg xmlns="<http://www.w3.org/2000/svg>" viewBox="0 0 1942 1576"%3E%3C/svg%3E)
 
-
-![op](data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1942 1576"%3E%3C/svg%3E)
-
-
+broken:
 
 - [RxJava系列1(简介)](https://zhuanlan.zhihu.com/p/20687178)
 - [RxJava系列2(基本概念及使用介绍)](https://zhuanlan.zhihu.com/p/20687307)
@@ -537,21 +479,9 @@ A quick rundown of the tools available, and what they do:
 - [RxJava系列6(从微观角度解读RxJava源码)](https://zhuanlan.zhihu.com/p/22338235)
 - [RxJava系列7(最佳实践)](https://zhuanlan.zhihu.com/p/23108381)
 
-
-
-
-
-
-
-
-
 ## CRTP
 
-
-
 如果觉得虚函数与其重载如此痛苦竟然不能忍的话，你可以考虑 [谈 C++17 里的 Builder 模式 所介绍的 CRTP](https://hedzr.com/c++/algorithm/cxx17-builder-pattern/#crtp) 惯用法的能力，CRTP 在模板类继承体系中是个很强大的编译期多态能力。
-
-
 
 ### What's it?
 
@@ -579,11 +509,9 @@ class derived: public base<derived> {
 };
 ```
 
-
-
 #### 相似的旁路继承 - 一个例子
 
-https://godbolt.org/z/oqEPsGzqe
+<https://godbolt.org/z/oqEPsGzqe>
 
 ```cpp
 #include <iostream>
@@ -618,17 +546,7 @@ int main(){
 }
 ```
 
-
-
-
-
 ### 有什么用处，适用场景
-
-
-
-
-
-
 
 ## Range-based for loop in c++17
 
@@ -645,15 +563,15 @@ loop-statement
 
 ```cpp
 {
-	init-statement
-	auto && __range = range-expression ;
-	auto __begin = begin-expr ;
-	auto __end = end-expr ;
-	for ( ; __begin != __end; ++__begin)
-	{
-		range-declaration = *__begin;
-		loop-statement
-	}
+ init-statement
+ auto && __range = range-expression ;
+ auto __begin = begin-expr ;
+ auto __end = end-expr ;
+ for ( ; __begin != __end; ++__begin)
+ {
+  range-declaration = *__begin;
+  loop-statement
+ }
 }
 ```
 
@@ -661,12 +579,12 @@ loop-statement
 
 ```cpp
 {
-	auto && __range = range-expression ;
-	for (auto __begin = begin-expr, __end = end-expr; __begin != __end; ++__begin)
-	{
-		range-declaration = *__begin;
-		loop-statement
-	}
+ auto && __range = range-expression ;
+ for (auto __begin = begin-expr, __end = end-expr; __begin != __end; ++__begin)
+ {
+  range-declaration = *__begin;
+  loop-statement
+ }
 }
 ```
 
@@ -674,7 +592,7 @@ loop-statement
 
 这一展开式尚且包含附注来定义何者为初始化表达式，何者为 begin-expr, end-expr，等等。你可以检查其详情：
 
->  [Range-based for loop (since C++11) - cppreference.com](https://en.cppreference.com/w/cpp/language/range-for) 
+> [Range-based for loop (since C++11) - cppreference.com](https://en.cppreference.com/w/cpp/language/range-for)
 
 但不管它，我们理解到，基于范围表达式的 for 循环在枚举范围对象时，要求你的对象应该实现 begin() 和 end() 这两个 iterator 方法。两者的原型为：
 
@@ -693,13 +611,6 @@ iterator end();
 
 简而言之，
 
- [c++ - How to make my custom type to work with "range-based for loops"? - Stack Overflow](https://stackoverflow.com/questions/8164567/how-to-make-my-custom-type-to-work-with-range-based-for-loops) 
-
-
-
-
+ [c++ - How to make my custom type to work with "range-based for loops"? - Stack Overflow](https://stackoverflow.com/questions/8164567/how-to-make-my-custom-type-to-work-with-range-based-for-loops)
 
 ## 🔚
-
-
-
