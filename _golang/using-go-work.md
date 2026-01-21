@@ -16,6 +16,16 @@ excerpt: >-
   记录一下方法 ...
 ---
 
+
+
+> **按**：  
+>
+> go.work 刚出来时功能不全面、不稳定，所以有本文。
+>
+> 随后我进一步尝试了运用 go.work，于是有了 [go.work 在开源库开发中的运用](https://hedzr.com/golang/arch/go-work-for-library-dev/)。
+>
+> 2024 年底（或许更早一点）开始 go.work 步入了实用阶段，因为它支持嵌套 go.mod 了（这一特性细节的应用另文 [go.work 在开源库开发中的运用](https://hedzr.com/golang/arch/go-work-for-library-dev/) 有述及），所以本文的结论就过时了。
+
 ## 方法
 
 一个大型项目可能会有十数个分离的 libraries，分别都是 go module；同时还会有十数个 microservices，所以这些项目的完整布局实际上一直是个难题。
