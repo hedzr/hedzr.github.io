@@ -272,7 +272,7 @@ Type=idle
 解决的办法是使用 `.d` 文件夹和 override.conf 文件：
 
 ```bash
-sudo mkdir /etc/systemd/system/getty@tty1.service.d
+sudo mkdir /etc/systemd/system/getty@tty1.service.d 
 cat <<EOF | sudo tee /etc/systemd/system/getty@tty1.service.d/override.conf
 [Service]
 ExecStart=
