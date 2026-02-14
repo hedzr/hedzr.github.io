@@ -94,13 +94,13 @@ sidebar-meta:
         description: The Documentation of Mine Open Projects
         icon: far fa-fw fa-newspaper
       - title: "CMDR Docs v2"
-        url: https://docs.hedzr.com/docs/cmdr.v2/
+        url: https://docs.hedzr.com/docs/cmdr/v2/
         description: The Documentation for cmdr v2 (Golang)
         icon: far fa-fw fa-newspaper
-      - title: "CMDR Docs v1 (Obseleted)"
-        url: /cmdr-docs/
-        description: The Documentation for cmdr v1 (Golang)
-        icon: far fa-fw fa-newspaper
+      # - title: "CMDR Docs v1 (Obseleted)"
+      #   url: /cmdr-docs/
+      #   description: The Documentation for cmdr v1 (Golang)
+      #   icon: far fa-fw fa-newspaper
       - title: "Mirror-list"
         url: /mirror-list/
         description: 各种各样的镜像加速，Live Page Here
