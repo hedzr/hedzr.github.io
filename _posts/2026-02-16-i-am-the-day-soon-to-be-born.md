@@ -24,19 +24,19 @@ excerpt: >-
 
 我记得全书结尾，约翰·克利斯朵夫濒死时的升华，是背着一个小孩子过河。
 
-> 快要倒下来的克利斯朵夫终于到了彼岸。于是他对孩子说：
-> “咱们到了！唉，你多重啊！孩子，你究竟是谁呢？”
-> 孩子回答说：
-> “我是即将来到的日子。”
+> 快要倒下来的克利斯朵夫终于到了彼岸。于是他对孩子说：  
+> “咱们到了！唉，你多重啊！孩子，你究竟是谁呢？”  
+> 孩子回答说：  
+> “我是即将来到的日子。”  
 
 我记得的，就是这最后一句话。
 
 嗯，我记得的是“到来”，但傅雷的译文是“来到”。
 
-> Almost falling Christophe at last reaches the bank, and he says to the Child:
-> "Here we are! How heavy thou wert! Child, who art thou?"
-> And the Child answers:
-> "I am the day soon to be born."
+> Almost falling Christophe at last reaches the bank, and he says to the Child:  
+> "Here we are! How heavy thou wert! Child, who art thou?"  
+> And the Child answers:  
+> "I am the day soon to be born."  
 
 这本书是罗曼·罗兰所著，傅雷翻译。我小时候在爸爸的书架上翻下来看完的，半懂不懂。少年时代我曾多次复读，克利斯朵夫的形象和贝多芬有一定的重合。
 
